@@ -23,7 +23,7 @@ export const MobileNav = () => {
   return (
     <div className=" navbar lg:hidden flex w-full h-full items-center justify p-6">
       <div className="navbar-start">
-        <Link href="/" className="mr-2">
+        <Link href="/" className="mr-6">
           <Image
             src="/TGT_logo.png"
             width={70}

@@ -11,7 +11,7 @@ import "./Navbar.scss";
 export const Navbar = () => {
   return (
     <div className={`navbarwrapper z-50 relative`}>
-      <div className={`${Noto.className} navbarStyles`}>
+      <div className={`${Noto.className} navbarStyles font-extrabold `}>
         <DesktopNav />
         <MobileNav />
       </div>
