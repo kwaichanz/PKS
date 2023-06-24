@@ -29,13 +29,13 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div
+    <header
       className={`navbar-wrapper z-50 relative opacity-0 transition-opacity duration-1000 ease-in-out`}
     >
-      <div className={`${Noto.className} navbar-styles font-extrabold `}>
+      <nav className={`${Noto.className} navbar-styles font-extrabold `}>
         <DesktopNav />
         <MobileNav />
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
