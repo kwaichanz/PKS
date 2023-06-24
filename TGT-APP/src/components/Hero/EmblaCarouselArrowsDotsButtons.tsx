@@ -46,7 +46,7 @@ export const NextButton: React.FC<PrevNextButtonPropType> = (props) => {
 
   return (
     <button
-      className="embla__button embla__button--next bg-red"
+      className="embla__button embla__button--next bg-red "
       onClick={onClick}
       disabled={!enabled}
     >

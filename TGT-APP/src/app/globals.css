@@ -19,4 +19,6 @@
 
 body {
   background: rgb(var(--background));
+  max-width: 100%;
+  overflow-x: hidden;
 }

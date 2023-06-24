@@ -18,7 +18,7 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplay.current]);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -63,15 +63,18 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <>
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container relative mx-auto my-2 h-[56rem] w-screen">
+          <div className="embla__container relative mx-auto my-2 w-screen">
             {slides.map((index) => (
               <div
-                className="embla__slide relative  h-screen flex-[0_0_100%]"
+                className="embla__slide relative  flex-[0_0_100%]"
                 key={index}
               >
-                {/* <div className="embla__slide__number">
-                  <span>{index + 1}</span>
-                </div> */}
+                <div className="embla__slide__number flex flex-row">
+                  <h1 className="font-serif font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-br from-[#05668d] via-[#02c39a] to-[#ffea00]">
+                    UNLEASHING THE POSSIBILITIES OF & TEA
+                  </h1>
+                  {/* <span>{index + 1}</span> */}
+                </div>
                 <Image
                   className="embla__slide__img relative object-cover"
                   src={imageByIndex(index)}
