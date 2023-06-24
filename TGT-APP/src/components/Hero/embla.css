@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap"');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+
 * {
   --brand-primary: rgb(47, 112, 193);
   --brand-secondary: rgb(116, 97, 195);
@@ -103,19 +108,20 @@
   object-fit: cover;
 }
 .embla__slide__number {
-  width: 40%;
-  height: 50%;
+  width: 60%;
+  height: 100%;
   z-index: 1;
   position: absolute;
-  top: 40%;
-  left: 10%;
-  border-radius: 50%;
+  top: 55%;
+  left: 8%;
+  /* border-radius: 50%; */
   /* background-color: rgba(var(--background-site-rgb-value), 0.85); */
-  line-height: 4.6rem;
-  font-weight: 900;
+  /* line-height: 4.6rem; */
+  /* font-weight: 900; */
   text-align: start;
   pointer-events: none;
   display: block;
+  font-family: "Caveat", cursive;
 }
 .embla__slide__number > span {
   color: var(--brand-primary);
@@ -164,7 +170,7 @@
 }
 .embla__dot {
   width: 3rem;
-  height: 5rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   margin-right: 0.75rem;
@@ -248,4 +254,15 @@
   .embla__button {
     scale: 0.9;
   }
+}
+
+.after-hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vw * 0.047);
+  background: url("../../../public/big-banner-rip-mask.png") no-repeat center
+    bottom/cover;
 }

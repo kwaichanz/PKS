@@ -21,6 +21,11 @@ module.exports = {
         warning: "#f2c150",
         error: "#df3a5d",
       },
+      fontFamily: {
+        hel: ["Helvetica, Arial, sans-serif"],
+        belanosima: ['"Belanosima", sans-serif'],
+        dacingscript: ['"Dancing Script", cursive'],
+      },
     },
     {
       extend: {
@@ -30,7 +35,7 @@ module.exports = {
             "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         },
         height: {
-          '104': "28rem",
+          104: "28rem",
         },
       },
     },

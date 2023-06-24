@@ -25,7 +25,7 @@ export const MobileNav = () => {
       <div className="navbar-start">
         <Link href="/" className="mr-6">
           <Image
-            src="/TGT_logo.png"
+            src="/brand_logo.png"
             width={70}
             height={70}
             alt="TGT"
