@@ -103,11 +103,11 @@
   object-fit: cover;
 }
 .embla__slide__number {
-  width: 60%;
-  height: 100%;
+  /* width: 40%; */
+  /* height: 100%; */
   z-index: 1;
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 8%;
   /* border-radius: 50%; */
   /* background-color: rgba(var(--background-site-rgb-value), 0.85); */

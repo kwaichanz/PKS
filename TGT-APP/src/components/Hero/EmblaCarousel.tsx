@@ -69,12 +69,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 className="embla__slide relative  flex-[0_0_100%]"
                 key={index}
               >
-                <div>
-                  <div className="embla__slide__number">
-                    <h1 className=" font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#ef476f] from-20% via-[#ffd166] via-50% to-[#06d6a0] to-80% text-4xl sm:text-4xl md:text-7xl lg:text-8xl drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]">
+                <div className=" ">
+                  d
+                  <div className="embla__slide__number w-3/4 sm:w-3/4 lg:w-2/4 lg:h-1/4">
+                    <h1 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#ef476f] from-20% via-[#ffd166] via-50% to-[#06d6a0] to-80% text-3xl sm:text-4xl md:text-7xl  drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]">
                       UNLEASHING THE POSSIBILITIES OF WATERMELON
                     </h1>
-
                     {/* <span>{index + 1}</span> */}
                   </div>
                 </div>
