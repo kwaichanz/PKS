@@ -18,7 +18,7 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+  const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplay.current]);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);

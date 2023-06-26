@@ -1,4 +1,4 @@
-import { ICardItem } from "@/models/cardModel";
+import { ICardItem } from "@/models/productModel";
 
 export const cardItems: ICardItem[] = [
   {

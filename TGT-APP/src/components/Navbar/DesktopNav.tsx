@@ -6,7 +6,7 @@ import "./Navbar.scss";
 
 export const DesktopNav = () => {
   return (
-    <div className="navbar hidden lg:flex w-full h-full lg:items-center lg:justify-center p-6 ">
+    <div className="navbar hidden lg:flex w-full h-full lg:items-center lg:justify-center p-8 ">
       <div className="navbar-start ">
         <Link href="/" className="mr-6">
           <Image
@@ -20,7 +20,7 @@ export const DesktopNav = () => {
         </Link>
 
         <div className="navbar-center ">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 ">
             <li tabIndex={0}>
               <details>
                 <summary>เช่าซื้อ</summary>

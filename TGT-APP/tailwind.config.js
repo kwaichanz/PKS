@@ -37,6 +37,12 @@ module.exports = {
         height: {
           104: "28rem",
         },
+        fontFamily: {
+          belanosima: ["Belanosima", "sans-serif"],
+          dacingscript: ["Dancing Script", "cursive"],
+          Roboto: ["Roboto", "sans-serif"],
+          Rampart: ["Rampart One", "cursive"],
+        }
       },
     },
   ],
