@@ -2,7 +2,7 @@
 import React from "react";
 import EmblaCarousel from "./EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel-react";
-import "./embla.css";
+import "./embla.scss";
 import "./sandbox.css";
 
 export const Hero = () => {

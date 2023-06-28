@@ -132,13 +132,7 @@ h3{
     .content-body{
         padding: 13.5rem 1.5rem 13.6rem;
     }
-    .text {
-        display: block;
-        width: 200px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
+
       .content-header{
         margin-top: 1rem;
     }
@@ -162,6 +156,7 @@ h3{
         width: 0.8rem;
     }
 
+
     h6 {
         font-size: 0.8rem;
     }
@@ -183,3 +178,14 @@ h3{
 
 }
     
+
+@media only screen and (max-width: 420px){
+    .show-less {
+        display: block;
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+}
