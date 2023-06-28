@@ -107,7 +107,7 @@
   /* height: 100%; */
   z-index: 1;
   position: absolute;
-  top: 60%;
+  top:55%;
   left: 8%;
   /* border-radius: 50%; */
   /* background-color: rgba(var(--background-site-rgb-value), 0.85); */
@@ -116,7 +116,7 @@
   text-align: start;
   /* pointer-events: none; */
   display: block;
-  font-family: "Caveat", cursive;
+  font-family: "Bitter", "sans-serif";
 }
 .embla__slide__number > span {
   color: var(--brand-primary);

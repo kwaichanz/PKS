@@ -42,6 +42,7 @@ module.exports = {
           dacingscript: ["Dancing Script", "cursive"],
           Roboto: ["Roboto", "sans-serif"],
           Rampart: ["Rampart One", "cursive"],
+          Bitter: ['Bitter', 'sans-serif']
         }
       },
     },

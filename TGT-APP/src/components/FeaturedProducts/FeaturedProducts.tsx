@@ -14,7 +14,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
     <div className="tgt-product-recommend w-full">
       <div className="container max-w-[1440px] mr-auto ml-auto pl-[25px] pr-[25px]">
         <div className="row flex flex-wrap -mr-[25px] -ml-[25px]">
-          <div className="content-body relative w-full h-full">
+          <div className="content-body relative w-full">
             <figure className="content grid ">
               <div className="content-image mr-auto ml-auto relative">
                 <img src={featured.image} alt={featured.title} />
@@ -27,16 +27,21 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                 </h3>
               </div>
               <div className="content-text">
-                <p>
+                <p className="text">
+                  unleashes the possibilities of coffee and tea in more than 100
+                  developed and emerging markets through a portfolio of over 50
+                  brands that collectively cover the entire category landscape
+                  led by household names such as L’OR, Peet’s, Jacobs, Senseo,
+                  Tassimo, Douwe Egberts, OldTown, Super, Pickwick and Moccona.
                   more than 100 developed and emerging markets through a
                   portfolio of over 50 brands that collectively cover the entire
                   category landscape
                 </p>
               </div>
-              <div className="content-buttons">
+              <div className="content-buttons xl:mt-0 md:mt-2 mt-4">
                 <button
                   type="button"
-                  className="btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold"
+                  className="btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold btn-sm md:btn-md"
                 >
                   Show more
                 </button>

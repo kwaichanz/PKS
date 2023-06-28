@@ -10,10 +10,11 @@ h2 {
 
 h3{
     font: 1.2rem alternate,sans-serif;
+    font-weight: 600;
 }
 
 .content{
-    // background: linear-gradient(to right,#f7eedc 33.89%,#fff 30.89%);-
+    // background: linear-gradient(to right,#f7eedc 33.89%,#fff 30.89%);
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
 }
@@ -21,7 +22,7 @@ h3{
 
 
 .content-body{
-    padding: 13.5rem 12.5rem 13.6rem;
+    padding: 13.5rem 10rem 13.6rem;
     background: linear-gradient(to right,#f7eedc 33.89%,#fff 30.89%);
 }
 
@@ -36,9 +37,9 @@ h3{
 }
 
 .content-header{
-    margin-top: 4rem;
-    margin-left: 12rem;
-    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    // margin-bottom: 2.5rem;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
@@ -48,6 +49,10 @@ h3{
     grid-row-start: 1;
     grid-row-end: 4;
     z-index: 2;
+    max-width: 480px;
+    min-width: 120px;
+    max-height: 480px;
+
 }
 
 .content-image img{
@@ -55,6 +60,7 @@ h3{
     // clip-path: polygon(0% 99%, 0% 1%, 99% 1%, 80% 80%);
     transform: translateY(0%) ; 
 	clip-path: circle(100% at -5% 0%);
+    height: 100%;
 }
 
 .super-title-primary {
@@ -62,7 +68,7 @@ h3{
     color: #f3b58c;
     display: inline-flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 .super-title-primary::before {
     background-color: #ac683b;
@@ -85,7 +91,7 @@ h3{
 }
 
 .content-text{
-    margin-left: 12rem;
+    margin-left: 4rem;
     max-width: 35rem;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -93,8 +99,87 @@ h3{
 }
 
 .content-buttons{
-    margin-left: 12rem;
+    margin-left: 4rem;
     grid-row-start: 3;
     grid-row-end: 4;
     grid-column-start: 2;
 }
+
+
+
+@media only screen and (max-width: 1024px){
+    .content-body{
+        padding: 13.5rem 3.5rem 13.6rem;
+    }
+    .content-header{
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .content-body{
+        padding: 13.5rem 2rem 13.6rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    .content-header{
+        margin-top: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .content-body{
+        padding: 13.5rem 1.5rem 13.6rem;
+    }
+    .text {
+        display: block;
+        width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .content-header{
+        margin-top: 1rem;
+    }
+    .content-header, .content-text, .content-buttons{
+        margin-left: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .content-body{
+        padding: 10rem 1rem 10rem;
+    }
+
+    .super-title-primary{
+        margin-bottom: 0rem;
+
+    }
+
+    .super-title-primary::before{
+        height: 0.8rem;
+        width: 0.8rem;
+    }
+
+    h6 {
+        font-size: 0.8rem;
+    }
+
+    h2{
+        font-size: 1rem;
+    }
+    h3 {
+        font-size: 0.8rem;
+    }
+
+    .content-header{
+        margin-top: 0rem;
+    }
+
+    .content-header, .content-text, .content-buttons{
+        margin-left: 1rem;
+    }
+
+}
+    

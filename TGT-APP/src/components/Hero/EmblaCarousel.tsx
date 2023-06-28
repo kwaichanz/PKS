@@ -69,15 +69,28 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 className="embla__slide relative  flex-[0_0_100%]"
                 key={index}
               >
-                <div className=" ">
-                  d
-                  <div className="embla__slide__number w-3/4 sm:w-3/4 lg:w-2/4 lg:h-1/4">
-                    <h1 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#ef476f] from-20% via-[#ffd166] via-50% to-[#06d6a0] to-80% text-3xl sm:text-4xl md:text-7xl  drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]">
-                      UNLEASHING THE POSSIBILITIES OF WATERMELON
-                    </h1>
-                    {/* <span>{index + 1}</span> */}
+                  <div className="embla__slide__number w-full h-full">
+                    <div className="w-3/4 sm:w-3/4 lg:w-2/4 lg:h-1/4 bg-black bg-opacity-5 rounded-tl-3xl rounded-br-3xl p-3">
+                      <h1
+                        className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br 
+                    from-[#2b9348] from-10% via-[#aacc00] via-50% to-[#d08c60] to-70% 
+                    text-3xl sm:text-4xl md:text-6xl  drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]"
+                      >
+                        UNLEASHING THE POSSIBILITIES OF TEA
+                      </h1>
+                      {/* <span>{index + 1}</span> */}
+                      <p className="text-2xl text-gray-50 font-semibbold mt-2">
+                        The world's leading pure-play coffee and tea company,
+                        serving approximately 4,200 cups of tea per second
+                      </p>
+                      </div>
+                      <button
+                        type="button"
+                        className="btn btn-accent uppercase mt-3 ml-1"
+                      >
+                        Discover More
+                      </button>
                   </div>
-                </div>
                 <Image
                   className="embla__slide__img relative object-cover -z-10"
                   src={imageByIndex(index)}
