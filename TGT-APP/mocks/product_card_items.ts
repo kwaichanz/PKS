@@ -1,4 +1,4 @@
-import { ICardItem } from "@/models/productModel";
+import { ICardItem, IFeed } from "@/models/productModel";
 
 export const cardItems: ICardItem[] = [
   {
@@ -25,21 +25,21 @@ export const cardItems: ICardItem[] = [
   {
     id: "4",
     title: "Grains",
-    flavorText:  "Healthy and yummy",
+    flavorText: "Healthy and yummy",
     image:
       "https://images.unsplash.com/photo-1676458861122-ad0a8794e76d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: "5",
     title: "Corn",
-    flavorText:  "Fresh and sweet",
+    flavorText: "Fresh and sweet",
     image:
       "https://images.unsplash.com/photo-1651667343378-4c5131206c5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: "6",
     title: "Pineapple",
-    flavorText:  "Sweet and juicy",
+    flavorText: "Sweet and juicy",
     image:
       "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
@@ -53,8 +53,21 @@ export const cardItems: ICardItem[] = [
   {
     id: "8",
     title: "Banana",
-    flavorText:  "Sweet and healthy",
+    flavorText: "Sweet and healthy",
     image:
       "https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80",
+  },
+];
+
+export const feeds: IFeed[] = [
+  {
+    id: "1",
+    title: "JDE PEET’S TO CANCEL 15.3 MILLION OF THE COMPANY’S TREASURY SHARES",
+    image: "./images/feeds/feed-left.jpg",
+  },
+  {
+    id: "2",
+    title: "JDE PEET’S TO COMBINE OUT-OF-HOME AND CPG EUROPE SEGMENTS",
+    image: "./images/feeds/feed-right.jpg",
   },
 ];

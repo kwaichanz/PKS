@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 
 import "./FeaturedProducts.scss";
 
@@ -12,11 +11,9 @@ interface IFeaturedProp {
 }
 
 export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
-  const [shown, setShown] = useState(false);
-
-  const handleShow = () => {
-    document.querySelector(".text")?.classList.toggle("show-less");
-  };
+  // const handleShow = () => {
+  //   document.querySelector(".text")?.classList.toggle("show-less");
+  // };
 
   return (
     <div className="tgt-product-recommend w-full">
@@ -25,7 +22,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
           <div className="content-body relative w-full">
             <figure className="content grid ">
               <div className="content-image mr-auto ml-auto relative">
-                <img src={featured.image} alt={featured.title}/>
+                <img src={featured.image} alt={featured.title} />
               </div>
               <div className="content-header font-bold font-Rampart">
                 <h6 className="super-title-primary">"Our story"</h6>
@@ -35,19 +32,17 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                 </h3>
               </div>
               <div className="content-text ">
-                <p className="text show-less sm:!show-less">
+                <p className="text show-less sm:!show-less font-mono">
                   unleashes the possibilities of coffee and tea in more than 100
                   developed and emerging markets through a portfolio of over 50
                   brands that collectively cover the entire category landscape
                   led by household names such as L’OR, Peet’s, Jacobs, Senseo,
                   Tassimo, Douwe Egberts, OldTown, Super, Pickwick and Moccona.
-                  
                 </p>
               </div>
               <div className="content-buttons xl:mt-0 md:mt-2 mt-4">
                 <button
                   type="button"
-                  onClick={() => handleShow()}
                   className="btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold btn-sm md:btn-md"
                 >
                   Show more

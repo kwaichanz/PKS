@@ -13,3 +13,10 @@ export interface IProduct {
   image: string;
   url?: string;
 }
+
+export interface IFeed {
+  id: string;
+  title: string;
+  image: string;
+  url?: string;
+}

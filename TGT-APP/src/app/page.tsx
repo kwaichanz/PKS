@@ -2,16 +2,19 @@ import { Hero } from "@/components/Hero/Hero";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
 
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
+import { Feeds } from "@/components/Feeds/Feeds";
 
 import { cardItems } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
+import { feeds } from "../../mocks/product_card_items";
+
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-between ">
       <Hero />
       <main className="w-full h-full relative bg-white">
-        <section className="relative mr-auto ml-auto max-w-[1000px]">
+        <section className="relative mr-auto ml-auto max-w-[1000px] mb-36 mt-16">
           <header className="mb-12 block text-center mt-10 mx-2">
             <h1 className=" text-3xl font-extrabold">
               สินค้า <span className="text-blue-500">TGT</span>
@@ -22,7 +25,7 @@ export default function Home() {
               ในภาคเกษตรกรรมเพื่อตอบสนองทุกความต้องการ
             </p>
           </header>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-28 px-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  px-4">
             {cardItems.map((item) => (
               <ProductCard key={item.id} product={item} />
             ))}
@@ -30,6 +33,21 @@ export default function Home() {
         </section>
         <article>
           <FeaturedProducts featured={featuredProducts} />
+        </article>
+        <article className="h-[300px]  bg-[url('/images/home-banner.jpg')] bg-cover filter hue-rotate-15">
+          <div className="h-full max-w-[75rem] ml-auto mr-auto flex justify-end flex-col pb-8">
+            <div className="">
+              <h2>วิจัยและพัฒนาการปลูก กับโครงการฯ</h2>
+              <p>
+                การมีส่วนร่วมฟื้นฟูและอนุรักษ์ทรัพยากรธรรมชาติ
+                และสิ่งแวดล้อมของท้องถิ่นโดยเฉพาะป่าต้นน้ำ
+                ในขณะเดียวกันคาเฟ่อเมซอนก็ได้วัตถุดิบเป็นเมล็ดกาแฟคุณภาพเพื่อผู้บริโภคที่มาใช้บริการ{" "}
+              </p>
+            </div>
+          </div>
+        </article>
+        <article>
+          <Feeds feeds={feeds}/>
         </article>
       </main>
     </div>
