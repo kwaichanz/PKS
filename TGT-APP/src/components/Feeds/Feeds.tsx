@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { IFeed } from "@/models/productModel";
 import React from "react";
 
@@ -14,18 +14,26 @@ export const Feeds = ({ feeds }: IFeedProp) => {
       </div>
       <div className="content-text flex justify-between w-full">
         <section>
-          <img
-            src={feeds[0].image}
-            alt="feed-left"
-            className=" rounded-badge"
-          />
+          <div className="content-image">
+            <img
+              src={feeds[0].image}
+              alt="feed-left"
+              className=" rounded-badge"
+            />
+          </div>
+          <div className="content-header"></div>
+          <div className="content-button"></div>
         </section>
         <section>
-          <img
-            src={feeds[1].image}
-            alt="feed-left"
-            className=" rounded-badge"
-          />
+        <div className="content-image">
+            <img
+              src={feeds[1].image}
+              alt="feed-right"
+              className=" rounded-badge"
+            />
+          </div>
+          <div className="content-header"></div>
+          <div className="content-button"></div>
         </section>
       </div>
       <div className="content-button">
