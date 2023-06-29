@@ -1,6 +1,9 @@
 import { ICardItem } from "@/models/productModel";
+
 import "./ProductCard.scss";
 import React from "react";
+
+
 
 interface IProductCardProp {
   product: ICardItem;
@@ -23,7 +26,7 @@ export const ProductCard = ({ product }: IProductCardProp) => {
           </a>
         </div>
         <div className="h-[150px] w-full absolute opacity-0 fd-sh group-hover:opacity-100 flex flex-col justify-center items-center text-center font-serif">
-          <span className="select-none  text-lg sm:text-xl font-bold text-white tracking-wider leading-relaxed font-sans">
+          <span className="select-none text-lg sm:text-xl font-bold text-white tracking-wider leading-relaxed font-sans">
             {product.flavorText}
           </span>
           <div className="pt-6 text-center">

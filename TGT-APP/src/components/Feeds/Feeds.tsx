@@ -1,23 +1,22 @@
-"use client";
 import { IFeed } from "@/models/productModel";
 import React from "react";
 
 interface IFeedProp {
-  feeds: IFeed;
+  feeds: IFeed[];
 }
 
 export const Feeds = ({ feeds }: IFeedProp) => {
   return (
-    <div className="newsfeed-content h-[1000px] bg-orange-200 text-center flex justify-center items-center flex-col">
+    <div className="newsfeed-content h-[1000px] bg-[#f7eedc] text-center flex justify-center items-center flex-col">
       <div className="content-header ">
         <h1 className="text-8xl">FEEDS</h1>
       </div>
-      <div className="content-text flex justify-between w-full">
+      <div className="content-text flex justify-between w-full gap-20">
         <section>
           <div className="content-image">
             <img
               src={feeds[0].image}
-              alt="feed-left"
+              alt="leftfeed"
               className=" rounded-badge"
             />
           </div>
@@ -25,11 +24,11 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           <div className="content-button"></div>
         </section>
         <section>
-        <div className="content-image">
+          <div className="content-image">
             <img
               src={feeds[1].image}
-              alt="feed-right"
-              className=" rounded-badge"
+              alt="rightfeed"
+              className=" rounded-e-2xl"
             />
           </div>
           <div className="content-header"></div>
