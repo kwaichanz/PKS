@@ -61,7 +61,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <div className="embla">
+      <div className="embla select-none">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container relative mx-auto w-screen">
             {slides.map((index) => (
@@ -73,7 +73,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 bg-black bg-opacity-5 rounded-tl-3xl rounded-br-3xl p-3">
                     <h1
                       className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br 
-                    from-[#2b9348] from-10% via-[#aacc00] via-50% to-[#d08c60] to-70% 
+                    from-[#3eb35f] from-10% via-[#aacc00] via-50% to-[#9b5d33] to-70% 
                     text-xl sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]"
                     >
                       UNLEASHING THE POSSIBILITIES OF TEA
@@ -85,12 +85,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       <p>serving approximately 4,200 cups of tea per second</p>
                     </div>
                   </div>
-                  <button
+                  {/* <button
                     type="button"
                     className="btn btn-accent uppercase mt-3 ml-1 text-xs sm:text-base"
                   >
                     Discover More
-                  </button>
+                  </button> */}
                 </div>
                 <Image
                   className="embla__slide__img relative object-cover -z-10"

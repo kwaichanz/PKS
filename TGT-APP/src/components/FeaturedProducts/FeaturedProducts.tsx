@@ -1,29 +1,12 @@
 "use client";
 
-import React from "react";
-import { Rampart_One, Bubblegum_Sans, Thasadith } from "next/font/google";
+import React, { useEffect } from "react";
 
 import "./FeaturedProducts.scss";
 
 import { IProduct } from "@/models/productModel";
 
-const rampart = Rampart_One({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
-
-const bubblegum = Bubblegum_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
-
-const thasadith = Thasadith({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
+import {rampart, bubblegum,thasadith} from "@/utils/fonts";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -33,6 +16,16 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
   // const handleShow = () => {
   //   document.querySelector(".text")?.classList.toggle("show-less");
   // };
+  useEffect(() => {
+    document.querySelectorAll(".content-body .content .content-image img")?.forEach((el) => {
+      el.classList.remove("opacity-0");
+      el.classList.add("content-image-fadein")
+    });
+    document.querySelectorAll(".content-body .content .content-image")?.forEach((el) => {
+      el.classList.remove("opacity-0");
+      el.classList.add("content-image-fadein")
+    });
+  }, []);
 
   return (
     <div className="tgt-product-recommend w-full">
@@ -40,8 +33,8 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
         <div className="row flex flex-wrap -mr-[25px] -ml-[25px]">
           <div className="content-body relative w-full">
             <figure className="content grid ">
-              <div className="content-image mr-auto ml-auto relative">
-                <img src={featured.image} alt={featured.title} />
+              <div className="content-image mr-auto ml-auto relative opacity-0">
+                <img src={featured.image} alt={featured.title} className="opacity-0"/>
               </div>
               <div
                 className={`content-header font-bold ${bubblegum.className}`}

@@ -3,10 +3,13 @@ import Link from "next/link";
 import React from "react";
 
 import "./Navbar.scss";
+import {noto} from "@/utils/fonts";
 
 export const DesktopNav = () => {
   return (
-    <div className="navbar hidden lg:flex w-full h-full lg:items-center lg:justify-center p-8 ">
+    <div
+      className={`navbar hidden lg:flex w-full h-full lg:items-center lg:justify-center p-8 }`}
+    >
       <div className="navbar-start ">
         <Link href="/" className="mr-6">
           <Image
@@ -19,11 +22,13 @@ export const DesktopNav = () => {
           />
         </Link>
 
-        <div className="navbar-center ">
+        <div className="navbar-center">
           <ul className="menu menu-horizontal px-1 ">
             <li tabIndex={0}>
               <details>
-                <summary>เช่าซื้อ</summary>
+                <summary>
+                  <a>เช่าซื้อ</a>
+                </summary>
                 <ul className="p-4">
                   <li>
                     <a>Submenu 1</a>
@@ -38,7 +43,7 @@ export const DesktopNav = () => {
               <a>สโตร์</a>
             </li>
             <li>
-              <a>บริการหลังการขาย</a>
+              <a className={`${noto.className}`}>บริการหลังการขาย</a>
             </li>
           </ul>
         </div>
@@ -51,7 +56,9 @@ export const DesktopNav = () => {
           </li>
           <li tabIndex={0}>
             <details>
-              <summary>ข้อมูลองค์กร</summary>
+              <summary>
+                <a>ข้อมูลองค์กร</a>
+              </summary>
               <ul className="p-2">
                 <li>
                   <a>Submenu 1</a>

@@ -52,7 +52,20 @@ h3{
     max-width: 480px;
     min-width: 120px;
     max-height: 480px;
+    left: -300px;
+    transition-property: transform;
+    transition: ease-in-out 1s;;
 
+}
+
+.content-body .content .content-image img{
+    left: -300px;
+    transition-property:all;
+    transition: ease-in-out 1s;;
+}
+
+.content-image-fadein{
+    transform: translateX(300px);
 }
 
 .content-body .content .content-image img{

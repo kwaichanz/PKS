@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Noto_Sans_Thai } from "next/font/google";
-
-const Noto = Noto_Sans_Thai({ subsets: ["latin"], weight: ["400", "600"] });
 
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 
 import "./Navbar.scss";
+
+
 
 export const Navbar = () => {
   // const ref = { current: null };
@@ -34,7 +33,7 @@ export const Navbar = () => {
     <header
       className={`navbar-wrapper z-50 relative transition-opacity duration-1000 ease-in-out`}
     >
-      <nav className={`${Noto.className} navbar-styles font-extrabold `}>
+      <nav className={` navbar-styles font-extrabold `}>
         <DesktopNav />
         <MobileNav />
       </nav>

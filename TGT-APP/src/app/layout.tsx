@@ -15,14 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="autumn">
       <head>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
-        />
       </head>
       <body>
         <Navbar />

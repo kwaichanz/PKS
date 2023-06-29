@@ -9,6 +9,8 @@ interface IFeedProp {
 }
 
 export const Feeds = ({ feeds }: IFeedProp) => {
+
+
   return (
     <div className="newsfeed-content h-[980px] bg-[#f7eedc] flex-col ">
       <div className="content-header ">

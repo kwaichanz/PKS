@@ -11,16 +11,8 @@ import useOnScreen from "@/utils/useOnScreen";
 import { cardItems, feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
-import { Thasadith, Noto_Sans_Thai } from "next/font/google";
-const thasadith = Thasadith({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
-const noto = Noto_Sans_Thai({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { noto, thasadith } from "@/utils/fonts";
+
 
 export default function Home() {
   const productCardRef = useRef<HTMLDivElement>(null);
