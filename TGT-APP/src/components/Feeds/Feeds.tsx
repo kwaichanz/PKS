@@ -1,34 +1,41 @@
 import { IFeed } from "@/models/productModel";
 import React from "react";
 
+import "./Feeds.scss";
+import Image from "next/image";
+
 interface IFeedProp {
   feeds: IFeed[];
 }
 
 export const Feeds = ({ feeds }: IFeedProp) => {
   return (
-    <div className="newsfeed-content h-[1000px] bg-[#f7eedc] text-center flex justify-center items-center flex-col">
+    <div className="newsfeed-content h-[980px] bg-[#f7eedc] flex-col ">
       <div className="content-header ">
         <h1 className="text-8xl">FEEDS</h1>
       </div>
-      <div className="content-text flex justify-between w-full gap-20">
-        <section>
+      <div className="content-text flex justify-center mb-[75px]">
+        <section className="content lazy">
           <div className="content-image">
-            <img
+            <Image
               src={feeds[0].image}
               alt="leftfeed"
               className=" rounded-badge"
+              width={500}
+              height={550}
             />
           </div>
           <div className="content-header"></div>
           <div className="content-button"></div>
         </section>
-        <section>
+        <section className="content lazy">
           <div className="content-image">
-            <img
+            <Image
               src={feeds[1].image}
               alt="rightfeed"
               className=" rounded-e-2xl"
+              width={500}
+              height={550}
             />
           </div>
           <div className="content-header"></div>

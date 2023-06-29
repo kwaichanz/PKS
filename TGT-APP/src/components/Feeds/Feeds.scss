@@ -1,0 +1,24 @@
+.newsfeed-content > .content-text {
+
+    .content:first-child{
+    width: 55rem;
+    margin-right: 7.4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+    }
+
+    .content:last-child{
+    width: 55rem;
+    margin-top: 5.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1px auto 1fr;
+    }
+
+    .content .content-image {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+}

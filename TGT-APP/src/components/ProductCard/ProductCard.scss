@@ -1,10 +1,23 @@
+.content-div{
+    transition-property: all;
+    transition: ease-out 0.30s;
+}
 
 .content-div:hover{
     background: linear-gradient(to right,
     rgba(177, 123, 79, 0.801), hsla(17, 40%, 52%, 0.801));
-    transition-property: all;
-    transform: translateY(-5px);
-    transition:ease-in-out 0.25s;
+    transform: translateY(-10px);
+}
+
+
+.content-div .fd-cl{
+ top: -20px;
+
+}
+
+.fd-cl-fadein{
+    transform: translateY(20px);
+
 }
 
 .content-div:hover .fd-cl {

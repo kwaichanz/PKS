@@ -1,19 +1,24 @@
 import { ICardItem } from "@/models/productModel";
 
 import "./ProductCard.scss";
-import React from "react";
-
-
+import React, { useEffect } from "react";
 
 interface IProductCardProp {
   product: ICardItem;
 }
 
 export const ProductCard = ({ product }: IProductCardProp) => {
+  useEffect(() => {
+    document.querySelectorAll(".fd-cl")?.forEach((el) => {
+      el.classList.remove("opacity-0");
+      el.classList.add("fd-cl-fadein")
+    });
+  }, []);
+
   return (
     <div className="tgt-product-category hover:cursor-pointer">
-      <div className="shadow-lg group flex flex-col justify-center mx-auto relative content-div rounded-md">
-        <div className="fd-cl group-hover:opacity-25 h-[150px] bg-white border-r-4 overflow-hidden shadow-lg relative transition-all duration-200 ease-in rounded-lg">
+      <div className="shadow-lg group flex flex-col justify-center mx-auto relative content-div rounded-md" >
+        <div className="fd-cl group-hover:opacity-25 h-[150px] bg-white border-r-4 overflow-hidden shadow-lg relative transition-all duration-500 ease-in rounded-lg opacity-0">
           <a href="" className="flex flex-col text-center h-full p-5">
             <i className=" h-16 flex items-center justify-center mb-4">
               <img
