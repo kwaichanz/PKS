@@ -1,15 +1,20 @@
-import { Noto_Sans_Thai, Thasadith, Rampart_One, Bubblegum_Sans } from "next/font/google";
+import {
+  Noto_Sans_Thai,
+  Thasadith,
+  Rampart_One,
+  Bubblegum_Sans,
+} from "next/font/google";
 
 export const noto = Noto_Sans_Thai({
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const thasadith = Thasadith({
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
+  weight: ["400", "700"],
 });
 
 export const rampart = Rampart_One({

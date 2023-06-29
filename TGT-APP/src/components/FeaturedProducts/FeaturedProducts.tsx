@@ -6,7 +6,7 @@ import "./FeaturedProducts.scss";
 
 import { IProduct } from "@/models/productModel";
 
-import {rampart, bubblegum,thasadith} from "@/utils/fonts";
+import { noto, rampart, bubblegum, thasadith } from "@/utils/fonts";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -17,14 +17,18 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
   //   document.querySelector(".text")?.classList.toggle("show-less");
   // };
   useEffect(() => {
-    document.querySelectorAll(".content-body .content .content-image img")?.forEach((el) => {
-      el.classList.remove("opacity-0");
-      el.classList.add("content-image-fadein")
-    });
-    document.querySelectorAll(".content-body .content .content-image")?.forEach((el) => {
-      el.classList.remove("opacity-0");
-      el.classList.add("content-image-fadein")
-    });
+    document
+      .querySelectorAll(".content-body .content .content-image img")
+      ?.forEach((el) => {
+        el.classList.remove("opacity-0");
+        el.classList.add("content-image-fadein");
+      });
+    document
+      .querySelectorAll(".content-body .content .content-image")
+      ?.forEach((el) => {
+        el.classList.remove("opacity-0");
+        el.classList.add("content-image-fadein");
+      });
   }, []);
 
   return (
@@ -34,16 +38,24 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
           <div className="content-body relative w-full">
             <figure className="content grid ">
               <div className="content-image mr-auto ml-auto relative opacity-0">
-                <img src={featured.image} alt={featured.title} className="opacity-0"/>
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="opacity-0"
+                />
               </div>
               <div
                 className={`content-header font-bold ${bubblegum.className}`}
               >
                 <h6 className="super-title-primary">"Our story"</h6>
-                <h2 className={`uppercase ${rampart.className}`}>
+                <h2
+                  className={`uppercase text-3xl sm:text-2xl md:text-4xl lg:text-6xl text-extrabold ${bubblegum.className}`}
+                >
                   A Rich Coffee & Traditional Tea
                 </h2>
-                <h3 className={`uppercase ${rampart.className}`}>
+                <h3
+                  className={`uppercase text-xs sm:text-sm md:text-lg ${noto.className} mt-1`}
+                >
                   more than 235 years of coffee and tea experience
                 </h3>
               </div>
