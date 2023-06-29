@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 
 import { Hero } from "@/components/Hero/Hero";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
@@ -12,7 +12,7 @@ import { cardItems, feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
 import { noto, thasadith } from "@/utils/fonts";
-
+import Loading from "./loading";
 
 export default function Home() {
   const productCardRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-between ">
-      <Hero />
+      <Suspense fallback={<Loading />}>
+        <Hero />
+      </Suspense>
       <main className="w-full h-full relative bg-white">
         <section
           className="relative mr-auto ml-auto max-w-[1000px] mb-36 mt-16"

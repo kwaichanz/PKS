@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import "./Navbar.scss";
-import {noto} from "@/utils/fonts";
+import { noto } from "@/utils/fonts";
 
 export const DesktopNav = () => {
   return (
@@ -27,7 +27,7 @@ export const DesktopNav = () => {
             <li tabIndex={0}>
               <details>
                 <summary>
-                  <a>เช่าซื้อ</a>
+                  <a className={`${noto.className}`}>สินค้า</a>
                 </summary>
                 <ul className="p-4">
                   <li>
@@ -40,7 +40,7 @@ export const DesktopNav = () => {
               </details>
             </li>
             <li>
-              <a>สโตร์</a>
+              <a className={`${noto.className}`}>สโตร์</a>
             </li>
             <li>
               <a className={`${noto.className}`}>บริการหลังการขาย</a>
@@ -52,12 +52,15 @@ export const DesktopNav = () => {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>สาระความรู้</a>
+            <a className={`${noto.className}`}>ข่าวสาร</a>
+          </li>
+          <li>
+            <a className={`${noto.className}`}>สาระความรู้</a>
           </li>
           <li tabIndex={0}>
             <details>
               <summary>
-                <a>ข้อมูลองค์กร</a>
+                <a className={`${noto.className}`}>ข้อมูลองค์กร</a>
               </summary>
               <ul className="p-2">
                 <li>
@@ -68,9 +71,6 @@ export const DesktopNav = () => {
                 </li>
               </ul>
             </details>
-          </li>
-          <li>
-            <a>ข่าวสาร</a>
           </li>
         </ul>
       </div>
