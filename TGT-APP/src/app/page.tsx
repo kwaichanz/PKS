@@ -1,9 +1,13 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 import { Hero } from "@/components/Hero/Hero";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
-
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
 import { Feeds } from "@/components/Feeds/Feeds";
 
+import useOnScreen from "@/utils/useOnScreen";
 import { cardItems, feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
@@ -19,6 +23,26 @@ const noto = Noto_Sans_Thai({
 });
 
 export default function Home() {
+  const productCardRef = useRef();
+  const productCardRefValue = useOnScreen(productCardRef);
+  const [isProductCardref, setIsProductCardRef] = useState(false);
+
+  useEffect(() => {
+    if (!isProductCardref) {
+      setIsProductCardRef(productCardRefValue);
+    }
+  }, [productCardRefValue]);
+
+  const featuredProductsRef = useRef();
+  const featuredProductsRefValue = useOnScreen(featuredProductsRef);
+  const [isFeaturedProductRef, setIsFeaturedProductRef] = useState(false);
+
+  useEffect(() => {
+    if (!isFeaturedProductRef) {
+      setIsFeaturedProductRef(featuredProductsRefValue);
+    }
+  }, [featuredProductsRefValue]);
+
   return (
     <div className="flex flex-col items-center justify-between ">
       <Hero />
@@ -34,14 +58,20 @@ export default function Home() {
               ในภาคเกษตรกรรมเพื่อตอบสนองทุกความต้องการ
             </p>
           </header>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  px-4">
-            {cardItems.map((item) => (
-              <ProductCard key={item.id} product={item} />
-            ))}
+          <div
+            className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  px-4"
+            ref={productCardRef}
+          >
+            {productCardRefValue &&
+              cardItems.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
           </div>
         </section>
-        <article>
-          <FeaturedProducts featured={featuredProducts} />
+        <article ref={featuredProductsRef}>
+          {featuredProductsRefValue && (
+            <FeaturedProducts featured={featuredProducts} />
+          )}
         </article>
         <article className="h-[300px]  bg-[url('/images/home-banner.jpg')] bg-cover filter hue-rotate-15">
           <div className="h-full max-w-[75rem] ml-auto mr-auto flex justify-end flex-col pb-8">
