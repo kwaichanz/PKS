@@ -36,12 +36,14 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
       <div className="container max-w-[1440px] mr-auto ml-auto pl-[25px] pr-[25px]">
         <div className="row flex flex-wrap -mr-[25px] -ml-[25px]">
           <div className="content-body relative w-full">
-            <figure className="content grid ">
+            <figure className="content grid select-none">
               <div className="content-image mr-auto ml-auto relative opacity-0">
                 <img
                   src={featured.image}
                   alt={featured.title}
                   className="opacity-0"
+                  unselectable="on"
+                  style={{pointerEvents: "none"}}                 
                 />
               </div>
               <div
