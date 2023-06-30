@@ -142,17 +142,17 @@ h3{
 }
 
 @media only screen and (max-width: 640px) {
-    .content-body{
+    .row .content-body{
         padding: 13.5rem 1.5rem 13.6rem;
     }
 
-    .content-body .content .content-header{
+    .row .content-body .content .content-header{
         margin-top: 1rem;
     }
-    .content-body .content .content-text{
+    .row .content-body .content .content-text{
         margin-left: 1.5rem;
     }
-    .content-body .content .content-header, .content-text, .content-buttons{
+    .row .content-body .content .content-header, .content-text, .content-buttons{
         margin-left: 1.5rem;
     }
 }
@@ -188,7 +188,7 @@ h3{
         margin-top: 0rem;
     }
 
-    .content-body .content .content-header, .content-text, .content-buttons{
+    .row .content-body .content .content-header, .content-text, .content-buttons{
         margin-left: 1rem;
     }
 

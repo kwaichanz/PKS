@@ -11,6 +11,16 @@ import {
 import imageByIndex from "./ImageByIndex";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import {
+  anuphan,
+  bubblegum,
+  cherry,
+  ibm,
+  kanit,
+  montserrat,
+  noto,
+  rampart,
+} from "@/utils/fonts";
 
 type PropType = {
   slides: number[];
@@ -70,15 +80,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 key={index}
               >
                 <div className="embla__slide__text w-full h-full">
-                  <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 bg-black bg-opacity-5 rounded-tl-3xl rounded-br-3xl p-3">
+                  <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 rounded-tl-3xl rounded-br-3xl p-3">
                     <h1
-                      className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br 
-                    from-[#3eb35f] from-10% via-[#aacc00] via-50% to-[#9b5d33] to-70% 
-                    text-xl sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]"
+                      className={`${cherry.className} text-transparent bg-clip-text bg-gradient-to-b 
+                    from-[#ff5400] from-10% via-[#f48c06] via-50% to-[#ffba08] to-70% 
+                    text-xl sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_4.2px_1.2px_rgba(255,255,255,0.8)]`}
                     >
                       UNLEASHING THE POSSIBILITIES OF TEA
                     </h1>
-                    <div className="text-lg sm:text-2xl text-gray-50 font-semibbold mt-2">
+                    <div
+                      className={`${kanit.className} text-lg sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
+                    >
                       <p className="">
                         The world's leading pure-play coffee and tea company,
                       </p>

@@ -6,7 +6,7 @@ import "./FeaturedProducts.scss";
 
 import { IProduct } from "@/models/productModel";
 
-import { noto, rampart, bubblegum, thasadith } from "@/utils/fonts";
+import { noto,  bubblegum, thasadith } from "@/utils/fonts";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -72,9 +72,9 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
               <div className="content-buttons xl:mt-0 md:mt-2 mt-4">
                 <button
                   type="button"
-                  className="btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold btn-sm md:btn-md"
+                  className={`${noto.className} btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold btn-sm md:btn-md`}
                 >
-                  อ่านเพิ่มเติม
+                  Read More
                 </button>
               </div>
             </figure>
