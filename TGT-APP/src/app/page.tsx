@@ -75,7 +75,7 @@ export default function Home() {
         <article className="h-[300px]  bg-[url('/images/home-banner.jpg')] bg-cover filter hue-rotate-15">
           <div className="h-full max-w-[75rem] ml-auto mr-auto flex justify-end flex-col pb-8">
             <div
-              className={`text-white ${noto.className} bg-black bg-opacity-25 p-4 pt-0`}
+              className={`text-white ${noto.className} bg-black bg-opacity-25 p-4 pt-0 select-none`}
             >
               <h2 className={`${noto.className}`}>
                 วิจัยและพัฒนาการปลูก กับโครงการฯ
