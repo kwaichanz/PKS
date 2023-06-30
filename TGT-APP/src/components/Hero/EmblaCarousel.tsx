@@ -11,16 +11,7 @@ import {
 import imageByIndex from "./ImageByIndex";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  anuphan,
-  bubblegum,
-  cherry,
-  ibm,
-  kanit,
-  montserrat,
-  noto,
-  rampart,
-} from "@/utils/fonts";
+import { cherry, kanit } from "@/utils/fonts";
 
 type PropType = {
   slides: number[];
@@ -92,17 +83,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       className={`${kanit.className} text-lg sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
                     >
                       <p className="">
-                        The world's leading pure-play coffee and tea company,
+                        The worlds leading pure-play coffee and tea company,
                       </p>
                       <p>serving approximately 4,200 cups of tea per second</p>
                     </div>
                   </div>
-                  {/* <button
-                    type="button"
-                    className="btn btn-accent uppercase mt-3 ml-1 text-xs sm:text-base"
-                  >
-                    Discover More
-                  </button> */}
                 </div>
                 <Image
                   className="embla__slide__img relative object-cover -z-10"

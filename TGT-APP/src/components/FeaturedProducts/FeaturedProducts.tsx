@@ -47,7 +47,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
               <div
                 className={`content-header font-bold ${bubblegum.className}`}
               >
-                <h6 className="super-title-primary">"Our story"</h6>
+                <h6 className="super-title-primary">&quot;Our story&quot;</h6>
                 <h2
                   className={`uppercase text-3xl sm:text-2xl md:text-4xl lg:text-6xl text-extrabold ${bubblegum.className}`}
                 >

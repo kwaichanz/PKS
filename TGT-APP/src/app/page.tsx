@@ -13,6 +13,7 @@ import { featuredProducts } from "../../mocks/featured_products";
 
 import { cherry, noto, thasadith } from "@/utils/fonts";
 import Loading from "./loading";
+import Head from "next/head";
 
 export default function Home() {
   const productCardRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-between ">
+
       <Suspense fallback={<Loading />}>
         <Hero />
       </Suspense>
