@@ -11,7 +11,7 @@ import useOnScreen from "@/utils/useOnScreen";
 import { cardItems, feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
-import { noto, thasadith } from "@/utils/fonts";
+import { cherry, noto, thasadith } from "@/utils/fonts";
 import Loading from "./loading";
 
 export default function Home() {
@@ -47,9 +47,9 @@ export default function Home() {
         >
           {isProductCardRef && (
             <>
-              <header className="mb-12 block text-center mt-10 mx-2">
+              <header className="mb-12 block text-center mt-10 mx-2 select-none">
                 <h1 className={`text-3xl font-extrabold ${noto.className}`}>
-                  สินค้า <span className="text-blue-500">TGT</span>
+                  สินค้า <span className={`text-blue-500 ${cherry.className} `}>TGT</span>
                 </h1>
                 <p className={`mt-4 text-md md:text-md ${thasadith.className}`}>
                   มุ่งพัฒนาการเกษตรให้มีความหลากหลายครอบคลุมทุกการใช้งาน

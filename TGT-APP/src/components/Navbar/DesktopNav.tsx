@@ -3,12 +3,12 @@ import Link from "next/link";
 import React from "react";
 
 import "./Navbar.scss";
-import { noto } from "@/utils/fonts";
+import {noto } from "@/utils/fonts";
 
 export const DesktopNav = () => {
   return (
     <div
-      className={`navbar hidden lg:flex w-full h-full lg:items-center lg:justify-center p-8 }`}
+      className={`navbar hidden lg:flex w-full h-full lg:items-center lg:justify-center p-8 `}
     >
       <div className="navbar-start ">
         <Link href="/" className="mr-6">

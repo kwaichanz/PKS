@@ -7,7 +7,6 @@ import { MobileNav } from "./MobileNav";
 
 import "./Navbar.scss";
 
-import {noto} from "@/utils/fonts";
 
 
 export const Navbar = () => {
@@ -34,7 +33,7 @@ export const Navbar = () => {
     <header
       className={`navbar-wrapper z-50 relative transition-opacity duration-1000 ease-in-out`}
     >
-      <nav className={` navbar-styles`}>
+      <nav className={` navbar-styles `}>
         <DesktopNav />
         <MobileNav />
       </nav>

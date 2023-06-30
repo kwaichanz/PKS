@@ -2,6 +2,7 @@ import { ICardItem } from "@/models/productModel";
 
 import "./ProductCard.scss";
 import React, { useEffect } from "react";
+import { cherry } from "@/utils/fonts";
 
 interface IProductCardProp {
   product: ICardItem;
@@ -27,7 +28,7 @@ export const ProductCard = ({ product }: IProductCardProp) => {
                 className="w-full h-full object-cover max-h-16 m-auto"
               />
             </i>
-            <p className=" h-9 text-md">{product.title}</p>
+            <p className={` h-9 text-md ${cherry.className} text-[#4d4d4d]`}>{product.title}</p>
           </a>
         </div>
         <div className="h-[150px] w-full absolute opacity-0 fd-sh group-hover:opacity-100 flex flex-col justify-center items-center text-center font-serif">

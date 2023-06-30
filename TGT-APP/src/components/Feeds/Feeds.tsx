@@ -12,14 +12,14 @@ interface IFeedProp {
 export const Feeds = ({ feeds }: IFeedProp) => {
   return (
     <div className="newsfeed-content h-full bg-[#f7eedc] flex-col pt-28 ">
-      <div className="content-header mb-24 block text-center">
+      <div className="content-header mb-16 block text-center">
         <h6
-          className={`text-[#f3b58c] super-title-primary ${bubblegum.className}`}
+          className={`text-[#f3b58c] super-title-primary text-xl ${bubblegum.className}`}
         >
           news and stories
         </h6>
         <h1
-          className={` ${bubblegum.className} font-extrabold text-red-500 text-xl sm:text-4xl md:text-5xl lg:text-7xl drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]`}
+          className={` ${bubblegum.className} font-extrabold text-red-500 text-4xl  md:text-5xl lg:text-6xl drop-shadow-[0_2.2px_1.2px_rgba(255,255,100,0.8)]`}
         >
           The latest coffee and tea news
         </h1>
@@ -39,7 +39,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
             </h3>
           </div>
           <div className="content-button">
-            <a href="" className="btn btn-accent btn-outline min-h-6  px-8">
+            <a href="" className="btn btn-accent btn-outline min-h-6 px-8">
               <p className={`  ${montserrat.className}`}>read story</p>
             </a>
           </div>
