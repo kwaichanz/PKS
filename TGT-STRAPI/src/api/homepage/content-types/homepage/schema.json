@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hero-slide",
+        "components.product-category-header",
+        "components.product-category-card"
+      ]
+    }
+  }
+}

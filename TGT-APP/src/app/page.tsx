@@ -7,13 +7,12 @@ import { ProductCard } from "@/components/ProductCard/ProductCard";
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
 import { Feeds } from "@/components/Feeds/Feeds";
 
-import useOnScreen from "@/utils/useOnScreen";
+import useOnScreen from "@/app/utils/useOnScreen";
 import { cardItems, feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
-import { cherry, noto, thasadith } from "@/utils/fonts";
+import { cherry, noto, thasadith } from "@/app/utils/fonts";
 import Loading from "./loading";
-import Head from "next/head";
 
 export default function Home() {
   const productCardRef = useRef<HTMLDivElement>(null);

@@ -69,8 +69,6 @@ h3{
 }
 
 .content-body .content .content-image img{
-    // clip-path: ellipse(100% 100% at 0% 0%);
-    // clip-path: polygon(0% 99%, 0% 1%, 99% 1%, 80% 80%);
     transform: translateY(0%) ; 
 	clip-path: circle(100% at -5% 0%);
     height: 100%;

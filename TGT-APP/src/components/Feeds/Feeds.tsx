@@ -1,7 +1,7 @@
 import { IFeed } from "@/models/productModel";
 import React from "react";
 
-import { bubblegum, kanit, montserrat, noto } from "@/utils/fonts";
+import { bubblegum, kanit, montserrat, noto } from "@/app/utils/fonts";
 
 import "./Feeds.scss";
 

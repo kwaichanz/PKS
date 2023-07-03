@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_product_category_cards",
+  "info": {
+    "displayName": "Product-category-card",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "category_name": {
+      "type": "string"
+    },
+    "Category_images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Inner_text": {
+      "type": "string"
+    }
+  }
+}

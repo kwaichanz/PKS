@@ -2,7 +2,7 @@ import { ICardItem } from "@/models/productModel";
 
 import "./ProductCard.scss";
 import React, { useEffect } from "react";
-import { cherry } from "@/utils/fonts";
+import { cherry } from "@/app/utils/fonts";
 
 interface IProductCardProp {
   product: ICardItem;

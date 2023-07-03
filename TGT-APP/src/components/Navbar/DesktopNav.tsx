@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import "./Navbar.scss";
-import {noto } from "@/utils/fonts";
+import {noto } from "@/app/utils/fonts";
 
 export const DesktopNav = () => {
   return (

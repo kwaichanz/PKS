@@ -11,7 +11,7 @@ import {
 import imageByIndex from "./ImageByIndex";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import { cherry, kanit } from "@/utils/fonts";
+import { cherry, kanit } from "@/app/utils/fonts";
 
 type PropType = {
   slides: number[];
@@ -59,6 +59,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
+
+  const fetchImages = async () => {
+    try {
+      const path = `/hero-slide-images`;
+      const urlParamsObject = {
+        populate: "image",
+      };
+
+      // const options = {headers: { Authorization: `Bearer ${token}`}}
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>

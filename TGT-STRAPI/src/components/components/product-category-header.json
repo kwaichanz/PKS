@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_product_category_headers",
+  "info": {
+    "displayName": "Product-category-header",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

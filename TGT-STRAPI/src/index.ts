@@ -1,3 +1,5 @@
+import { Strapi } from "@strapi/strapi";
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -5,7 +7,15 @@ export default {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }: { strapi: Strapi }) {
+    try {
+      strapi.isLoaded && console.log("Strapi Loaded");
+    } catch (err) {
+      console.error("Strapi fail to load", err);
+    }
+
+    strapi.runLifecyclesFunctions 
+  },
 
   /**
    * An asynchronous bootstrap function that runs before
