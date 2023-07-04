@@ -65,7 +65,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   var [imageSlides, setImageSlides] = useState([0]);
 
-  var [imageUrls, setImageUrls] = useState(["a"]);
+  var [imageUrls, setImageUrls] = useState([""]);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -145,7 +145,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     </div>
                     <BlurImage image={imageUrls[index]} />
                   </>
-                )}
+                ) }
               </div>
             ))}{" "}
           </div>

@@ -21,7 +21,7 @@ console.log('image : ', image);
           : "scale-100 blur-0 grayscale-0"
       })`}
       unoptimized={true}
-      src={getStrapiMedia(image)}
+      src={image ? getStrapiMedia(image) : '/images/hero-slide-1.webp'}
       alt="hero image" 
       fill
       priority
