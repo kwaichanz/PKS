@@ -208,12 +208,20 @@ h3{
         transition-property: transform;
         transition: ease-in-out 1s;;
     
+        img{
+            transform: translateY(0%) ; 
+            clip-path: none;
+            border-radius: 44px;
+            height: 100%;
+        }
     }
     .content-header{
+        margin-top: 1.5rem;
         grid-row-start: 2;
         grid-row-end: 2;
         grid-column-start: 1;
         grid-column-end: 3;
+        margin-left: 0rem;
     }
 
     
@@ -223,7 +231,9 @@ h3{
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 3;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
     }
 
     .content-buttons{
@@ -233,6 +243,7 @@ h3{
     grid-column-end: 3;
     text-align: center;
     margin-left: 0;
+    margin-top: 1rem;
     }
 
 
