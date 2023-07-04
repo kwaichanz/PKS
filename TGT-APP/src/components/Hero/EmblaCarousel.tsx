@@ -76,7 +76,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
       // const options = {headers: { Authorization: `Bearer ${token}`}}
       const responseData = await fetchAPI(path, urlParamsObject);
-
+      console.log('response data : ', responseData);
     } catch (error) {
       console.error(error);
     }

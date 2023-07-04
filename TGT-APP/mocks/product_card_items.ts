@@ -63,11 +63,11 @@ export const feeds: IFeed[] = [
   {
     id: "1",
     title: "JDE PEET’S TO CANCEL 15.3 MILLION OF THE COMPANY’S TREASURY SHARES",
-    image: "/images/feeds/feed-left.jpg",
+    image: "/images/feeds/feed-left.webp",
   },
   {
     id: "2",
     title: "JDE PEET’S TO COMBINE OUT-OF-HOME AND CPG EUROPE SEGMENTS",
-    image: "/images/feeds/feed-right.jpg",
+    image: "/images/feeds/feed-right.webp",
   },
 ];
