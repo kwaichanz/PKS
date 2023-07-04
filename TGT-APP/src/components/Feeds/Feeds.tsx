@@ -25,12 +25,12 @@ export const Feeds = ({ feeds }: IFeedProp) => {
         </h1>
       </div>
       <div className="content-text flex justify-center mb-[7.5rem] flex-col lg:flex-row items-center ">
-        <section className="content lazy">
-          <div className="content-image">
+        <section className="content lazy hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer ">
+          <div className="content-image ">
             <img
               src={feeds[0].image}
               alt="leftfeed"
-              className="rounded-badge "
+              className="rounded-s-[130px] "
             />
           </div>
           <div className="content-header">
@@ -39,17 +39,17 @@ export const Feeds = ({ feeds }: IFeedProp) => {
             </h3>
           </div>
           <div className="content-button">
-            <a href="" className="btn btn-accent btn-outline min-h-6 px-8">
+            <a href="" className="btn btn-accent btn-outline min-h-6 px-8 hover:shadow-2xl">
               <p className={`  ${montserrat.className}`}>read story</p>
             </a>
           </div>
         </section>
-        <section className="content lazy">
-          <div className="content-image">
+        <section className="content lazy hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <div className="content-image ">
             <img
               src={feeds[1].image}
               alt="rightfeed"
-              className=" rounded-e-2xl"
+              className=" rounded-e-[130px] "
             />
           </div>
           <div className="content-header">

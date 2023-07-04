@@ -28,8 +28,8 @@ export const MobileNav = () => {
             src="/brand_logo.png"
             width={70}
             height={70}
-            alt="TGT"
-            className="static rounded-full"
+            alt="PKS"
+            className="static rounded-2xl"
             loading="lazy"
           />
         </Link>

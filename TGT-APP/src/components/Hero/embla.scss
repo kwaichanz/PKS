@@ -273,3 +273,13 @@
   background: url("../../../public/big-banner-rip-mask.png") no-repeat center
     bottom/cover;
 }
+
+.embla__slide__text div h1 {
+    // text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    text-shadow:
+       2px 2px 0 #fff,
+     -1.5px -1.5px 0 #fff,  
+      1.5px -1.5px 0 #fff,
+      -1.5px 1.5px 0 #fff,
+       1.5px 1.5px 0 #fff;
+}

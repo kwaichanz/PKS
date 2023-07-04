@@ -61,7 +61,7 @@ export default function Home() {
             <>
               <header className="mb-12 block text-center mt-10 mx-2 select-none">
                 <h1 className={`text-3xl font-extrabold ${noto.className}`}>
-                  สินค้า <span className={`text-blue-500 ${cherry.className} `}>TGT</span>
+                  สินค้า <span className={`text-amber-600 ${cherry.className} `}>PKS</span>
                 </h1>
                 <p className={`mt-4 text-md md:text-md ${thasadith.className}`}>
                   มุ่งพัฒนาการเกษตรให้มีความหลากหลายครอบคลุมทุกการใช้งาน
@@ -82,7 +82,7 @@ export default function Home() {
             <FeaturedProducts featured={featuredProducts} />
           )}
         </article>
-        <article className="h-[300px]  bg-[url('/images/home-banner.webp')] bg-cover filter hue-rotate-15">
+        <article className="h-[300px]  bg-[url('/images/home-banner.webp')] bg-cover filter">
           <div className="h-full max-w-[75rem] ml-auto mr-auto flex justify-end flex-col pb-8">
             <div
               className={`text-white ${noto.className} bg-black bg-opacity-25 p-4 pt-0 select-none`}

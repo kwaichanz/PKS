@@ -32,7 +32,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
   }, []);
 
   return (
-    <div className="tgt-product-recommend w-full">
+    <div className="pks-product-recommend w-full">
       <div className="container max-w-[1440px] mr-auto ml-auto pl-[25px] pr-[25px]">
         <div className="row flex flex-wrap -mr-[25px] -ml-[25px]">
           <div className="content-body relative w-full">
@@ -49,11 +49,11 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
               <div
                 className={`content-header font-bold ${bubblegum.className}`}
               >
-                <h6 className="super-title-primary">&quot;Our story&quot;</h6>
+                <h6 className="super-title-primary text-lg">&quot;Our story&quot;</h6>
                 <h2
                   className={`uppercase text-3xl sm:text-2xl md:text-4xl lg:text-6xl text-extrabold ${bubblegum.className}`}
                 >
-                  A Rich Coffee & Traditional Tea
+                  A <span className="text-red-900"> Rich </span>Coffee & <span className="text-red-900"> Traditional </span> Tea
                 </h2>
                 <h3
                   className={`uppercase text-xs sm:text-sm md:text-lg ${noto.className} mt-1`}

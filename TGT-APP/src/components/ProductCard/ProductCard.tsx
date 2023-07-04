@@ -17,7 +17,7 @@ export const ProductCard = ({ product }: IProductCardProp) => {
   }, []);
 
   return (
-    <div className="tgt-product-category hover:cursor-pointer">
+    <div className="pks-product-category hover:cursor-pointer">
       <div className="shadow-lg group flex flex-col justify-center mx-auto relative content-div rounded-md">
         <div className="fd-cl group-hover:opacity-25 h-[150px] bg-white border-r-4 overflow-hidden shadow-lg relative transition-all duration-200 ease-in rounded-lg opacity-0">
           <a href="" className="flex flex-col text-center h-full p-5">

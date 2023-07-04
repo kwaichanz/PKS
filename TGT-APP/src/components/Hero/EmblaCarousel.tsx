@@ -9,9 +9,8 @@ import {
   NextButton,
 } from "./EmblaCarouselArrowsDotsButtons";
 import imageByIndex from "./ImageByIndex";
-import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import { cherry, kanit } from "@/app/utils/fonts";
+import { kanit,  prompt } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
 import BlurImage from "../BlurImage";
 
@@ -82,6 +81,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     }
   };
 
+  useEffect(() => {
+    fetchImages();
+  },[])
+
   return (
     <>
       <div className="embla select-none">
@@ -95,17 +98,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <div className="embla__slide__text w-full h-full">
                   <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 rounded-tl-3xl rounded-br-3xl p-3">
                     <h1
-                      className={`${cherry.className} text-transparent bg-clip-text bg-gradient-to-b 
-                    from-[#ff5400] from-10% via-[#f48c06] via-50% to-[#ffba08] to-70% 
-                    text-xl sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_4.2px_1.2px_rgba(255,255,255,0.8)]`}
+                      className={`${prompt.className} text-amber-700
+                    text-xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold`}
                     >
-                      UNLEASHING THE POSSIBILITIES OF TEA
+                      ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ
                     </h1>
                     <div
                       className={`${kanit.className} text-lg sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
                     >
                       <p className="">
-                        The worlds leading pure-play coffee and tea company,
+                        The industry leading pure-play coffee company,
                       </p>
                       <p>serving approximately 4,200 cups of tea per second</p>
                     </div>
@@ -113,6 +115,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 </div>
                 <BlurImage image={imageByIndex(index)}  />
               </div>
+                      
+
             ))}{" "}
           </div>
         </div>
