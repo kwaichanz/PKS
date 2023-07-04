@@ -68,8 +68,8 @@ export const MobileNav = () => {
           className="menu menu-lg left-0 top-20 !fixed  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-screen "
         >
           <li>
-            <a>สินค้า</a>
-            <ul className="p-2">
+            <a>สินค้า</a> 
+            <ul className="ps">
               <li>
                 <a>สินค้า 1</a>
               </li>
