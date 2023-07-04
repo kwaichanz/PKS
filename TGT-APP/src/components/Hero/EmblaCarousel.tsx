@@ -13,6 +13,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { kanit,  prompt } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
 import BlurImage from "../BlurImage";
+import { getStrapiMedia } from "@/app/utils/api-helpers";
 
 type PropType = {
   slides: number[];
@@ -27,7 +28,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState(true)
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -61,7 +61,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
-
+var imgUrl: string | null = 'http://localhost:1337/uploads/hero_slide_1_032ea78295.jpg'
   const fetchImages = async () => {
     try {
       const path = `/hero-slide-images`;
@@ -73,9 +73,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         }
       };
 
+      console.log('slides', slides);
+      console.log('imgbyidx', imageByIndex(1))
+
       // const options = {headers: { Authorization: `Bearer ${token}`}}
+
       const responseData = await fetchAPI(path, urlParamsObject);
       console.log('response data : ', responseData);
+
+      const images = responseData.data[0].attributes.image.data;
+      console.log('images: ',images[0].attributes.url);
+
+      imgUrl = getStrapiMedia(images[0]?.attributes?.url)
+      console.log('imgUrl : ',imgUrl);
     } catch (error) {
       console.error(error);
     }
@@ -113,7 +123,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     </div>
                   </div>
                 </div>
-                <BlurImage image={imageByIndex(index)}  />
+                <BlurImage image={imgUrl}  />
               </div>
                       
 
