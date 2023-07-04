@@ -36,16 +36,7 @@ h3{
     width: 99vw;
 }
 
-.content-body .content .content-header{
-    margin-top: 2rem;
-    margin-left: 4rem;
-    // margin-bottom: 2.5rem;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-}
-
-.content-body .content .content-image{
+.row .content-body .content .content-image{
     grid-row-start: 1;
     grid-row-end: 4;
     z-index: 2;
@@ -58,7 +49,18 @@ h3{
 
 }
 
-.content-body .content .content-image img{
+.row .content-body .content .content-header{
+    margin-top: 2rem;
+    margin-left: 4rem;
+    // margin-bottom: 2.5rem;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+}
+
+
+
+.row .content-body .content .content-image img{
     left: -300px;
     transition-property:all;
     transition: ease-in-out 1s;;
@@ -68,7 +70,7 @@ h3{
     transform: translateX(300px);
 }
 
-.content-body .content .content-image img{
+.row .content-body .content .content-image img{
     transform: translateY(0%) ; 
 	clip-path: circle(100% at -5% 0%);
     height: 100%;
@@ -182,18 +184,59 @@ h3{
         font-size: 0.8rem;
     }
 
-    .content-body .content .content-header{
+    .row .content-body .content {
+        
+    .content-header{
         margin-top: 0rem;
+        text-align: center;
+
+        .content-text, .content-buttons{
+            margin-left: 1rem;
+        }
     }
 
-    .row .content-body .content .content-header, .content-text, .content-buttons{
+    .content-text{
         margin-left: 1rem;
+        margin-top: 1rem;
     }
 
-    .row .content-body .content .content-text{
-        margin-left: 1rem;
+    .content-image{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        transition-property: transform;
+        transition: ease-in-out 1s;;
+    
+    }
+    .content-header{
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 
+    
+    .content-text{
+    max-width: 35rem;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-left: 1.5rem;
+    }
+
+    .content-buttons{
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    margin-left: 0;
+    }
+
+
+    }
 }
     
 

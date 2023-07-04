@@ -6,7 +6,7 @@ import "./FeaturedProducts.scss";
 
 import { IProduct } from "@/models/productModel";
 
-import { noto,  bubblegum, thasadith } from "@/app/utils/fonts";
+import { noto, bubblegum, thasadith } from "@/app/utils/fonts";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -43,7 +43,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                   alt={featured.title}
                   className="opacity-0"
                   unselectable="on"
-                  style={{pointerEvents: "none"}}                 
+                  style={{ pointerEvents: "none" }}
                 />
               </div>
               <div
