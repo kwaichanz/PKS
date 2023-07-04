@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, Suspense } from "react";
 import useEmblaCarousel, {
   EmblaCarouselType,
   EmblaOptionsType,
@@ -12,6 +12,8 @@ import imageByIndex from "./ImageByIndex";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { cherry, kanit } from "@/app/utils/fonts";
+import { fetchAPI } from "@/app/utils/fetchApi";
+import BlurImage from "../BlurImage";
 
 type PropType = {
   slides: number[];
@@ -26,6 +28,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -65,9 +68,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       const path = `/hero-slide-images`;
       const urlParamsObject = {
         populate: "image",
+        pagination: {
+          // start: start,
+          // limit: limit
+        }
       };
 
       // const options = {headers: { Authorization: `Bearer ${token}`}}
+      const responseData = await fetchAPI(path, urlParamsObject);
+
     } catch (error) {
       console.error(error);
     }
@@ -102,12 +111,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     </div>
                   </div>
                 </div>
-                <Image
-                  className="embla__slide__img relative object-cover -z-10"
-                  src={imageByIndex(index)}
-                  alt="Your alt text"
-                  fill
-                />
+                <BlurImage image={imageByIndex(index)}  />
               </div>
             ))}{" "}
           </div>

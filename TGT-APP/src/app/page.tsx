@@ -35,6 +35,17 @@ export default function Home() {
     }
   }, [featuredProductsRefValue]);
 
+  const feedsRef = useRef<HTMLDivElement>(null);
+  const feedsRefValue = useOnScreen(feedsRef);
+  const [isFeedsRef, setIsFeedsRef] = useState(false);
+
+  useEffect(() => {
+    if (!isFeedsRef) {
+      setIsFeedsRef(feedsRefValue);
+    }
+  }, [feedsRefValue]);
+
+
   return (
     <div className="flex flex-col items-center justify-between ">
 
@@ -71,7 +82,7 @@ export default function Home() {
             <FeaturedProducts featured={featuredProducts} />
           )}
         </article>
-        <article className="h-[300px]  bg-[url('/images/home-banner.jpg')] bg-cover filter hue-rotate-15">
+        <article className="h-[300px]  bg-[url('/images/home-banner.webp')] bg-cover filter hue-rotate-15">
           <div className="h-full max-w-[75rem] ml-auto mr-auto flex justify-end flex-col pb-8">
             <div
               className={`text-white ${noto.className} bg-black bg-opacity-25 p-4 pt-0 select-none`}
@@ -87,8 +98,8 @@ export default function Home() {
             </div>
           </div>
         </article>
-        <article>
-          <Feeds feeds={feeds} />
+        <article ref={feedsRef}>
+        {isFeedsRef && (<Feeds feeds={feeds} /> )}
         </article>
       </main>
     </div>
