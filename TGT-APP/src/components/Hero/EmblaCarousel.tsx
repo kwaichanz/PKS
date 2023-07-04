@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef, Suspense } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel, {
   EmblaCarouselType,
   EmblaOptionsType,
@@ -10,10 +10,9 @@ import {
 } from "./EmblaCarouselArrowsDotsButtons";
 import imageByIndex from "./ImageByIndex";
 import Autoplay from "embla-carousel-autoplay";
-import { kanit,  prompt } from "@/app/utils/fonts";
+import { kanit, prompt } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
 import BlurImage from "../BlurImage";
-import { getStrapiMedia } from "@/app/utils/api-helpers";
 
 type PropType = {
   slides: number[];
@@ -61,7 +60,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
-var imgUrl: string | null = 'http://localhost:1337/uploads/hero_slide_1_032ea78295.jpg'
+
+  var images: Array<any> = [];
+
+  var [imageSlides, setImageSlides] = useState([0]);
+
+  var [imageUrls, setImageUrls] = useState(["a"]);
+
+  const [isLoading, setIsLoading] = useState(true);
+
   const fetchImages = async () => {
     try {
       const path = `/hero-slide-images`;
@@ -70,63 +77,76 @@ var imgUrl: string | null = 'http://localhost:1337/uploads/hero_slide_1_032ea782
         pagination: {
           // start: start,
           // limit: limit
-        }
+        },
       };
 
-      console.log('slides', slides);
-      console.log('imgbyidx', imageByIndex(1))
+      console.log("slides", slides);
+      console.log("imgbyidx", imageByIndex(1));
 
       // const options = {headers: { Authorization: `Bearer ${token}`}}
 
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log('response data : ', responseData);
 
-      const images = responseData.data[0].attributes.image.data;
-      console.log('images: ',images[0].attributes.url);
+      images = responseData.data[0].attributes.image.data;
 
-      imgUrl = getStrapiMedia(images[0]?.attributes?.url)
-      console.log('imgUrl : ',imgUrl);
+      const imageSlides = Array.from(Array(images.length).keys());
+      setImageSlides(imageSlides);
+
+      const imageUrls = images.map((data: any) => {
+        return data?.attributes?.url;
+      });
+
+      setImageUrls(imageUrls);
+
+      // console.log("imageUrls : ", imageUrls);
+
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     fetchImages();
-  },[])
+  }, []);
 
   return (
     <>
       <div className="embla select-none">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container relative mx-auto w-screen">
-            {slides.map((index) => (
+            {imageSlides.map((index) => (
               <div
                 className="embla__slide relative  flex-[0_0_100%]"
                 key={index}
               >
-                <div className="embla__slide__text w-full h-full">
-                  <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 rounded-tl-3xl rounded-br-3xl p-3">
-                    <h1
-                      className={`${prompt.className} text-amber-700
+                {!isLoading && (
+                  <>
+                    <div className="embla__slide__text w-full h-full">
+                      <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 rounded-tl-3xl rounded-br-3xl p-3">
+                        <h1
+                          className={`${prompt.className} text-amber-700
                     text-xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold`}
-                    >
-                      ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ
-                    </h1>
-                    <div
-                      className={`${kanit.className} text-lg sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
-                    >
-                      <p className="">
-                        The industry leading pure-play coffee company,
-                      </p>
-                      <p>serving approximately 4,200 cups of tea per second</p>
+                        >
+                          ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ
+                        </h1>
+                        <div
+                          className={`${kanit.className} text-lg sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
+                        >
+                          <p className="">
+                            The industry leading pure-play coffee company,
+                          </p>
+                          <p>
+                            serving approximately 4,200 cups of tea per second
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <BlurImage image={imgUrl}  />
+                    <BlurImage image={imageUrls[index]} />
+                  </>
+                )}
               </div>
-                      
-
             ))}{" "}
           </div>
         </div>
