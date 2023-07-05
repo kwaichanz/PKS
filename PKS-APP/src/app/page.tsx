@@ -8,11 +8,12 @@ import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts
 import { Feeds } from "@/components/Feeds/Feeds";
 
 import useOnScreen from "@/app/utils/useOnScreen";
-import { cardItems, feeds } from "../../mocks/product_card_items";
+import { feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
-import { cherry, noto, thasadith } from "@/app/utils/fonts";
+import {noto } from "@/app/utils/fonts";
 import Loading from "./loading";
+import { ProductCardSection } from "@/components/ProductCard/ProductCardSection";
 
 export default function Home() {
   const productCardRef = useRef<HTMLDivElement>(null);
@@ -58,23 +59,7 @@ export default function Home() {
           ref={productCardRef}
         >
           {isProductCardRef && (
-            <>
-              <header className="mb-12 block text-center mt-10 mx-2 select-none">
-                <h1 className={`text-3xl font-extrabold ${noto.className}`}>
-                  สินค้า <span className={`text-amber-600 ${cherry.className} `}>PKS</span>
-                </h1>
-                <p className={`mt-4 text-md md:text-md ${thasadith.className}`}>
-                  มุ่งพัฒนาการเกษตรให้มีความหลากหลายครอบคลุมทุกการใช้งาน
-                  <br />
-                  ในภาคเกษตรกรรมเพื่อตอบสนองทุกความต้องการ
-                </p>
-              </header>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  px-4">
-                {cardItems.map((item) => (
-                  <ProductCard key={item.id} product={item} />
-                ))}
-              </div>
-            </>
+            <ProductCardSection />
           )}
         </section>
         <article ref={featuredProductsRef}>

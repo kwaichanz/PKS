@@ -1,7 +1,7 @@
 export interface ICardItem {
-  id: string;
-  title: string;
-  flavorText: string;
+  id: number;
+  name: string;
+  description: string;
   image: string;
 }
 
@@ -19,4 +19,11 @@ export interface IFeed {
   title: string;
   image: string;
   url?: string;
+}
+
+export interface ICards{
+  id: number
+  name: string
+  description: string
+  image: string
 }

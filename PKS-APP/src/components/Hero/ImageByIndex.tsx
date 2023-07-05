@@ -1,3 +1,5 @@
+      // Unused
+
 import { StaticImageData } from "next/image";
 import image1 from "../../../public/images/hero-slide-1.webp";
 import image2 from "../../../public/images/hero-slide-2.webp";

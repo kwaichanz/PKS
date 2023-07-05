@@ -61,7 +61,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
 
-  var images: Array<any> = [];
+  // var images: Array<any> = [];
 
   var [imageSlides, setImageSlides] = useState([0]);
 
@@ -80,14 +80,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         },
       };
 
-      console.log("slides", slides);
-      console.log("imgbyidx", imageByIndex(1));
 
-      // const options = {headers: { Authorization: `Bearer ${token}`}}
-
+      // console.log("slides", slides);
+      // Unused
+      // console.log("imgbyidx", imageByIndex(1));
       const responseData = await fetchAPI(path, urlParamsObject);
 
-      images = responseData.data[0].attributes.image.data;
+      const images = responseData.data[0].attributes.image.data;
 
       const imageSlides = Array.from(Array(images.length).keys());
       setImageSlides(imageSlides);
