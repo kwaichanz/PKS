@@ -46,6 +46,7 @@ export const ProductCardSection = () => {
     } catch (error) {
       console.error(error);
       setIsLoading(false);
+
     }
   };
 
@@ -73,7 +74,7 @@ export const ProductCardSection = () => {
               <>
                 {cards?.map((item) => (
                   <>
-                    <ProductCard key={item.id} product={item} />{" "}
+                    <ProductCard key={item.id} product={item} />
                   </>
                 ))}
               </>

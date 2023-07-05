@@ -19,7 +19,7 @@ export const ProductCard = ({ product }: IProductCardProp) => {
     });
   }, []);
 
-  console.log("product :", product);
+  // console.log("product :", product);
 
   return (
     <div className="pks-product-category hover:cursor-pointer">
