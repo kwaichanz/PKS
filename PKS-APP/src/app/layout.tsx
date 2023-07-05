@@ -1,11 +1,11 @@
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 import "./globals.css";
-import Head from "next/head";
 
 export const metadata = {
   title: "Panoatkaset",
   description: "PANOATKASET",
+  
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
         <meta property="og:title" content="PANOATKASET" key="title" />
         <meta name="description" content={metadata.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" sizes="any"/>
       </head>
       <body>
         <Navbar />

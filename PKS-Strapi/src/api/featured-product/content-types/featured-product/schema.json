@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "product_categories",
+  "collectionName": "featured_products",
   "info": {
-    "singularName": "product-category",
-    "pluralName": "product-categories",
-    "displayName": "Product_category",
+    "singularName": "featured-product",
+    "pluralName": "featured-products",
+    "displayName": "Featured_product",
     "description": ""
   },
   "options": {
@@ -12,11 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
       "type": "text"
+    },
+    "urlPath": {
+      "type": "string"
     },
     "image": {
       "type": "media",

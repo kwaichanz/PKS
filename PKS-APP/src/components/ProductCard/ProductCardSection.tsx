@@ -5,10 +5,6 @@ import { cherry, noto, thasadith } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
 // import { ICards } from "@/models/productModel";
 
-interface CardsState {
-  cards?: ICards[];
-}
-
 interface ICards {
   id: number;
   name: string;
@@ -40,13 +36,12 @@ export const ProductCardSection = () => {
           image: data?.attributes.image.data.attributes.formats.small.url,
         };
       });
-    //   console.log("cards :", cards);
+      //   console.log("cards :", cards);
       setCards(cards as ICards[]);
       setIsLoading(false);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
-
     }
   };
 

@@ -1,22 +1,58 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./FeaturedProducts.scss";
 
 import { IProduct } from "@/models/productModel";
 
 import { noto, bubblegum, thasadith } from "@/app/utils/fonts";
+import { fetchAPI } from "@/app/utils/fetchApi";
 
 interface IFeaturedProp {
   featured: IProduct;
 }
 
+interface IFeaturedData {
+  title: string;
+  subtitle: string;
+  description: string;
+  urlPath: string;
+  image: object;
+}
+
 export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
+  const [featuredData, setFeaturedData] = useState<IFeaturedData>();
   // const handleShow = () => {
   //   document.querySelector(".text")?.classList.toggle("show-less");
   // };
-  useEffect(() => {
+
+  const fetchFeaturedProducts = async () => {
+    try {
+      const path = "/featured-products";
+      const urlParamsObject = {
+        populate: "image",
+        pagination: {},
+      };
+      const responseData = await fetchAPI(path, urlParamsObject);
+      console.log("responseData", responseData);
+
+      const data = responseData?.data[0].attributes;
+      console.log(data);
+
+      const { title, subtitle, description, urlPath, image } = data;
+      console.log(title, subtitle, description, urlPath, image);
+
+      setFeaturedData({title, subtitle, description, urlPath, image});
+      console.log(featuredData);
+    } catch (error) {
+      console.error(error);
+    }finally{
+      console.log("featuredData", featuredData);
+    }
+  };
+
+  const fadeInImage = () => {
     document
       .querySelectorAll(".content-body .content .content-image img")
       ?.forEach((el) => {
@@ -29,6 +65,11 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
         el.classList.remove("opacity-0");
         el.classList.add("content-image-fadein");
       });
+  };
+
+  useEffect(() => {
+    fetchFeaturedProducts();
+    fadeInImage();
   }, []);
 
   return (
@@ -49,11 +90,14 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
               <div
                 className={`content-header font-bold ${bubblegum.className}`}
               >
-                <h6 className="super-title-primary text-lg">&quot;Our story&quot;</h6>
+                <h6 className="super-title-primary text-lg">
+                  &quot;Our story&quot;
+                </h6>
                 <h2
                   className={`uppercase text-3xl sm:text-2xl md:text-4xl lg:text-6xl text-extrabold ${bubblegum.className}`}
                 >
-                  A <span className="text-red-900"> Rich </span>Coffee & <span className="text-red-900"> Traditional </span> Tea
+                  A <span className="text-red-900"> Rich </span>Coffee &{" "}
+                  <span className="text-red-900"> Traditional </span> Tea
                 </h2>
                 <h3
                   className={`uppercase text-xs sm:text-sm md:text-lg ${noto.className} mt-1`}

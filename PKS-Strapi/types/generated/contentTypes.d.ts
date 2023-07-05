@@ -713,6 +713,42 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeaturedProductFeaturedProduct
+  extends Schema.CollectionType {
+  collectionName: 'featured_products';
+  info: {
+    singularName: 'featured-product';
+    pluralName: 'featured-products';
+    displayName: 'Featured_product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.String;
+    description: Attribute.Text;
+    urlPath: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::featured-product.featured-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::featured-product.featured-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeroSlideImageHeroSlideImage extends Schema.CollectionType {
   collectionName: 'hero_slide_images';
   info: {
@@ -823,7 +859,7 @@ export interface ApiProductCategoryProductCategory
   info: {
     singularName: 'product-category';
     pluralName: 'product-categories';
-    displayName: 'Product_Category';
+    displayName: 'Product_category';
     description: '';
   };
   options: {
@@ -887,6 +923,28 @@ export interface ApiRestaurantRestaurant extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestTest extends Schema.CollectionType {
+  collectionName: 'tests';
+  info: {
+    singularName: 'test';
+    pluralName: 'tests';
+    displayName: 'test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -904,11 +962,13 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
+      'api::featured-product.featured-product': ApiFeaturedProductFeaturedProduct;
       'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::homepage2.homepage2': ApiHomepage2Homepage2;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
+      'api::test.test': ApiTestTest;
     }
   }
 }
