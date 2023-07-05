@@ -9,8 +9,6 @@ export const Hero = () => {
   const slide_count = 5;
   const slides = Array.from(Array(slide_count).keys());
 
-  const [slideCount, setslideCount] = useState<number[]>([])
-
   // This makes the initial load takes longer due to calling the api for the number of pages
   // fetch(`http://localhost:${process.env.NEXT_PUBLIC_STRAPI_PORT_NUMBER}/api/hero-slide-images?populate=image`)
   //   .then((res) => res.json())
