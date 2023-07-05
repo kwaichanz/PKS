@@ -61,13 +61,13 @@ export const cardItems: ICardItem[] = [
 
 export const feeds: IFeed[] = [
   {
-    id: "1",
-    name: "JDE PEET’S TO CANCEL 15.3 MILLION OF THE COMPANY’S TREASURY SHARES",
+    id: 1,
+    title: "JDE PEET’S TO CANCEL 15.3 MILLION OF THE COMPANY’S TREASURY SHARES",
     image: "/images/feeds/feed-left.webp",
   },
   {
-    id: "2",
-    name: "JDE PEET’S TO COMBINE OUT-OF-HOME AND CPG EUROPE SEGMENTS",
+    id: 2,
+    title: "JDE PEET’S TO COMBINE OUT-OF-HOME AND CPG EUROPE SEGMENTS",
     image: "/images/feeds/feed-right.webp",
   },
 ];

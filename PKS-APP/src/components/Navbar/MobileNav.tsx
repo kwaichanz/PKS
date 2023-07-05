@@ -21,13 +21,13 @@ export const MobileNav = () => {
   //   }
 
   return (
-    <div className=" navbar lg:hidden flex w-full h-full items-center justify p-6">
+    <div className="navbar lg:hidden flex w-full h-full items-center justify p-6">
       <div className="navbar-start">
         <Link href="/" className="mr-6">
           <Image
             src="/brand_logo.png"
-            width={70}
-            height={70}
+            width={60}
+            height={60}
             alt="PKS"
             className="static rounded-2xl"
             loading="lazy"
@@ -47,7 +47,7 @@ export const MobileNav = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
+              d="M4 6h18M4 12h8m-8 6h18"
             />
           </svg>
           <svg

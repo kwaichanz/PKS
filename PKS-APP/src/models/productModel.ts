@@ -15,7 +15,7 @@ export interface IProduct {
 }
 
 export interface IFeed {
-  id: string;
+  id: number;
   title: string;
   image: string;
   url?: string;
