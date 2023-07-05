@@ -5,14 +5,9 @@ import React from "react";
 export default function BlurImage({ image }) {
   const [isLoading, setIsLoading] = React.useState(true);
 
-  
-
   // console.log('fsafafasfa',getStrapiMedia(image));
 
-
-
-
-console.log('image : ', image);
+// console.log('image : ', image);
   return (
     <Image
       className={`embla__slide__img relative object-cover -z-10 duration-700 ease-in-out               ${

@@ -145,7 +145,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     </div>
                     <BlurImage image={imageUrls[index]} />
                   </>
-                ) }
+                )}
               </div>
             ))}{" "}
           </div>
