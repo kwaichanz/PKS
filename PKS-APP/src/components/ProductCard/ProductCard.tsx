@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import { cherry } from "@/app/utils/fonts";
 import { getStrapiMedia } from "@/app/utils/api-helpers";
 import Image from "next/image";
-import BlurImage from "../BlurImage";
 
 interface IProductCardProp {
   product: ICards;
@@ -22,12 +21,12 @@ export const ProductCard = ({ product }: IProductCardProp) => {
   // console.log("product :", product);
 
   return (
-    <div className="pks-product-category hover:cursor-pointer">
+    <div className="pks-product-category hover:cursor-pointer"  >
       <div className="shadow-lg group flex flex-col justify-center mx-auto relative content-div rounded-md">
         <div className="fd-cl group-hover:opacity-25 h-[150px] bg-white border-r-4 overflow-hidden shadow-lg relative transition-all duration-200 ease-in rounded-lg opacity-0">
           <a href="" className="flex flex-col text-center h-full p-5">
             <i className=" h-16 flex items-center justify-center mb-4">
-              <Image
+              <Image 
                 src={
                   product.image
                     ? String(getStrapiMedia(product.image))

@@ -9,6 +9,7 @@ import { IProduct } from "@/models/productModel";
 import { noto, bubblegum, thasadith } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
 import { getStrapiMedia } from "@/app/utils/api-helpers";
+import Link from "next/link";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -146,12 +147,14 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                 </p>
               </div>
               <div className="content-buttons xl:mt-0 md:mt-2 mt-4">
-                <button
-                  type="button"
-                  className={`${noto.className} btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold btn-sm md:btn-md`}
-                >
-                  Read More
-                </button>
+                <Link href="/about" prefetch>
+                  <button
+                    type="button"
+                    className={`${noto.className} btn btn-outline btn-accent hover:!text-white !rounded-none uppercase font-bold btn-sm md:btn-md`}
+                  >
+                    Read More
+                  </button>
+                </Link>
               </div>
             </figure>
           </div>

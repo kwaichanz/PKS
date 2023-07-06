@@ -2,7 +2,7 @@
 
     .content:hover{
         .content-image img{
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px;
+                --_p: 75%;
         }
     }
 
@@ -33,7 +33,24 @@
             max-width: 550px;
             max-height: 550px;
             width: 100%;  
+
+                --g: 4px;     /* the gap */
+                --b: 8px;    /* border thickness*/
+                --c: #eb8526; /* the color */
+                
+                padding: calc(var(--g) + var(--b));
+                --_c: #d1191900 0 25%, var(--c) 0 50%;
+                --_g1: repeating-linear-gradient(45deg ,var(--_c)) repeat-x;
+                --_g2: repeating-linear-gradient(230deg,var(--_c)) repeat-y;
+                background:
+                  var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+                  var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+                background-size: 200% var(--b),var(--b) 200%;
+                cursor: pointer;
+                transition: .3s;
+
         }
+
     }
     .content .content-header{
         grid-column-start: 1;

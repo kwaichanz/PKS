@@ -20,12 +20,12 @@ export const SectionBanner = () => {
       };
 
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log("responseData", responseData);
+      // console.log("responseData", responseData);
       const { title, subtitle, image } = getExtractedData(responseData)[0];
       // console.log("title", title);
       // console.log("subtitle", subtitle);
 
-      console.log("image", image?.data.attributes.url);
+      // console.log("image", image?.data.attributes.url);
       setBannerData({ title, subtitle, image } as IBannerData);
     } catch (error) {
       console.error(error);
@@ -34,8 +34,6 @@ export const SectionBanner = () => {
 
   useEffect(() => {
     fetchBanner();
-    console.log("ffafafsf", bannerData?.image?.data.attributes.url);
-    console.log("bbannner data", bannerData);
   }, []);
 
   return (
