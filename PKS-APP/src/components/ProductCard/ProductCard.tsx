@@ -2,9 +2,10 @@ import { ICardItem, ICards } from "@/models/productModel";
 
 import "./ProductCard.scss";
 import React, { useEffect } from "react";
-import { cherry } from "@/app/utils/fonts";
+import { cherry, prompt } from "@/app/utils/fonts";
 import { getStrapiMedia } from "@/app/utils/api-helpers";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProductCardProp {
   product: ICards;
@@ -21,12 +22,12 @@ export const ProductCard = ({ product }: IProductCardProp) => {
   // console.log("product :", product);
 
   return (
-    <div className="pks-product-category hover:cursor-pointer"  >
+    <div className="pks-product-category hover:cursor-pointer">
       <div className="shadow-lg group flex flex-col justify-center mx-auto relative content-div rounded-md">
         <div className="fd-cl group-hover:opacity-25 h-[150px] bg-white border-r-4 overflow-hidden shadow-lg relative transition-all duration-200 ease-in rounded-lg opacity-0">
           <a href="" className="flex flex-col text-center h-full p-5">
             <i className=" h-16 flex items-center justify-center mb-4">
-              <Image 
+              <Image
                 src={
                   product.image
                     ? String(getStrapiMedia(product.image))
@@ -47,20 +48,22 @@ export const ProductCard = ({ product }: IProductCardProp) => {
           </a>
         </div>
         <div className="h-[150px] w-full absolute opacity-0 fd-sh group-hover:opacity-100 flex flex-col justify-center items-center text-center font-serif">
-          <span className="select-none text-lg sm:text-xl font-bold text-white tracking-wider leading-relaxed font-sans">
+          <span
+            className={`select-none text-lg sm:text-xl font-bold text-red-500 tracking-wider leading-relaxed ${cherry.className}`}
+          >
             {product.description}
           </span>
           <div className="pt-6 text-center">
             <button
-              className=" rounded-lg  p-2 bg-white btn btn-secondary transition-colors duration-200 ease-in-out "
+              className=" rounded-lg py-2 bg-white btn btn-secondary transition-colors duration-200 ease-in-out "
               type="button"
             >
-              <a
-                href=""
-                className="text-center text-gray-700 font-bold text-sm"
+              <Link
+                href={product.urlPath || ""}
+                className={`text-center font-bold text-sm ${prompt.className}`}
               >
-                ดูเพิ่มเติม
-              </a>
+                Read More
+              </Link>
             </button>
           </div>
         </div>

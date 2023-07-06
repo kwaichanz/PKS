@@ -261,6 +261,13 @@
     text-overflow: ellipsis;
   }
   
+  .embla__button--prev {
+    left: 0.4rem;
+  }
+  .embla__button--next {
+    right: 0.4rem;
+  }
+
 }
 
 .after-hero::after {

@@ -30,10 +30,10 @@ export const Feeds = ({ feeds }: IFeedProp) => {
       };
 
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log("responseData", responseData);
+      // console.log("responseData", responseData);
       const [leftFeed, rightFeed] = getExtractedData(responseData);
-      console.log("feed1", leftFeed);
-      console.log("feed2", rightFeed);
+      // console.log("feed1", leftFeed);
+      // console.log("feed2", rightFeed);
 
       setLeftFeed(leftFeed);
       setRightFeed(rightFeed);
@@ -45,8 +45,8 @@ export const Feeds = ({ feeds }: IFeedProp) => {
     fetchFeeds();
   }, []);
   return (
-    <div className="newsfeed-content h-full bg-[#f7eedc] flex-col pt-28 select-nones">
-      <div className="content-header mb-16 block text-center">
+    <div className="newsfeed-content h-full bg-[#f7eedc] flex-col pt-28 ">
+      <div className="content-header mb-16 block text-center select-none">
         <h6
           className={`text-[#f3b58c] super-title-primary text-xl ${bubblegum.className}`}
         >
@@ -71,7 +71,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
               className="rounded-s-[120px] "
             />
           </div>
-          <div className="content-header">
+          <div className="content-header select-none">
             <h3 className={`uppercase ${kanit.className}`}>
               {leftFeed?.title
                 ? leftFeed.title
@@ -79,12 +79,13 @@ export const Feeds = ({ feeds }: IFeedProp) => {
             </h3>
           </div>
           <div className="content-button">
-            <a
-              href={leftFeed?.urlPath}
+            <Link
+              href={leftFeed?.urlPath || ""}
+              prefetch
               className="btn btn-accent btn-outline min-h-6 px-8 hover:shadow-2xl"
             >
               <p className={`  ${montserrat.className}`}>read story</p>
-            </a>
+            </Link>
           </div>
         </section>
         <section className="content lazy hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer opacity-90 hover:opacity-100">
@@ -99,7 +100,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
               className=" rounded-e-[120px] "
             />
           </div>
-          <div className="content-header">
+          <div className="content-header select-none">
             <h3 className={`uppercase ${kanit.className}`}>
               {rightFeed?.title
                 ? rightFeed.title
@@ -107,12 +108,13 @@ export const Feeds = ({ feeds }: IFeedProp) => {
             </h3>
           </div>
           <div className="content-button">
-            <a
-              href={rightFeed?.urlPath}
+            <Link
+              href={rightFeed?.urlPath || ""}
+              prefetch
               className="btn btn-accent btn-outline px-8 "
             >
               <p className={`${montserrat.className} `}>read story</p>
-            </a>
+            </Link>
           </div>
         </section>
       </div>

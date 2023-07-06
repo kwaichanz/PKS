@@ -28,6 +28,9 @@
         "videos",
         "audios"
       ]
+    },
+    "urlPath": {
+      "type": "string"
     }
   }
 }

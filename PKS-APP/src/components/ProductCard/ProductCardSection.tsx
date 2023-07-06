@@ -36,9 +36,10 @@ export const ProductCardSection = () => {
           name: data?.attributes.Name,
           description: data?.attributes.Description,
           image: data?.attributes.image.data.attributes.formats.small.url,
+          urlPath: data?.attributes.urlPath,
         };
       });
-      //   console.log("cards :", cards);
+        console.log("cards :", cards);
       setCards(cards as ICards[]);
       setIsLoading(false);
     } catch (error) {

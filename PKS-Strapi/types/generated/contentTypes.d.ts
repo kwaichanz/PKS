@@ -865,6 +865,7 @@ export interface ApiProductCategoryProductCategory
     Name: Attribute.String;
     Description: Attribute.Text;
     image: Attribute.Media;
+    urlPath: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -26,4 +26,5 @@ export interface ICards{
   name: string
   description: string
   image: string
+  urlPath?: string
 }
