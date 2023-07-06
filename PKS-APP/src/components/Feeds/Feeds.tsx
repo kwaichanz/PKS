@@ -119,7 +119,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
         </section>
       </div>
       <div className="content-button text-center pb-[7.5rem]">
-        <Link href="/feeds" prefetch>
+        <Link href="/feeds" replace={false}>
           <button
             className={`btn btn-primary uppercase btn-outline font-extrabold  ${noto.className} rounded-none`}
           >
