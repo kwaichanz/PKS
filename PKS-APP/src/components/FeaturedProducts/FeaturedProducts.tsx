@@ -25,7 +25,6 @@ interface IFeaturedData {
 export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
   const [featuredData, setFeaturedData] = useState<IFeaturedData>();
 
-
   const fetchFeaturedProducts = async () => {
     try {
       const path = "/featured-products";
@@ -34,10 +33,10 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
         pagination: {},
       };
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log("responseData", responseData);
+      // console.log("responseData", responseData);
 
       const data = responseData?.data[0].attributes;
-      console.log("data :", data);
+      // console.log("data :", data);
 
       const featuredInfo = {
         title: data?.title,
@@ -47,15 +46,14 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
         image: data?.image,
       };
 
-      console.log("featuredInfo :", featuredInfo);
+      // console.log("featuredInfo :", featuredInfo);
 
       setFeaturedData(featuredInfo as IFeaturedData);
-      console.log("featuredData :", featuredData);
-
+      // console.log("featuredData :", featuredData);
     } catch (error) {
       console.error(error);
     } finally {
-      console.log("featuredData", featuredData);
+      // console.log("featuredData", featuredData);
     }
   };
 

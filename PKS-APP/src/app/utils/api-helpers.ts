@@ -18,6 +18,14 @@ export function getStrapiMedia(url: string | null){
 
 }
 
+export function getExtractedData(data: any, ...args: string[]){
+  // console.log("getExtractedData", data.data[0].attributes);
+  console.log("data", data);
+   const extractedData = data.data.map((item: any) => item.attributes);
+  // console.log("extractedData", extractedData[0]);
+  return extractedData
+}
+
 export function formatDate(dateString: string){
     const date = new Date(dateString)
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };

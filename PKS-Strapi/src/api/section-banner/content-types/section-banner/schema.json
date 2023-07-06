@@ -1,25 +1,21 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "section_banners",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Category",
-    "description": ""
+    "singularName": "section-banner",
+    "pluralName": "section-banners",
+    "displayName": "Section_banner"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
-    "restaurants": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::restaurant.restaurant",
-      "inversedBy": "categories"
+    "subtitle": {
+      "type": "string"
     },
     "image": {
       "allowedTypes": [

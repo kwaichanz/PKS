@@ -676,43 +676,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    restaurants: Attribute.Relation<
-      'api::category.category',
-      'manyToMany',
-      'api::restaurant.restaurant'
-    >;
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiFeaturedProductFeaturedProduct
   extends Schema.CollectionType {
   collectionName: 'featured_products';
@@ -887,60 +850,34 @@ export interface ApiProductCategoryProductCategory
   };
 }
 
-export interface ApiRestaurantRestaurant extends Schema.CollectionType {
-  collectionName: 'restaurants';
+export interface ApiSectionBannerSectionBanner extends Schema.CollectionType {
+  collectionName: 'section_banners';
   info: {
-    singularName: 'restaurant';
-    pluralName: 'restaurants';
-    displayName: 'Restaurant';
+    singularName: 'section-banner';
+    pluralName: 'section-banners';
+    displayName: 'Section_banner';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.Text;
-    categories: Attribute.Relation<
-      'api::restaurant.restaurant',
-      'manyToMany',
-      'api::category.category'
-    >;
+    title: Attribute.String;
+    subtitle: Attribute.String;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::restaurant.restaurant',
+      'api::section-banner.section-banner',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::restaurant.restaurant',
+      'api::section-banner.section-banner',
       'oneToOne',
       'admin::user'
     > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTestTest extends Schema.CollectionType {
-  collectionName: 'tests';
-  info: {
-    singularName: 'test';
-    pluralName: 'tests';
-    displayName: 'test';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -961,14 +898,12 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::category.category': ApiCategoryCategory;
       'api::featured-product.featured-product': ApiFeaturedProductFeaturedProduct;
       'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::homepage2.homepage2': ApiHomepage2Homepage2;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
-      'api::restaurant.restaurant': ApiRestaurantRestaurant;
-      'api::test.test': ApiTestTest;
+      'api::section-banner.section-banner': ApiSectionBannerSectionBanner;
     }
   }
 }
