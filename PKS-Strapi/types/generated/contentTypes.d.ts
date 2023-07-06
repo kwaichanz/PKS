@@ -743,6 +743,39 @@ export interface ApiHeroSlideImageHeroSlideImage extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomeFeedHomeFeed extends Schema.CollectionType {
+  collectionName: 'home_feeds';
+  info: {
+    singularName: 'home-feed';
+    pluralName: 'home-feeds';
+    displayName: 'Home_feed';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    urlPath: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-feed.home-feed',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-feed.home-feed',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -900,6 +933,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::featured-product.featured-product': ApiFeaturedProductFeaturedProduct;
       'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;
+      'api::home-feed.home-feed': ApiHomeFeedHomeFeed;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::homepage2.homepage2': ApiHomepage2Homepage2;
       'api::product-category.product-category': ApiProductCategoryProductCategory;

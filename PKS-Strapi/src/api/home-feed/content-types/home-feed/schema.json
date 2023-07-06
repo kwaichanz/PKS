@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_feeds",
+  "info": {
+    "singularName": "home-feed",
+    "pluralName": "home-feeds",
+    "displayName": "Home_feed",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "urlPath": {
+      "type": "string"
+    }
+  }
+}
