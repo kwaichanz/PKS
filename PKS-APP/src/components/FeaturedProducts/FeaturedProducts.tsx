@@ -8,6 +8,7 @@ import { IProduct } from "@/models/productModel";
 
 import { noto, bubblegum, thasadith } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
+import { getStrapiMedia } from "@/app/utils/api-helpers";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -18,14 +19,12 @@ interface IFeaturedData {
   subtitle: string;
   description: string;
   urlPath: string;
-  image: object;
+  image: any;
 }
 
 export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
   const [featuredData, setFeaturedData] = useState<IFeaturedData>();
-  // const handleShow = () => {
-  //   document.querySelector(".text")?.classList.toggle("show-less");
-  // };
+
 
   const fetchFeaturedProducts = async () => {
     try {
@@ -38,16 +37,24 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
       console.log("responseData", responseData);
 
       const data = responseData?.data[0].attributes;
-      console.log(data);
+      console.log("data :", data);
 
-      const { title, subtitle, description, urlPath, image } = data;
-      console.log(title, subtitle, description, urlPath, image);
+      const featuredInfo = {
+        title: data?.title,
+        subtitle: data?.subtitle,
+        description: data?.description,
+        urlPath: data?.urlPath,
+        image: data?.image,
+      };
 
-      setFeaturedData({title, subtitle, description, urlPath, image});
-      console.log(featuredData);
+      console.log("featuredInfo :", featuredInfo);
+
+      setFeaturedData(featuredInfo as IFeaturedData);
+      console.log("featuredData :", featuredData);
+
     } catch (error) {
       console.error(error);
-    }finally{
+    } finally {
       console.log("featuredData", featuredData);
     }
   };
@@ -80,8 +87,16 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
             <figure className="content grid select-none">
               <div className="content-image mr-auto ml-auto relative opacity-0">
                 <img
-                  src={featured.image}
-                  alt={featured.title}
+                  src={
+                    featuredData?.image
+                      ? String(
+                          getStrapiMedia(
+                            featuredData?.image?.data?.attributes?.url
+                          )
+                        )
+                      : featured.image
+                  }
+                  alt={featuredData?.title}
                   className="opacity-0"
                   unselectable="on"
                   style={{ pointerEvents: "none" }}
@@ -96,23 +111,40 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                 <h2
                   className={`uppercase text-3xl sm:text-2xl md:text-4xl lg:text-6xl text-extrabold ${bubblegum.className}`}
                 >
-                  A <span className="text-red-900"> Rich </span>Coffee &{" "}
-                  <span className="text-red-900"> Traditional </span> Tea
+                  {featuredData?.title ? (
+                    <span className="text-red-950">{featuredData?.title}</span>
+                  ) : (
+                    <>
+                      A <span className="text-red-900"> Rich </span>Coffee &{" "}
+                      <span className="text-red-900"> Traditional </span> Tea{" "}
+                    </>
+                  )}
                 </h2>
                 <h3
                   className={`uppercase text-xs sm:text-sm md:text-lg ${noto.className} mt-1`}
                 >
-                  more than 235 years of coffee and tea experience
+                  {featuredData?.subtitle ? (
+                    featuredData?.subtitle
+                  ) : (
+                    <>more than 235 years of coffee and tea experience</>
+                  )}
                 </h3>
               </div>
               <div className="content-text ">
                 <p className={`text ${thasadith.className}`}>
-                  เริ่มต้นจากแนวความคิดที่ว่า
-                  ประเทศบราซิลซึ่งเป็นต้นตำรับกาแฟและดินแดนแห่งนี้มีป่า
-                  อันเป็นสุดยอดแห่งป่าดงดิบธรรมชาติของโลก
-                  ที่อุดมไปด้วยเสน่ห์ของธรรมชาติอันยิ่งใหญ่ ทั้งพืชพรรณแมกไม้
-                  สายน้ำ สัตว์ป่านานาชนิด และยังเป็นแหล่งผลิตอากาศอันบริสุทธิ์
-                  แนวความคิดนี้จึงถูกนำมาเพื่อสร้างสรรค์เป็นร้านกาแฟที่มีบรรยากาศร่มรื่นเย็นสบายด้วยร่มไม้และน้ำล้อมรอบ
+                  {featuredData?.description ? (
+                    featuredData?.description
+                  ) : (
+                    <>
+                      เริ่มต้นจากแนวความคิดที่ว่า
+                      ประเทศบราซิลซึ่งเป็นต้นตำรับกาแฟและดินแดนแห่งนี้มีป่า
+                      อันเป็นสุดยอดแห่งป่าดงดิบธรรมชาติของโลก
+                      ที่อุดมไปด้วยเสน่ห์ของธรรมชาติอันยิ่งใหญ่
+                      ทั้งพืชพรรณแมกไม้ สายน้ำ สัตว์ป่านานาชนิด
+                      และยังเป็นแหล่งผลิตอากาศอันบริสุทธิ์
+                      แนวความคิดนี้จึงถูกนำมาเพื่อสร้างสรรค์เป็นร้านกาแฟที่มีบรรยากาศร่มรื่นเย็นสบายด้วยร่มไม้และน้ำล้อมรอบ
+                    </>
+                  )}
                 </p>
               </div>
               <div className="content-buttons xl:mt-0 md:mt-2 mt-4">
