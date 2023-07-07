@@ -20,7 +20,7 @@ export default function About() {
         // }}
       >
         <div
-          className="actor"
+          className="actor "
           style={{
             backgroundImage: `url(${
               "" ? "" : "images/about/about_banner.jpg"
@@ -69,7 +69,7 @@ export default function About() {
       <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
         <article className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
           <div
-            className={`max-w-[1392px] py-14 px-auto text-lg tracking-widest leading-loose ${bubblegum.className} text-left`}
+            className={`max-w-[1392px] py-14 px-auto text-lg sm:tracking-widest sm:leading-loose ${bubblegum.className} text-left`}
           >
             <h2 className="text-4xl text-red-900 font-bold mb-8">
               Our Story, Our heritage
@@ -78,7 +78,7 @@ export default function About() {
               <Image
                 src="/images/about/top_about_image.jpg"
                 alt="top_image"
-                className="ml-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color  hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2"
+                className="ml-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color  hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6"
                 width={389}
                 height={227}
               />
@@ -98,11 +98,11 @@ export default function About() {
           </div>
         </article>
         <article className="about-center-container relative my-20">
-          <div className="max-w-[1392px] flex flex-row-reverse my-[20] overflow-hidden">
-            <div className="right-center-about py-20 px-[6.5%] min-h-[512px] w-1/2 bg-[#771c28] flex flex-col relative text-white">
-              <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute left-[14px] z-10">
+          <div className="max-w-[1392px] flex flex-col-reverse md:flex-row-reverse w-full my-[80px] mx-auto overflow-hidden">
+            <div className="right-center-about py-24 px-[10%] md:py-20 md:px-[6.5%] min-h-[300px] md:min-h-[512px] w-full md:w-1/2 bg-[#771c28] flex flex-col relative text-white">
+              <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute top-[14px] md:left-[14px] z-10">
                 <svg
-                  className="WaveSeparator__Icon rotate-0 text-[#771c28] absolute w-[100px] h-[1344px]"
+                  className="WaveSeparator__Icon rotate-90 md:rotate-0 text-[#771c28] absolute w-[100px] h-[1344px]"
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -127,7 +127,7 @@ export default function About() {
               </div>
               <div>
                 <p
-                  className={`text-lg ${bubblegum.className} tracking-widest leading-loose`}
+                  className={`text-lg ${bubblegum.className} sm:tracking-widest sm:leading-loose`}
                 >
                   Our iconic Signature Blend is the perfect combination and
                   balance of delicate Arabica and strong Robusta beans. In early
@@ -138,12 +138,12 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="left-center-about w-1/2 h-auto min-h-[512px]">
-              <div className="h-full min-h-[300px] w-full inline-block align-top relative overflow-hidden ">
-                <div></div>
+            <div className="left-center-about w-auto m-0 md:w-1/2  md:h-auto  min-h-[300px] md:min-h-[512px]">
+              <div className="h-full min-h-[300px] sm:h-[500px] w-full inline-block align-top relative overflow-hidden ">
+                <div className=" max-w-[700px] block"></div>
                 <Image
                   aria-hidden="true"
-                  className="opacity-100 transition-opacity duration-500 h-full w-full top-0 right-0 bottom-0 left-0 absolute object-cover object-center "
+                  className="opacity-100 transition-opacity duration-500 h-full w-full top-0 right-0 bottom-0 left-0 absolute object-cover object-center"
                   src="/images/about/center_about_image.jpg"
                   alt="center_about_image"
                   width={690}
@@ -158,7 +158,7 @@ export default function About() {
         <article className="about-bottom-container max-w-[1274px] min-h-[500px] mx-[4%] relative">
           {" "}
           <div
-            className={`max-w-[1392px] py-14 px-auto text-lg tracking-widest leading-loose ${bubblegum.className} text-left`}
+            className={`max-w-[1392px] py-14 px-auto text-lg sm:tracking-widest sm:leading-loose ${bubblegum.className} text-left`}
           >
             <h2 className="text-4xl text-red-900 font-bold mb-8">
               Coffee lover, born and blended since 1971
@@ -167,7 +167,7 @@ export default function About() {
               <Image
                 src="/images/about/bottom_about_image.jpg"
                 alt="bottom_image"
-                className="ml-10 float-right grayscale hover:grayscale-0  duration-1000 transition-color hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2"
+                className="ml-10 float-right grayscale hover:grayscale-0  duration-1000 transition-color hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6"
                 width={389}
                 height={227}
                 loading="lazy"
