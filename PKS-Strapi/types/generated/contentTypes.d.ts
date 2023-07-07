@@ -676,6 +676,45 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutSectorAboutSector extends Schema.CollectionType {
+  collectionName: 'about_sectors';
+  info: {
+    singularName: 'about-sector';
+    pluralName: 'about-sectors';
+    displayName: 'About_sector';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    top_title: Attribute.String;
+    top_description: Attribute.Text;
+    top_image: Attribute.Media;
+    center_title: Attribute.String;
+    center_description: Attribute.Text;
+    center_image: Attribute.Media;
+    bottom_title: Attribute.String;
+    bottom_description: Attribute.Text;
+    bottom_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-sector.about-sector',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-sector.about-sector',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFeaturedProductFeaturedProduct
   extends Schema.CollectionType {
   collectionName: 'featured_products';
@@ -932,6 +971,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-sector.about-sector': ApiAboutSectorAboutSector;
       'api::featured-product.featured-product': ApiFeaturedProductFeaturedProduct;
       'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;
       'api::home-feed.home-feed': ApiHomeFeedHomeFeed;
