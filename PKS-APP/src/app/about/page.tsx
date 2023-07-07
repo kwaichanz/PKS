@@ -4,20 +4,46 @@ import Image from "next/image";
 import React from "react";
 import { bubblegum, cherry, thasadith } from "../utils/fonts";
 
+import "./about.scss";
+
 export default function About() {
   return (
-    <div className="flex flex-col items-center  relative select-none">
+    <div className="flex flex-col items-center relative select-none">
       <article
-        className="about-banner flex justify-center  w-full pt-24 h-[600px] bg-yellow-200"
-        style={{
-          backgroundImage: `url(${
-            "" ? "/images/about-banner.jpg" : "images/about/about_banner.jpg"
-          })`,
-          backgroundSize: "100%% 100%",
-          backgroundRepeat: "no-repeat",
-        }}
+        className="about-banner flex justify-center  w-full pt-24 h-[600px]"
+        // style={{
+        //   backgroundImage: `url(${
+        //     "" ? "/images/about-banner.jpg" : "images/about/about_banner.jpg"
+        //   })`,
+        //   backgroundSize: "100%% 50%",
+        //   backgroundRepeat: "no-repeat",
+        // }}
       >
-        <div className="">
+        <div
+          className="actor"
+          style={{
+            backgroundImage: `url(${
+              "" ? "" : "images/about/about_banner.jpg"
+            })`,
+          }}
+        ></div>
+        <div
+          className="actor"
+          style={{
+            backgroundImage: `url(${
+              "" ? "" : "images/about/about_banner_2.jpg"
+            })`,
+          }}
+        ></div>
+        <div
+          className="actor"
+          style={{
+            backgroundImage: `url(${
+              "" ? "" : "images/about/about_banner_3.jpg"
+            })`,
+          }}
+        ></div>
+        {/* <div className="">
           <h1 className="text-7xl font-extrabold uppercase text-center space-y-2">
             <p className="text-white">Indulge in Exceptional Coffee Moments</p>
             <p
@@ -38,7 +64,7 @@ export default function About() {
               </span>
             </p>
           </h1>
-        </div>
+        </div> */}
       </article>
       <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
         <article className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
@@ -52,7 +78,7 @@ export default function About() {
               <Image
                 src="/images/about/top_about_image.jpg"
                 alt="top_image"
-                className="pl-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color"
+                className="ml-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color  hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2"
                 width={389}
                 height={227}
               />
@@ -71,7 +97,7 @@ export default function About() {
             </p>
           </div>
         </article>
-        <article className="about-center-container bg-red-100 relative my-20">
+        <article className="about-center-container relative my-20">
           <div className="max-w-[1392px] flex flex-row-reverse my-[20] overflow-hidden">
             <div className="right-center-about py-20 px-[6.5%] min-h-[512px] w-1/2 bg-[#771c28] flex flex-col relative text-white">
               <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute left-[14px] z-10">
@@ -117,11 +143,12 @@ export default function About() {
                 <div></div>
                 <Image
                   aria-hidden="true"
-                  className="opacity-100 transition-opacity duration-500 h-full w-full top-0 right-0 bottom-0 left-0 absolute object-cover object-center"
+                  className="opacity-100 transition-opacity duration-500 h-full w-full top-0 right-0 bottom-0 left-0 absolute object-cover object-center "
                   src="/images/about/center_about_image.jpg"
                   alt="center_about_image"
                   width={690}
                   height={540}
+                  loading="lazy"
                 />
                 <div></div>
               </div>
@@ -139,22 +166,23 @@ export default function About() {
             <p>
               <Image
                 src="/images/about/bottom_about_image.jpg"
-                alt="top_image"
-                className="pl-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color"
+                alt="bottom_image"
+                className="ml-10 float-right grayscale hover:grayscale-0  duration-1000 transition-color hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2"
                 width={389}
                 height={227}
+                loading="lazy"
               />
             </p>
             <p>
-              We&apos;ve 50 years&apos; experience of crafting the finest quality coffee.
-              From revolutionary methods and commitment to quality to
-              unforgettable successes that have made Our Coffee the Nation’s
-              Favourite* coffee shop, our story is as unique as our coffee.
-              Setting up a small roastery in Fenchurch Street, they committed to
-              crafting the finest quality coffee. It was here the blind-tested
-              112 variations of coffee before they tasted one good enough to be
-              our signature blend. They named it ‘Mocha Italia’ and it remains
-              our signature blend to this day.
+              We&apos;ve 50 years&apos; experience of crafting the finest
+              quality coffee. From revolutionary methods and commitment to
+              quality to unforgettable successes that have made Our Coffee the
+              Nation’s Favourite* coffee shop, our story is as unique as our
+              coffee. Setting up a small roastery in Fenchurch Street, they
+              committed to crafting the finest quality coffee. It was here the
+              blind-tested 112 variations of coffee before they tasted one good
+              enough to be our signature blend. They named it ‘Mocha Italia’ and
+              it remains our signature blend to this day.
             </p>
           </div>
         </article>
