@@ -8,12 +8,12 @@ export default function About() {
   return (
     <div className="flex flex-col items-center  relative select-none">
       <article
-        className="about-banner flex justify-center  w-full pt-24 h-[600px] bg-right-bottom bg-yellow-200"
+        className="about-banner flex justify-center  w-full pt-24 h-[600px] bg-yellow-200"
         style={{
           backgroundImage: `url(${
-            "" ? "/images/about-banner.jpg" : "images/banana.png"
+            "" ? "/images/about-banner.jpg" : "images/about/about_banner.jpg"
           })`,
-          backgroundSize: "30% 60%",
+          backgroundSize: "100%% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -108,7 +108,7 @@ export default function About() {
                   2023, we improved its strength and taste by roasting our beans
                   for just that little bit longer. This subtle change resulted
                   in a more intense blend without losing its smooth taste we
-                  know you love. It's bolder, smoother, tastier, better.
+                  know you love. It&apos;s bolder, smoother, tastier, better.
                 </p>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function About() {
               />
             </p>
             <p>
-              We've 50 years' experience of crafting the finest quality coffee.
+              We&apos;ve 50 years&apos; experience of crafting the finest quality coffee.
               From revolutionary methods and commitment to quality to
               unforgettable successes that have made Our Coffee the Nation’s
               Favourite* coffee shop, our story is as unique as our coffee.
