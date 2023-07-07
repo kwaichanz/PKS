@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import "./Navbar.scss";
-import {noto } from "@/app/utils/fonts";
+import { noto } from "@/app/utils/fonts";
 
 export const DesktopNav = () => {
   return (
@@ -31,10 +31,10 @@ export const DesktopNav = () => {
                 </summary>
                 <ul className="p-4">
                   <li>
-                    <a>Submenu 1</a>
+                    <a>กาแฟ</a>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <a>ชา</a>
                   </li>
                 </ul>
               </details>
@@ -58,19 +58,7 @@ export const DesktopNav = () => {
             <a className={`${noto.className}`}>สาระความรู้</a>
           </li>
           <li tabIndex={0}>
-            <details>
-              <summary>
-                <a className={`${noto.className}`}>ข้อมูลองค์กร</a>
-              </summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
+            <a className={`${noto.className}`}>ข้อมูลองค์กร</a>
           </li>
         </ul>
       </div>

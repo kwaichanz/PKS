@@ -676,6 +676,40 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Schema.SingleType {
+  collectionName: 'about_pages';
+  info: {
+    singularName: 'about-page';
+    pluralName: 'about-pages';
+    displayName: 'About_Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    About_banner: Attribute.Component<'components.about-panel'>;
+    About_top_sector: Attribute.Component<'components.about-top-sector'>;
+    About_middle_sector: Attribute.Component<'components.about-middle-sector'>;
+    About_bottom_sector: Attribute.Component<'components.about-bottom-sector'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAboutSectorAboutSector extends Schema.CollectionType {
   collectionName: 'about_sectors';
   info: {
@@ -971,6 +1005,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::about-sector.about-sector': ApiAboutSectorAboutSector;
       'api::featured-product.featured-product': ApiFeaturedProductFeaturedProduct;
       'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;

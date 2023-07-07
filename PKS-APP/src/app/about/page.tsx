@@ -2,23 +2,14 @@
 
 import Image from "next/image";
 import React from "react";
-import { bubblegum, cherry, thasadith } from "../utils/fonts";
+import { bubblegum } from "../utils/fonts";
 
 import "./about.scss";
 
 export default function About() {
   return (
     <div className="flex flex-col items-center relative select-none">
-      <article
-        className="about-banner flex justify-center  w-full pt-24 h-[600px]"
-        // style={{
-        //   backgroundImage: `url(${
-        //     "" ? "/images/about-banner.jpg" : "images/about/about_banner.jpg"
-        //   })`,
-        //   backgroundSize: "100%% 50%",
-        //   backgroundRepeat: "no-repeat",
-        // }}
-      >
+      <article className="about-banner flex justify-center  w-full pt-24 h-[600px]">
         <div
           className="actor "
           style={{
@@ -43,28 +34,6 @@ export default function About() {
             })`,
           }}
         ></div>
-        {/* <div className="">
-          <h1 className="text-7xl font-extrabold uppercase text-center space-y-2">
-            <p className="text-white">Indulge in Exceptional Coffee Moments</p>
-            <p
-              className={`text-transparent bg-clip-text bg-gradient-to-r 
-                    from-[#f56e2a] from-20% via-[#ffb759] to-80% to-[#ff790c]
-                    text-xl sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_4.2px_1.2px_rgba(255,255,255,0.8)]`}
-            >
-              we love great tasting coffee
-            </p>
-            <p className="text-white">
-              this is our{" "}
-              <span className="text-[#ff9f1c]">
-                <span className="text-red-400 italic font rotate">s</span>
-                <span className="text-orange-400 italic font rotate">t</span>
-                <span className="text-yellow-400 italic font rotate">o</span>
-                <span className="text-green-400 italic font rotate">r</span>
-                <span className="text-blue-400 italic font rotate">y</span>
-              </span>
-            </p>
-          </h1>
-        </div> */}
       </article>
       <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
         <article className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
@@ -97,9 +66,9 @@ export default function About() {
             </p>
           </div>
         </article>
-        <article className="about-center-container relative my-20">
+        <article className="about-middle-container relative my-20">
           <div className="max-w-[1392px] flex flex-col-reverse md:flex-row-reverse w-full my-[80px] mx-auto overflow-hidden">
-            <div className="right-center-about py-24 px-[10%] md:py-20 md:px-[6.5%] min-h-[300px] md:min-h-[512px] w-full md:w-1/2 bg-[#771c28] flex flex-col relative text-white">
+            <div className="right-middle-about py-24 px-[10%] md:py-20 md:px-[6.5%] min-h-[300px] md:min-h-[512px] w-full md:w-1/2 bg-[#771c28] flex flex-col relative text-white">
               <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute top-[14px] md:left-[14px] z-10">
                 <svg
                   className="WaveSeparator__Icon rotate-90 md:rotate-0 text-[#771c28] absolute w-[100px] h-[1344px]"
@@ -138,14 +107,14 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="left-center-about w-auto m-0 md:w-1/2  md:h-auto  min-h-[300px] md:min-h-[512px]">
+            <div className="left-middle-about w-auto m-0 md:w-1/2  md:h-auto  min-h-[300px] md:min-h-[512px]">
               <div className="h-full min-h-[300px] sm:h-[500px] w-full inline-block align-top relative overflow-hidden ">
                 <div className=" max-w-[700px] block"></div>
                 <Image
                   aria-hidden="true"
                   className="opacity-100 transition-opacity duration-500 h-full w-full top-0 right-0 bottom-0 left-0 absolute object-cover object-center"
-                  src="/images/about/center_about_image.jpg"
-                  alt="center_about_image"
+                  src="/images/about/middle_about_image.jpg"
+                  alt="middle_about_image"
                   width={690}
                   height={540}
                   loading="lazy"

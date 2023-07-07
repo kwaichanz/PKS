@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "About_banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.about-panel"
+    },
+    "About_top_sector": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.about-top-sector"
+    },
+    "About_middle_sector": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.about-middle-sector"
+    },
+    "About_bottom_sector": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.about-bottom-sector"
+    }
+  }
+}

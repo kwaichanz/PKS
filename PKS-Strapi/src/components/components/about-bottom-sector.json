@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_about_bottom_sectors",
+  "info": {
+    "displayName": "About_bottom_sector",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
