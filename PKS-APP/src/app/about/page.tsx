@@ -6,7 +6,7 @@ import { bubblegum, cherry, thasadith } from "../utils/fonts";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center  relative h-[2000px] select-none">
+    <div className="flex flex-col items-center  relative select-none">
       <article
         className="about-banner flex justify-center  w-full pt-24 h-[600px] bg-right-bottom bg-yellow-200"
         style={{
@@ -28,12 +28,19 @@ export default function About() {
               we love great tasting coffee
             </p>
             <p className="text-white">
-              this is our <span className="text-[#ff9f1c]">story</span>
+              this is our{" "}
+              <span className="text-[#ff9f1c]">
+                <span className="text-red-400 italic font rotate">s</span>
+                <span className="text-orange-400 italic font rotate">t</span>
+                <span className="text-yellow-400 italic font rotate">o</span>
+                <span className="text-green-400 italic font rotate">r</span>
+                <span className="text-blue-400 italic font rotate">y</span>
+              </span>
             </p>
           </h1>
         </div>
       </article>
-      <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center">
+      <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
         <article className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
           <div
             className={`max-w-[1392px] py-14 px-auto text-lg tracking-widest leading-loose ${bubblegum.className} text-left`}
@@ -45,7 +52,7 @@ export default function About() {
               <Image
                 src="/images/about/top_about_image.jpg"
                 alt="top_image"
-                className="pl-10 float-right grayscale"
+                className="pl-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color"
                 width={389}
                 height={227}
               />
@@ -64,10 +71,10 @@ export default function About() {
             </p>
           </div>
         </article>
-        <article className="about-center-container bg-red-100 relative">
+        <article className="about-center-container bg-red-100 relative my-20">
           <div className="max-w-[1392px] flex flex-row-reverse my-[20] overflow-hidden">
             <div className="right-center-about py-20 px-[6.5%] min-h-[512px] w-1/2 bg-[#771c28] flex flex-col relative text-white">
-              <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute left-[14px]">
+              <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute left-[14px] z-10">
                 <svg
                   className="WaveSeparator__Icon rotate-0 text-[#771c28] absolute w-[100px] h-[1344px]"
                   version="1.1"
@@ -121,7 +128,36 @@ export default function About() {
             </div>
           </div>
         </article>
-        <article className="about-bottom-container">bottom-sector</article>
+        <article className="about-bottom-container max-w-[1274px] min-h-[500px] mx-[4%] relative">
+          {" "}
+          <div
+            className={`max-w-[1392px] py-14 px-auto text-lg tracking-widest leading-loose ${bubblegum.className} text-left`}
+          >
+            <h2 className="text-4xl text-red-900 font-bold mb-8">
+              Coffee lover, born and blended since 1971
+            </h2>
+            <p>
+              <Image
+                src="/images/about/bottom_about_image.jpg"
+                alt="top_image"
+                className="pl-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color"
+                width={389}
+                height={227}
+              />
+            </p>
+            <p>
+              We've 50 years' experience of crafting the finest quality coffee.
+              From revolutionary methods and commitment to quality to
+              unforgettable successes that have made Our Coffee the Nation’s
+              Favourite* coffee shop, our story is as unique as our coffee.
+              Setting up a small roastery in Fenchurch Street, they committed to
+              crafting the finest quality coffee. It was here the blind-tested
+              112 variations of coffee before they tasted one good enough to be
+              our signature blend. They named it ‘Mocha Italia’ and it remains
+              our signature blend to this day.
+            </p>
+          </div>
+        </article>
       </main>
     </div>
   );
