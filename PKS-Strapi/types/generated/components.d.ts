@@ -33,9 +33,7 @@ export interface ComponentsAboutPanel extends Schema.Component {
     description: '';
   };
   attributes: {
-    image_1: Attribute.Media;
-    image_2: Attribute.Media;
-    image_3: Attribute.Media;
+    image: Attribute.Media;
   };
 }
 

@@ -6,38 +6,15 @@
   },
   "options": {},
   "attributes": {
-    "image_1": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
+    "image": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "image_2": {
+      ],
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "image_3": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "multiple": true
     }
   }
 }

@@ -1,12 +1,48 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { bubblegum } from "../utils/fonts";
 
 import "./about.scss";
+import { fetchAPI } from "../utils/fetchApi";
+import { getExtractedData } from "../utils/api-helpers";
+
+interface IAboutBanner {
+  id: string;
+  image: string;
+}
+
+interface IAboutData {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
 
 export default function About() {
+  const fetchAboutBanner = async () => {
+    try {
+      const path = "/about-page";
+      const urlParamsObject = {
+        populate: "[About_banner][populate][0]=image",
+        pagination: {},
+      };
+      const responseData = await fetchAPI(path, urlParamsObject);
+      console.log("responseData", responseData);
+
+      const AboutData = getExtractedData(responseData);
+      console.log("AboutData", AboutData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  useEffect(() => {
+    fetchAboutBanner();
+  }, []);
+
   return (
     <div className="flex flex-col items-center relative select-none">
       <article className="about-banner flex justify-center  w-full pt-24 h-[600px]">
@@ -77,9 +113,9 @@ export default function About() {
                 >
                   <g
                     stroke="none"
-                    stroke-width="1"
+                    strokeWidth="1"
                     fill="none"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   >
                     <path
                       d="M64.1992449,95.5093197 C64.1992449,58.9121251 99.628,37.1568942 99.628,-0.414 L35.6267259,-0.414 C35.6267259,37.1568942 0.114510812,58.9121251 0.114510812,95.5093197 C0.114510812,132.092604 35.6267259,153.847835 35.6267259,191.432639 C35.6267259,229.003534 0.114510812,250.758764 0.114510812,287.355959 C0.114510812,323.953154 35.6267259,345.694475 35.6267259,383.279279 C35.6267259,420.864083 0.114510812,442.619314 0.114510812,479.202598 C0.114510812,515.799793 35.6267259,537.555024 35.6267259,575.125918 C35.6267259,612.710722 0.114510812,634.465953 0.114510812,671.049238 C0.114510812,707.646432 35.6267259,729.401663 35.6267259,766.986468 C35.6267259,804.557362 0.114510812,826.312593 0.114510812,862.909787 C0.114510812,899.493072 35.6267259,921.248303 35.6267259,958.833107 C35.6267259,996.404001 0.114510812,1018.15923 0.114510812,1054.75643 C0.114510812,1091.35362 35.6267259,1113.09494 35.6267259,1150.67975 C35.6267259,1188.26455 0.114510812,1210.01978 0.114510812,1246.60307 C0.114510812,1283.20026 35.6267259,1304.95549 35.6267259,1342.52639 L99.628,1342.52639 C99.628,1304.95549 64.1992449,1283.20026 64.1992449,1246.60307 C64.1992449,1210.01978 99.628,1188.26455 99.628,1150.67975 C99.628,1113.09494 64.1992449,1091.35362 64.1992449,1054.75643 C64.1992449,1018.15923 99.628,996.404001 99.628,958.833107 C99.628,921.248303 64.1992449,899.493072 64.1992449,862.909787 C64.1992449,826.312593 99.628,804.557362 99.628,766.986468 C99.628,729.401663 64.1992449,707.646432 64.1992449,671.049238 C64.1992449,634.465953 99.628,612.710722 99.628,575.125918 C99.628,537.555024 64.1992449,515.799793 64.1992449,479.202598 C64.1992449,442.619314 99.628,420.864083 99.628,383.279279 C99.628,345.694475 64.1992449,323.953154 64.1992449,287.355959 C64.1992449,250.758764 99.628,229.003534 99.628,191.432639 C99.628,153.847835 64.1992449,132.092604 64.1992449,95.5093197 Z"
@@ -108,7 +144,7 @@ export default function About() {
               </div>
             </div>
             <div className="left-middle-about w-auto m-0 md:w-1/2  md:h-auto  min-h-[300px] md:min-h-[512px]">
-              <div className="h-full min-h-[300px] sm:h-[500px] w-full inline-block align-top relative overflow-hidden ">
+              <div className="h-full min-h-[300px] sm:h-[512px] w-full inline-block align-top relative overflow-hidden ">
                 <div className=" max-w-[700px] block"></div>
                 <Image
                   aria-hidden="true"
