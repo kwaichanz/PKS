@@ -1,12 +1,13 @@
-import { IFeed } from "@/models/productModel";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Balancer from "react-wrap-balancer";
+
+import { IFeed } from "@/models/productModel";
 
 import { bubblegum, kanit, montserrat, noto } from "@/app/utils/fonts";
-
 import "./Feeds.scss";
 import { fetchAPI } from "@/app/utils/fetchApi";
 import { getExtractedData, getStrapiMedia } from "@/app/utils/api-helpers";
-import Link from "next/link";
 
 interface IFeedProp {
   feeds: IFeed[];
@@ -73,9 +74,11 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           </div>
           <div className="content-header select-none">
             <h3 className={`uppercase ${kanit.className}`}>
-              {leftFeed?.title
-                ? leftFeed.title
-                : "โออาร์ เปิดร้าน คาเฟ่ ฟอร์ แช้นส์ สาขาที่ 8"}
+              <Balancer>
+                {leftFeed?.title
+                  ? leftFeed.title
+                  : "โออาร์ เปิดร้าน คาเฟ่ ฟอร์ แช้นส์ สาขาที่ 8"}
+              </Balancer>
             </h3>
           </div>
           <div className="content-button">
@@ -102,9 +105,11 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           </div>
           <div className="content-header select-none">
             <h3 className={`uppercase ${kanit.className}`}>
-              {rightFeed?.title
-                ? rightFeed.title
-                : "เปิด Café สาขาแรกในมาเลเซีย ขยายตลาดเอเชียเป็นประเทศที่ 9"}
+              <Balancer>
+                {rightFeed?.title
+                  ? rightFeed.title
+                  : "เปิด Café สาขาแรกในมาเลเซีย ขยายตลาดเอเชียเป็นประเทศที่ 9"}
+              </Balancer>
             </h3>
           </div>
           <div className="content-button">

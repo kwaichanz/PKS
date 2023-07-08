@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 
 import "./FeaturedProducts.scss";
 
@@ -9,7 +11,6 @@ import { IProduct } from "@/models/productModel";
 import { noto, bubblegum, thasadith } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
 import { getStrapiMedia } from "@/app/utils/api-helpers";
-import Link from "next/link";
 
 interface IFeaturedProp {
   featured: IProduct;
@@ -122,15 +123,18 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                 <h3
                   className={`uppercase text-xs sm:text-sm md:text-lg ${noto.className} mt-1`}
                 >
-                  {featuredData?.subtitle ? (
-                    featuredData?.subtitle
-                  ) : (
-                    <>more than 235 years of coffee and tea experience</>
-                  )}
+                  <Balancer>
+                    {featuredData?.subtitle ? (
+                      featuredData?.subtitle
+                    ) : (
+                      <>more than 235 years of coffee and tea experience</>
+                    )}
+                  </Balancer>
                 </h3>
               </div>
               <div className="content-text ">
                 <p className={`text ${thasadith.className}`}>
+                  <Balancer>
                   {featuredData?.description ? (
                     featuredData?.description
                   ) : (
@@ -143,7 +147,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                       และยังเป็นแหล่งผลิตอากาศอันบริสุทธิ์
                       แนวความคิดนี้จึงถูกนำมาเพื่อสร้างสรรค์เป็นร้านกาแฟที่มีบรรยากาศร่มรื่นเย็นสบายด้วยร่มไม้และน้ำล้อมรอบ
                     </>
-                  )}
+                  )}</Balancer>
                 </p>
               </div>
               <div className="content-buttons xl:mt-0 md:mt-2 mt-4">

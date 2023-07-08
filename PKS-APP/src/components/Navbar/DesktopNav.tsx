@@ -43,7 +43,7 @@ export const DesktopNav = () => {
               <a className={`${noto.className}`}>สโตร์</a>
             </li>
             <li>
-              <a className={`${noto.className}`}>บริการหลังการขาย</a>
+              <a className={`${noto.className}`}>พีเคเอสแคร์</a>
             </li>
           </ul>
         </div>

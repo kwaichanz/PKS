@@ -68,7 +68,7 @@ export const MobileNav = () => {
           className="menu menu-lg left-0 top-20 !fixed  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-screen "
         >
           <li>
-            <a>สินค้า</a> 
+            <a>สินค้า</a>
             <ul className="ps">
               <li>
                 <a>สินค้า 1</a>
@@ -79,16 +79,19 @@ export const MobileNav = () => {
             </ul>
           </li>
           <li>
+            <a>สโตร์</a>
+          </li>
+          <li>
+            <a>พีเคเอสแคร์</a>
+          </li>
+          <li>
             <a>ข่าวสาร</a>
           </li>
           <li>
-            <a>โปรโมชั่น</a>
+            <a>สาระความรู้</a>
           </li>
           <li>
             <a>ข้อมูลองค์กร</a>
-          </li>
-          <li>
-            <a>สาระความรู้</a>
           </li>
         </ul>
       </div>

@@ -6,7 +6,9 @@ import { cherry } from "@/app/utils/fonts";
 export const Footer = () => {
   return (
     <>
-      <footer className={`footer p-14 bg-accent text-base-200 grid-cols-2 sm:grid-cols-4 place-items-start ${cherry.className}`}>
+      <footer
+        className={`footer p-12 pl:10 sm:pl-16 pr-4 sm:pr-8 bg-accent text-base-200 grid-cols-2 sm:grid-cols-4 place-items-start ${cherry.className}`}
+      >
         <div className=" ">
           <span className="footer-title">About Us</span>
           <a className="link link-hover">Our Heritage</a>

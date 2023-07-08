@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import React, { Suspense, useEffect, useState } from "react";
-import { bubblegum } from "../utils/fonts";
+import React, { useEffect, useState } from "react";
+import Balancer from "react-wrap-balancer";
 
+import { bubblegum } from "../utils/fonts";
 import "./about.scss";
 import { fetchAPI } from "../utils/fetchApi";
-import { getExtractedData, getStrapiMedia } from "../utils/api-helpers";
-import Loading from "../loading";
+import { getStrapiMedia } from "../utils/api-helpers";
 
 interface IAboutData {
   id: string;
@@ -73,7 +73,7 @@ export default function About() {
 
   return (
     <div className="flex flex-col items-center relative select-none min-h-[1000px]">
-      <article className="about-banner flex justify-center  w-full pt-24 h-[600px]">
+      <header className="about-banner flex justify-center  w-full pt-24 h-[600px]">
         <div
           className="actor "
           style={{
@@ -107,10 +107,10 @@ export default function About() {
                 : "url(images/about/about_banner_3.jpg)",
           }}
         ></div>
-      </article>
+      </header>
       {!isLoading && (
         <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
-          <article className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
+          <section className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
             <div
               className={`max-w-[1392px] py-14 px-auto text-lg  tracking-wider sm:tracking-widest leading-relaxed sm:leading-loose ${bubblegum.className} text-left`}
             >
@@ -131,7 +131,7 @@ export default function About() {
                       : "/images/about/top_about_image.jpg"
                   }
                   alt="top_image"
-                  className="ml-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color  hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6"
+                  className="ml-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color  hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6 cursor-pointer"
                   width={389}
                   height={227}
                   unoptimized={true}
@@ -152,8 +152,8 @@ export default function About() {
                 coffee a part of everyday life. `}
               </p>
             </div>
-          </article>
-          <article className="about-middle-container relative my-20 mb-28">
+          </section>
+          <section className="about-middle-container relative my-20 mb-28">
             <div className="max-w-[1392px] flex flex-col-reverse md:flex-row-reverse w-full my-[80px] mx-auto overflow-hidden">
               <div className="right-middle-about py-24 px-[10%] md:py-20 md:px-[6.5%] min-h-[300px] md:min-h-[512px] w-full md:w-1/2 bg-[#771c28] flex flex-col relative text-white">
                 <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute top-[14px] md:left-[14px] z-10">
@@ -187,14 +187,16 @@ export default function About() {
                   <p
                     className={`text-lg ${bubblegum.className}  tracking-wider sm:tracking-widest leading-relaxed sm:leading-loose`}
                   >
-                    {aboutMiddleData?.description
-                      ? aboutMiddleData.description
-                      : `Our iconic Signature Blend is the perfect combination and
+                    <Balancer>
+                      {aboutMiddleData?.description
+                        ? aboutMiddleData.description
+                        : `Our iconic Signature Blend is the perfect combination and
                   balance of delicate Arabica and strong Robusta beans. In early
                   2023, we improved its strength and taste by roasting our beans
                   for just that little bit longer. This subtle change resulted
                   in a more intense blend without losing its smooth taste we
                   know you love. It's bolder, smoother, tastier, better.`}
+                    </Balancer>
                   </p>
                 </div>
               </div>
@@ -223,8 +225,8 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </article>
-          <article className="about-bottom-container max-w-[1274px] min-h-[500px] mx-[4%] relative">
+          </section>
+          <section className="about-bottom-container max-w-[1274px] min-h-[500px] mx-[4%] relative">
             {" "}
             <div
               className={`max-w-[1392px] py-14 px-auto text-lg tracking-wider sm:tracking-widest leading-relaxed sm:leading-loose ${bubblegum.className} text-left`}
@@ -246,7 +248,7 @@ export default function About() {
                       : "/images/about/bottom_about_image.jpg"
                   }
                   alt="bottom_image"
-                  className="ml-10 float-right grayscale hover:grayscale-0  duration-1000 transition-color hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6"
+                  className="ml-10 float-right grayscale hover:grayscale-0  duration-1000 transition-color hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6  cursor-pointer"
                   width={389}
                   height={227}
                   loading="lazy"
@@ -267,7 +269,7 @@ export default function About() {
               it remains our signature blend to this day.`}
               </p>
             </div>
-          </article>
+          </section>
         </main>
       )}
     </div>

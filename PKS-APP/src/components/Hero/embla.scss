@@ -250,7 +250,7 @@
   }
 
   .embla__slide__text{
-  top:58%;
+  top:55%;
 
   }
 
@@ -269,6 +269,13 @@
   }
 
 }
+
+@media only screen and (max-width: 320px) {
+  .embla__slide__text {
+    top:45%
+  }
+}
+
 
 .after-hero::after {
   content: "";

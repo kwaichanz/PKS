@@ -3,6 +3,8 @@ import useEmblaCarousel, {
   EmblaCarouselType,
   EmblaOptionsType,
 } from "embla-carousel-react";
+import Balancer from "react-wrap-balancer";
+
 import {
   DotButton,
   PrevButton,
@@ -80,7 +82,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         },
       };
 
-
       // console.log("slides", slides);
       // Unused
       // console.log("imgbyidx", imageByIndex(1));
@@ -126,18 +127,21 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       <div className="w-3/4 sm:w-3/4 lg:max-w-2xl lg:h-1/4 rounded-tl-3xl rounded-br-3xl p-3">
                         <h1
                           className={`${prompt.className} text-amber-700
-                    text-xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold`}
+                    text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold`}
                         >
-                          ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ
+                          <Balancer>
+                            ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ
+                          </Balancer>
                         </h1>
                         <div
-                          className={`${kanit.className} text-lg sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
+                          className={`${kanit.className} text-md sm:text-2xl text-gray-50 font-semibbold mt-2 drop-shadow-[0_4.2px_1.2px_rgba(33,33,33,0.8)]`}
                         >
                           <p className="">
-                            The industry leading pure-play coffee company,
-                          </p>
-                          <p>
-                            serving approximately 4,200 cups of tea per second
+                            <Balancer>
+                              {" "}
+                              The industry leading pure-play coffee company,
+                              serving approximately 4,200 cups of tea per second
+                            </Balancer>
                           </p>
                         </div>
                       </div>

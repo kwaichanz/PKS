@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Balancer from 'react-wrap-balancer'
+
 import { ProductCard } from "./ProductCard";
 import { cardItems } from "../../../mocks/product_card_items";
 import { cherry, noto, thasadith } from "@/app/utils/fonts";
@@ -26,7 +28,6 @@ export const ProductCardSection = () => {
       const responseData = await fetchAPI(path, urlParamsObject);
       //   console.log("responseData", responseData);
 
-
       // Could refactor later with a utility function
       const cards = responseData?.data?.map((data: any, index: number) => {
         // console.log("data", data);
@@ -39,7 +40,7 @@ export const ProductCardSection = () => {
           urlPath: data?.attributes.urlPath,
         };
       });
-        // console.log("cards :", cards);
+      // console.log("cards :", cards);
       setCards(cards as ICards[]);
       setIsLoading(false);
     } catch (error) {
@@ -59,9 +60,10 @@ export const ProductCardSection = () => {
           <span className={`text-amber-600 ${cherry.className} `}>PKS</span>
         </h1>
         <p className={`mt-4 text-md md:text-md ${thasadith.className}`}>
-          มุ่งพัฒนาการเกษตรให้มีความหลากหลายครอบคลุมทุกการใช้งาน
-          <br />
-          ในภาคเกษตรกรรมเพื่อตอบสนองทุกความต้องการ
+          <Balancer>
+            มุ่งพัฒนาการเกษตรให้มีความหลากหลายครอบคลุมทุกการใช้งาน
+            ในภาคเกษตรกรรมเพื่อตอบสนองทุกความต้องการ
+          </Balancer>
         </p>
       </header>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols--2 md:grid-cols-3 lg:grid-cols-4  px-4">
