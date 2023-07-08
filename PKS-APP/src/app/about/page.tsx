@@ -1,15 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { bubblegum } from "../utils/fonts";
 
 import "./about.scss";
 import { fetchAPI } from "../utils/fetchApi";
-import { getExtractedData } from "../utils/api-helpers";
+import { getExtractedData, getStrapiMedia } from "../utils/api-helpers";
 
 interface IAboutBanner {
-  id: string;
   image: string;
 }
 
@@ -21,6 +20,12 @@ interface IAboutData {
 }
 
 export default function About() {
+  const [bannerData, setBannerData] = useState<IAboutBanner[]>();
+  const [aboutTopData, setAboutTopData] = useState<IAboutData>();
+  const [aboutMiddleData, setAboutMiddleData] = useState<IAboutData>();
+  const [aboutBottomData, setAboutBottomData] = useState<IAboutData>();
+  const [isLoading, setIsLoading] = useState(true);
+
   const fetchAboutBanner = async () => {
     try {
       const path = "/about-page";
@@ -31,10 +36,35 @@ export default function About() {
       const responseData = await fetchAPI(path, urlParamsObject);
       console.log("responseData", responseData);
 
-      const AboutData = getExtractedData(responseData);
-      console.log("AboutData", AboutData);
+      //  Destructuring and Property Shorthand
+      const aboutData = (({
+        About_banner,
+        About_top_sector,
+        About_middle_sector,
+        About_bottom_sector,
+      }) => ({
+        About_banner,
+        About_top_sector,
+        About_middle_sector,
+        About_bottom_sector,
+      }))(responseData.data.attributes);
+      console.log("aboutData", aboutData);
+
+      setBannerData(
+        aboutData.About_banner.image.data.map((element: any) => {
+          // console.log("element", element?.attributes!.url);
+          return element?.attributes!.url;
+        })
+      );
+
+      setAboutTopData(aboutData.About_top_sector);
+      setAboutMiddleData(aboutData.About_middle_sector);
+      setAboutBottomData(aboutData.About_bottom_sector);
+      console.log("About Top Dta : ", aboutData.About_top_sector);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -48,25 +78,34 @@ export default function About() {
         <div
           className="actor "
           style={{
-            backgroundImage: `url(${
-              "" ? "" : "images/about/about_banner.jpg"
-            })`,
+            backgroundImage:
+              // bannerData && !isLoading
+              //   ? bannerData[0] && !isLoading
+              //     ? `url(${String(getStrapiMedia(bannerData[0]))})`
+              "url(images/about/about_banner.jpg)",
+            // : "url(images/about/about_banner.jpg)",
           }}
         ></div>
         <div
           className="actor"
           style={{
-            backgroundImage: `url(${
-              "" ? "" : "images/about/about_banner_2.jpg"
-            })`,
+            backgroundImage:
+              bannerData && !isLoading
+                ? bannerData[1] && !isLoading
+                  ? `url(${String(getStrapiMedia(bannerData[1]))})`
+                  : "url(images/about/about_banner_2.jpg)"
+                : "url(images/about/about_banner_2.jpg)",
           }}
         ></div>
         <div
           className="actor"
           style={{
-            backgroundImage: `url(${
-              "" ? "" : "images/about/about_banner_3.jpg"
-            })`,
+            backgroundImage:
+              bannerData && !isLoading
+                ? bannerData[2] && !isLoading
+                  ? `url(${String(getStrapiMedia(bannerData[2]))})`
+                  : "url(images/about/about_banner_3.jpg)"
+                : "url(images/about/about_banner_3.jpg)",
           }}
         ></div>
       </article>

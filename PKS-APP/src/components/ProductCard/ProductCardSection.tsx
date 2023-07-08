@@ -39,7 +39,7 @@ export const ProductCardSection = () => {
           urlPath: data?.attributes.urlPath,
         };
       });
-        console.log("cards :", cards);
+        // console.log("cards :", cards);
       setCards(cards as ICards[]);
       setIsLoading(false);
     } catch (error) {
