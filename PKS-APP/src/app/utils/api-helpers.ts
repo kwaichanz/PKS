@@ -13,7 +13,7 @@ export function getStrapiMedia(url: string | null){
     if (url.startsWith("http") || url.startsWith("//")) {
         return url;
     }
-    return `${getStrapiURL()}${url}`;
+      return `${getStrapiURL()}${url}`;
 
 }
 
