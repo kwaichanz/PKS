@@ -8,19 +8,15 @@ import "./about.scss";
 import { fetchAPI } from "../utils/fetchApi";
 import { getExtractedData, getStrapiMedia } from "../utils/api-helpers";
 
-interface IAboutBanner {
-  image: string;
-}
-
 interface IAboutData {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image: any;
 }
 
 export default function About() {
-  const [bannerData, setBannerData] = useState<IAboutBanner[]>();
+  const [bannerData, setBannerData] = useState<string[]>([]);
   const [aboutTopData, setAboutTopData] = useState<IAboutData>();
   const [aboutMiddleData, setAboutMiddleData] = useState<IAboutData>();
   const [aboutBottomData, setAboutBottomData] = useState<IAboutData>();
@@ -56,6 +52,8 @@ export default function About() {
           return element?.attributes!.url;
         })
       );
+      console.log('banner data ', bannerData);
+
 
       setAboutTopData(aboutData.About_top_sector);
       setAboutMiddleData(aboutData.About_middle_sector);
@@ -65,6 +63,7 @@ export default function About() {
       console.error(error);
     } finally {
       setIsLoading(false);
+      console.log('banner data ', bannerData);
     }
   };
 
@@ -115,28 +114,39 @@ export default function About() {
             className={`max-w-[1392px] py-14 px-auto text-lg sm:tracking-widest sm:leading-loose ${bubblegum.className} text-left`}
           >
             <h2 className="text-4xl text-red-900 font-bold mb-8">
-              Our Story, Our heritage
+              {aboutTopData?.title
+                ? aboutTopData.title
+                : "Our Story, Our heritage"}
             </h2>
             <p>
               <Image
-                src="/images/about/top_about_image.jpg"
+                src={
+                  aboutTopData?.image
+                    ? String(
+                        getStrapiMedia(aboutTopData.image.data.attributes.url)
+                      )
+                    : "/images/about/top_about_image.jpg"
+                }
                 alt="top_image"
                 className="ml-10 float-right grayscale hover:grayscale-0 duration-1000 transition-color  hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6"
                 width={389}
                 height={227}
+                unoptimized={true}
               />
             </p>
             <p>
-              Our story begins in 1971 along the cobblestone streets of
-              Seattle’s historic Pike Place Market. It was here where Starbucks
-              opened its first store, offering fresh-roasted coffee beans, tea
-              and spices from around the world for our customers to take home.
-              Our name was inspired by the classic tale, “Moby-Dick,” evoking
-              the seafaring tradition of the early coffee traders. But first,
-              let’s start with how every good story should. At the very
-              beginning. The story began back in 1971 when Sergio and Bruno
-              arrived in London with a burning desire to make great tasting
-              coffee a part of everyday life.
+              {aboutTopData?.description
+                ? aboutTopData.description
+                : `Our story begins in 1971 along the cobblestone streets of
+                Seattles historic Pike Place Market. It was here where Starbucks
+                opened its first store, offering fresh-roasted coffee beans, tea
+                and spices from around the world for our customers to take home.
+                Our name was inspired by the classic tale, Moby-Dick, evoking
+                the seafaring tradition of the early coffee traders. But first,
+                let&quot;s start with how every good story should. At the very
+                beginning. The story began back in 1971 when Sergio and Bruno
+                arrived in London with a burning desire to make great tasting
+                coffee a part of everyday life. `}
             </p>
           </div>
         </article>
@@ -165,19 +175,23 @@ export default function About() {
               </div>
               <div>
                 <h3 className={`text-4xl ${bubblegum.className} mb-8`}>
-                  Our improved Signature Blend
+                  {aboutMiddleData?.title
+                    ? aboutMiddleData.title
+                    : "Our improved Signature Blend"}
                 </h3>
               </div>
               <div>
                 <p
                   className={`text-lg ${bubblegum.className} sm:tracking-widest sm:leading-loose`}
                 >
-                  Our iconic Signature Blend is the perfect combination and
+                  {aboutMiddleData?.description
+                    ? aboutMiddleData.description
+                    : `Our iconic Signature Blend is the perfect combination and
                   balance of delicate Arabica and strong Robusta beans. In early
                   2023, we improved its strength and taste by roasting our beans
                   for just that little bit longer. This subtle change resulted
                   in a more intense blend without losing its smooth taste we
-                  know you love. It&apos;s bolder, smoother, tastier, better.
+                  know you love. It&apos;s bolder, smoother, tastier, better.`}
                 </p>
               </div>
             </div>
@@ -187,11 +201,20 @@ export default function About() {
                 <Image
                   aria-hidden="true"
                   className="opacity-100 transition-opacity duration-500 h-full w-full top-0 right-0 bottom-0 left-0 absolute object-cover object-center"
-                  src="/images/about/middle_about_image.jpg"
+                  src={
+                    aboutMiddleData?.image
+                      ? String(
+                          getStrapiMedia(
+                            aboutMiddleData.image.data.attributes.url
+                          )
+                        )
+                      : "/images/about/middle_about_image.jpg"
+                  }
                   alt="middle_about_image"
                   width={690}
                   height={540}
                   loading="lazy"
+                  unoptimized={true}
                 />
                 <div></div>
               </div>
@@ -204,20 +227,34 @@ export default function About() {
             className={`max-w-[1392px] py-14 px-auto text-lg sm:tracking-widest sm:leading-loose ${bubblegum.className} text-left`}
           >
             <h2 className="text-4xl text-red-900 font-bold mb-8">
+              {aboutBottomData?.title
+                ? aboutBottomData.title
+                : "Our improved Signature Blend"}
               Coffee lover, born and blended since 1971
             </h2>
             <p>
               <Image
-                src="/images/about/bottom_about_image.jpg"
+                src={
+                  aboutBottomData?.image
+                    ? String(
+                        getStrapiMedia(
+                          aboutBottomData?.image.data.attributes.url
+                        )
+                      )
+                    : "/images/about/bottom_about_image.jpg"
+                }
                 alt="bottom_image"
                 className="ml-10 float-right grayscale hover:grayscale-0  duration-1000 transition-color hover:shadow-2xl hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:translate-y-2 w-full lg:w-[48%] xl:w-[389px] mb-6"
                 width={389}
                 height={227}
                 loading="lazy"
+                unoptimized={true}
               />
             </p>
             <p>
-              We&apos;ve 50 years&apos; experience of crafting the finest
+              {aboutBottomData?.description
+                ? aboutBottomData.description
+                : `We&apos;ve 50 years&apos; experience of crafting the finest
               quality coffee. From revolutionary methods and commitment to
               quality to unforgettable successes that have made Our Coffee the
               Nation’s Favourite* coffee shop, our story is as unique as our
@@ -225,7 +262,7 @@ export default function About() {
               committed to crafting the finest quality coffee. It was here the
               blind-tested 112 variations of coffee before they tasted one good
               enough to be our signature blend. They named it ‘Mocha Italia’ and
-              it remains our signature blend to this day.
+              it remains our signature blend to this day.`}
             </p>
           </div>
         </article>
