@@ -47,9 +47,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-between ">
-      <Suspense fallback={<Loading />}>
-        <Hero />
-      </Suspense>
+      <Hero />
       <main className="w-full h-full relative bg-white">
         <section
           className="relative mr-auto ml-auto max-w-[1000px] mb-36 mt-16"

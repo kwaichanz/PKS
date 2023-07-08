@@ -38,7 +38,6 @@ export default function About() {
     }
   };
 
-
   useEffect(() => {
     fetchAboutBanner();
   }, []);
@@ -102,7 +101,7 @@ export default function About() {
             </p>
           </div>
         </article>
-        <article className="about-middle-container relative my-20">
+        <article className="about-middle-container relative my-20 mb-28">
           <div className="max-w-[1392px] flex flex-col-reverse md:flex-row-reverse w-full my-[80px] mx-auto overflow-hidden">
             <div className="right-middle-about py-24 px-[10%] md:py-20 md:px-[6.5%] min-h-[300px] md:min-h-[512px] w-full md:w-1/2 bg-[#771c28] flex flex-col relative text-white">
               <div className="waveBorderWrapper rotate-180 flex items-center justify-center absolute top-[14px] md:left-[14px] z-10">

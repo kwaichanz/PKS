@@ -1,11 +1,12 @@
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: "Panoatkaset",
   description: "PANOATKASET",
-  
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         <Footer />
       </body>
     </html>
