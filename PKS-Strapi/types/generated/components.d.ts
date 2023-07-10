@@ -87,16 +87,6 @@ export interface ComponentsProductCategoryHeader extends Schema.Component {
   };
 }
 
-export interface ComponentsTest extends Schema.Component {
-  collectionName: 'components_components_tests';
-  info: {
-    displayName: 'test';
-  };
-  attributes: {
-    name: Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
@@ -107,7 +97,6 @@ declare module '@strapi/strapi' {
       'components.hero-slide': ComponentsHeroSlide;
       'components.product-category-card': ComponentsProductCategoryCard;
       'components.product-category-header': ComponentsProductCategoryHeader;
-      'components.test': ComponentsTest;
     }
   }
 }

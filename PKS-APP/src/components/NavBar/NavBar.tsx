@@ -11,9 +11,9 @@ type Props = {};
 
 export default function Navbar({ }: Props) {
 
-  
+
   return (
-    <NavigationMenu.Root className="sticky top-0 z-50 z-[1] flex w-screen  ">
+    <NavigationMenu.Root className="sticky top-0 z-50 flex w-screen  ">
       <NavigationMenu.List className="center shadow-blackA7 m-0 flex  list-none rounded-[6px] bg-white px-6 shadow-[0_2px_10px] h-20 items-center w-screen ">
         <Link href="/" className="mr-6">
           <Image
@@ -34,11 +34,11 @@ export default function Navbar({ }: Props) {
             />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto">
-            <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
+            <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:min-w-[600px] md:min-w-[760px] lg:min-w-[960px] md:min-h-[400px] sm:grid-cols-[0.75fr_1fr_1fr]">
               <li className="row-span-3 grid">
                 <NavigationMenu.Link asChild>
                   <a
-                    className="focus:shadow-violet7 from-purple9 to-indigo9 flex
+                    className="focus:shadow-violet7 from-brown4 via-brown8 to-brown11 flex
                   h-full w-full select-none flex-col justify-end rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
                     href="/"
                   >
@@ -54,7 +54,7 @@ export default function Navbar({ }: Props) {
                       <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
                     </svg>
                     <div className="mt-4 mb-[7px] text-[18px] font-medium leading-[1.2] text-white">
-                      Radix Primitives
+                      Coffee Primitives
                     </div>
                     <p className="text-mauve4 text-[14px] leading-[1.3]">
                       Unstyled, accessible components for React.
@@ -62,6 +62,16 @@ export default function Navbar({ }: Props) {
                   </a>
                 </NavigationMenu.Link>
               </li>
+
+              <ListItem href="https://stitches.dev/" title="Stitches">
+                CSS-in-JS with best-in-class developer experience.
+              </ListItem>
+              <ListItem href="/colors" title="Colors">
+                Beautiful, thought-out palettes with auto dark mode.
+              </ListItem>
+              <ListItem href="https://icons.radix-ui.com/" title="Icons">
+                A crisp set of 15x15 icons, balanced and consistent.
+              </ListItem>
 
               <ListItem href="https://stitches.dev/" title="Stitches">
                 CSS-in-JS with best-in-class developer experience.
@@ -152,6 +162,8 @@ export default function Navbar({ }: Props) {
             ติดต่อ
           </NavigationMenu.Link>
         </NavigationMenu.Item>
+
+
 
         <NavigationMenu.Indicator className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]">
           <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-red-400" />
