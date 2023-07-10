@@ -46,7 +46,7 @@ export default function Home() {
   }, [feedsRefValue]);
 
   return (
-    <div className="flex flex-col items-center justify-between ">
+    <div className="flex flex-col items-center justify-between  ">
       <Hero />
       <main className="w-full h-full relative bg-white">
         <section

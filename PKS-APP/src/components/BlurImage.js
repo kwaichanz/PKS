@@ -10,7 +10,7 @@ export default function BlurImage({ image }) {
 // console.log('image : ', image);
   return (
     <Image
-      className={`embla__slide__img relative object-cover -z-10 duration-700 ease-in-out               ${
+      className={`embla__slide__img relative object-cover -z-10 duration-700 ease-in-out  ${
         isLoading
           ? "scale-110 blur-2xl grayscale"
           : "scale-100 blur-0 grayscale-0"

@@ -4,16 +4,30 @@ import React from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
 import { CaretDownIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
-export default function Navbar({}: Props) {
+export default function Navbar({ }: Props) {
+
+  
   return (
-    <NavigationMenu.Root className="relative z-[1] flex w-screen justify-center ">
-      <NavigationMenu.List className="center shadow-blackA7 m-0 flex list-none rounded-[6px] bg-white p-1 shadow-[0_2px_10px]">
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="text-violet11 hover:bg-violet-3 focus:shadow-violet7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-            Learn{" "}
+    <NavigationMenu.Root className="sticky top-0 z-50 z-[1] flex w-screen  ">
+      <NavigationMenu.List className="center shadow-blackA7 m-0 flex  list-none rounded-[6px] bg-white px-6 shadow-[0_2px_10px] h-20 items-center w-screen ">
+        <Link href="/" className="mr-6">
+          <Image
+            src="/brand_logo.png"
+            width={60}
+            height={60}
+            alt="PKS"
+            className="static rounded-2xl"
+            loading="lazy"
+          />
+        </Link>
+        <NavigationMenu.Item className="">
+          <NavigationMenu.Trigger className="text-violet11 hover:bg-violet-3 focus:shadow-violet7 group flex select-none items-center  gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+            สินค้า{" "}
             <CaretDownIcon
               className="text-violet10 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
               aria-hidden
@@ -64,7 +78,7 @@ export default function Navbar({}: Props) {
 
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="text-violet11 hover:bg-violet3 focus:shadow-violet7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-            Overview{" "}
+            โปรโมชั่น{" "}
             <CaretDownIcon
               className="text-violet10 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
               aria-hidden
@@ -115,16 +129,36 @@ export default function Navbar({}: Props) {
             className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
             href="https://github.com/radix-ui"
           >
-            Github
+            พีเคเอสแคร์
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+
+        <NavigationMenu.Item className="ml-auto ">
+          <NavigationMenu.Link
+            className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+            href="https://github.com/radix-ui"
+          >
+            เกี่ยวกับ
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+
+
+
+        <NavigationMenu.Item className="mr-0">
+          <NavigationMenu.Link
+            className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+            href="https://github.com/radix-ui"
+          >
+            ติดต่อ
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
         <NavigationMenu.Indicator className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]">
-          <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-white" />
+          <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-red-400" />
         </NavigationMenu.Indicator>
       </NavigationMenu.List>
 
-      <div className="perspective-[2000px] absolute top-full left-0 flex w-full justify-center">
+      <div className="perspective-[2000px] absolute top-full left-0 flex w-full ">
         <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
       </div>
     </NavigationMenu.Root>
