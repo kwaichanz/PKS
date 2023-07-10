@@ -1,28 +1,50 @@
-import React, { useState } from "react";
-import EmblaCarousel from "./EmblaCarousel";
-import { EmblaOptionsType } from "embla-carousel-react";
-import "./embla.scss";
-import "./sandbox.css";
+"use client";
 
-export const Hero = () => {
-  const options: EmblaOptionsType = {};
-  const slide_count = 5;
-  const slides = Array.from(Array(slide_count).keys());
+import { getStrapiMedia } from "@/app/utils/api-helpers";
+import React from "react";
 
-  // This makes the initial load takes longer due to calling the api for the number of pages
-  // fetch(`http://localhost:${process.env.NEXT_PUBLIC_STRAPI_PORT_NUMBER}/api/hero-slide-images?populate=image`)
-  //   .then((res) => res.json())
-  //   .then((data) => {console.log(data);
-  //     console.log('d',data.data[0].attributes.image.data.length);
-  //     const countOfSlides = Array.from(Array(data.data[0].attributes.image.data.length).keys());
-  //     setslideCount(countOfSlides)
-  //     console.log("count", countOfSlides);
-  //   });
-
-
-  return (
-    <section className="relative after-hero">
-      <EmblaCarousel slides={slides} options={options} />
-    </section>
-  );
+type HeroProps = {
+  bannerData: string[];
+  isLoading?: boolean;
 };
+
+export default function Hero({ bannerData, isLoading }: HeroProps) {
+  bannerData = [];
+  return (
+    <header className="about-banner flex justify-center  w-full pt-24 h-[600px]">
+      <div
+        className="actor "
+        style={{
+          backgroundImage:
+            // bannerData && !isLoading
+            //   ? bannerData[0] && !isLoading
+            //     ? `url(${String(getStrapiMedia(bannerData[0]))})`
+            "url(images/about/about_banner.jpg)",
+          // : "url(images/about/about_banner.jpg)",
+        }}
+      ></div>
+      <div
+        className="actor"
+        style={{
+          backgroundImage:
+            bannerData && !isLoading
+              ? bannerData[1] && !isLoading
+                ? `url(${String(getStrapiMedia(bannerData[1]))})`
+                : "url(images/about/about_banner_2.jpg)"
+              : "url(images/about/about_banner_2.jpg)",
+        }}
+      ></div>
+      <div
+        className="actor"
+        style={{
+          backgroundImage:
+            bannerData && !isLoading
+              ? bannerData[2] && !isLoading
+                ? `url(${String(getStrapiMedia(bannerData[2]))})`
+                : "url(images/about/about_banner_3.jpg)"
+              : "url(images/about/about_banner_3.jpg)",
+        }}
+      ></div>
+    </header>
+  );
+}

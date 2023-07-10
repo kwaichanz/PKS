@@ -1,4 +1,4 @@
-      // Unused
+// Unused
 
 import { StaticImageData } from "next/image";
 import image1 from "../../../public/images/hero-slide-1.webp";
@@ -15,7 +15,6 @@ export const images: string[] | StaticImageData[] = [
   image5,
 ];
 
-const imageByIndex = (index: number): string | StaticImageData =>
-  images[index % images.length];
+const imageByIndex = (index: number) => images[index % images.length];
 
 export default imageByIndex;

@@ -8,6 +8,7 @@ import { bubblegum } from "../utils/fonts";
 import "./about.scss";
 import { fetchAPI } from "../utils/fetchApi";
 import { getStrapiMedia } from "../utils/api-helpers";
+import Hero from "@/components/Hero/Hero";
 
 interface IAboutData {
   id: string;
@@ -63,7 +64,7 @@ export default function About() {
       console.error(error);
     } finally {
       console.log("banner data ", bannerData);
-      setIsLoading(false);
+      setIsLoading(false); 
     }
   };
 
@@ -73,41 +74,9 @@ export default function About() {
 
   return (
     <div className="flex flex-col items-center relative select-none min-h-[1000px]">
-      <header className="about-banner flex justify-center  w-full pt-24 h-[600px]">
-        <div
-          className="actor "
-          style={{
-            backgroundImage:
-              // bannerData && !isLoading
-              //   ? bannerData[0] && !isLoading
-              //     ? `url(${String(getStrapiMedia(bannerData[0]))})`
-              "url(images/about/about_banner.jpg)",
-            // : "url(images/about/about_banner.jpg)",
-          }}
-        ></div>
-        <div
-          className="actor"
-          style={{
-            backgroundImage:
-              bannerData && !isLoading
-                ? bannerData[1] && !isLoading
-                  ? `url(${String(getStrapiMedia(bannerData[1]))})`
-                  : "url(images/about/about_banner_2.jpg)"
-                : "url(images/about/about_banner_2.jpg)",
-          }}
-        ></div>
-        <div
-          className="actor"
-          style={{
-            backgroundImage:
-              bannerData && !isLoading
-                ? bannerData[2] && !isLoading
-                  ? `url(${String(getStrapiMedia(bannerData[2]))})`
-                  : "url(images/about/about_banner_3.jpg)"
-                : "url(images/about/about_banner_3.jpg)",
-          }}
-        ></div>
-      </header>
+      {!isLoading && (
+      <Hero isLoading={isLoading} bannerData={bannerData}/>
+      )}
       {!isLoading && (
         <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
           <section className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">

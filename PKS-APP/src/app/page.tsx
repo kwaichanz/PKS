@@ -2,7 +2,7 @@
 
 import React, { Suspense, useEffect, useRef, useState } from "react";
 
-import { Hero } from "@/components/Hero/Hero";
+import { Hero } from "@/components/HomeHero/HomeHero";
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
 import { Feeds } from "@/components/Feeds/Feeds";
 
