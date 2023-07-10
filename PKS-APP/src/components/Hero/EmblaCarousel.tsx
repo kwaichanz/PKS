@@ -65,11 +65,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   // var images: Array<any> = [];
 
-  var [imageSlides, setImageSlides] = useState([0]);
+  var [imageSlides, setImageSlides] = useState<number[]>([0]);
 
-  var [imageUrls, setImageUrls] = useState([""]);
+  var [imageUrls, setImageUrls] = useState<string[]>([""]);
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<Boolean>(true);
 
   const fetchImages = async () => {
     try {
@@ -82,9 +82,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         },
       };
 
-      // console.log("slides", slides);
-      // Unused
-      // console.log("imgbyidx", imageByIndex(1));
       const responseData = await fetchAPI(path, urlParamsObject);
 
       const images = responseData.data[0].attributes.image.data;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Balancer from 'react-wrap-balancer'
+import Balancer from "react-wrap-balancer";
 
 import { ProductCard } from "./ProductCard";
 import { cardItems } from "../../../mocks/product_card_items";
@@ -16,7 +16,7 @@ interface ICards {
 
 export const ProductCardSection = () => {
   const [cards, setCards] = useState<ICards[] | null>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<Boolean>(true);
 
   const fetchCards = async () => {
     try {

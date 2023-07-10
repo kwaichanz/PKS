@@ -40,7 +40,7 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
       const data = responseData?.data[0].attributes;
       // console.log("data :", data);
 
-      const featuredInfo = {
+      const featuredInfo: IFeaturedData = {
         title: data?.title,
         subtitle: data?.subtitle,
         description: data?.description,

@@ -66,7 +66,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
               src={
                 leftFeed?.image.data.attributes.url
                   ? String(getStrapiMedia(leftFeed?.image.data.attributes.url))
-                  : feeds[0].image
+                  : feeds[0]?.image
               }
               alt="leftfeed"
               className="rounded-s-[120px] "
@@ -97,7 +97,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
               src={
                 rightFeed?.image.data.attributes.url
                   ? String(getStrapiMedia(rightFeed?.image.data.attributes.url))
-                  : feeds[1].image
+                  : feeds[1]?.image
               }
               alt="rightfeed"
               className=" rounded-e-[120px] "
