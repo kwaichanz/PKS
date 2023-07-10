@@ -1,5 +1,3 @@
-"use client";
-
 import { getStrapiMedia } from "@/app/utils/api-helpers";
 import React from "react";
 

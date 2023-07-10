@@ -1,8 +1,8 @@
 import { Footer } from "@/components/Footer/Footer";
-import { Navbar } from "../components/Navbar/Navbar";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
+import Navbar from "@/components/NavBar/NavBar";
 
 export const metadata = {
   title: "Panoatkaset",
