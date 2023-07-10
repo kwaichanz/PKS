@@ -9,7 +9,9 @@ type HeroProps = {
 };
 
 export default function Hero({ bannerData, isLoading }: HeroProps) {
-  bannerData = [];
+  
+  console.log("hero bannerData", bannerData);
+  console.log("hero isLoading", isLoading);
   return (
     <header className="about-banner flex justify-center  w-full pt-24 h-[600px]">
       <div

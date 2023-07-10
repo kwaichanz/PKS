@@ -8,3 +8,4 @@
 
 3. Working on implementing a new NavBar.
 
+4. A new Hero component pull out from About page requires string[] and isLoading state.

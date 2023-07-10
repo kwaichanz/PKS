@@ -32,7 +32,7 @@ export default function About() {
         pagination: {},
       };
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log("responseData", responseData);
+      // console.log("responseData", responseData);
 
       //  Destructuring and Property Shorthand
       const aboutData = (({
@@ -46,7 +46,7 @@ export default function About() {
         About_middle_sector,
         About_bottom_sector,
       }))(responseData.data.attributes);
-      console.log("aboutData", aboutData);
+      // console.log("aboutData", aboutData);
 
       setBannerData(
         aboutData.About_banner.image.data.map((element: any) => {
@@ -54,17 +54,19 @@ export default function About() {
           return element?.attributes!.url;
         })
       );
-      console.log("banner data ", bannerData);
+      // console.log("banner data ", bannerData);
+      console.log("isLoading" , isLoading);
 
       setAboutTopData(aboutData.About_top_sector);
       setAboutMiddleData(aboutData.About_middle_sector);
       setAboutBottomData(aboutData.About_bottom_sector);
-      console.log("About Top Dta : ", aboutData.About_top_sector);
+      // console.log("About Top Dta : ", aboutData.About_top_sector);
     } catch (error) {
       console.error(error);
     } finally {
       console.log("banner data ", bannerData);
       setIsLoading(false); 
+      
     }
   };
 
