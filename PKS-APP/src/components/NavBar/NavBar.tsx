@@ -6,14 +6,15 @@ import classNames from "classnames";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Image from "next/image";
+import { cherry, montserrat, noto, prompt, thasadith } from "@/app/utils/fonts";
 
 type Props = {};
 
-export default function Navbar({ }: Props) {
-
-
+export default function Navbar({}: Props) {
   return (
-    <NavigationMenu.Root className="sticky top-0 z-50 flex w-screen  ">
+    <NavigationMenu.Root
+      className={`sticky top-0 z-50 flex w-screen ${prompt.className}`}
+    >
       <NavigationMenu.List className="center shadow-blackA7 m-0 flex  list-none rounded-[6px] bg-white px-6 shadow-[0_2px_10px] h-20 items-center w-screen ">
         <Link href="/" className="mr-6">
           <Image
@@ -26,7 +27,7 @@ export default function Navbar({ }: Props) {
           />
         </Link>
         <NavigationMenu.Item className="">
-          <NavigationMenu.Trigger className="text-violet11 hover:bg-violet-3 focus:shadow-violet7 group flex select-none items-center  gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+          <NavigationMenu.Trigger className="text-amber11 hover:bg-violet-3 focus:shadow-violet7 group flex select-none items-center  gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
             สินค้า{" "}
             <CaretDownIcon
               className="text-violet10 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
@@ -57,30 +58,34 @@ export default function Navbar({ }: Props) {
                       Coffee Primitives
                     </div>
                     <p className="text-mauve4 text-[14px] leading-[1.3]">
-                      Unstyled, accessible components for React.
+                      Genuine coffee primitives, built with care.
                     </p>
                   </a>
                 </NavigationMenu.Link>
               </li>
 
-              <ListItem href="https://stitches.dev/" title="Stitches">
-                CSS-in-JS with best-in-class developer experience.
+              <ListItem href="">
+                A strong and concentrated coffee made by forcing hot water
+                through finely ground coffee beans
               </ListItem>
-              <ListItem href="/colors" title="Colors">
-                Beautiful, thought-out palettes with auto dark mode.
+              <ListItem href="">
+                A classic Italian coffee beverage made with equal parts
+                espresso, steamed milk, and milk foam.
               </ListItem>
-              <ListItem href="https://icons.radix-ui.com/" title="Icons">
-                A crisp set of 15x15 icons, balanced and consistent.
+              <ListItem href="">
+                A popular coffee drink made with espresso and steamed milk.
               </ListItem>
 
-              <ListItem href="https://stitches.dev/" title="Stitches">
-                CSS-in-JS with best-in-class developer experience.
+              <ListItem href="">
+                A simple coffee drink made by diluting espresso with hot water.
               </ListItem>
-              <ListItem href="/colors" title="Colors">
-                Beautiful, thought-out palettes with auto dark mode.
+              <ListItem href="">
+                A small and strong coffee consisting of a shot of espresso
+                stained or marked with a small amount of milk.
               </ListItem>
-              <ListItem href="https://icons.radix-ui.com/" title="Icons">
-                A crisp set of 15x15 icons, balanced and consistent.
+              <ListItem href="">
+                A decadent coffee beverage combining espresso, steamed milk, and
+                chocolate syrup or powder.
               </ListItem>
             </ul>
           </NavigationMenu.Content>
@@ -96,39 +101,27 @@ export default function Navbar({ }: Props) {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="absolute top-0 left-0 w-full sm:w-auto">
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <ListItem
-                title="Introduction"
-                href="/docs/primitives/overview/introduction"
-              >
-                Build high-quality, accessible design systems and web apps.
+              <ListItem title="Introduction" href="">
+                Buy high-quality, accessible blended coffee.
               </ListItem>
-              <ListItem
-                title="Getting started"
-                href="/docs/primitives/overview/getting-started"
-              >
-                A quick tutorial to get you up and running with Radix
-                Primitives.
+              <ListItem title="Getting started" href="">
+                A quick tutorial to get yourself an unforgettable taste of
+                coffee.
               </ListItem>
-              <ListItem title="Styling" href="/docs/primitives/guides/styling">
-                Unstyled and compatible with any styling solution.
+              <ListItem title="Packaging" href="">
+                Unstyled and compatible with any container.
               </ListItem>
-              <ListItem
-                title="Animation"
-                href="/docs/primitives/guides/animation"
-              >
-                Use CSS keyframes or any animation library of your choice.
+              <ListItem title="Promotions" href="">
+                Get the best deals from us.
               </ListItem>
-              <ListItem
-                title="Accessibility"
-                href="/docs/primitives/overview/accessibility"
-              >
-                Tested in a range of browsers and assistive technologies.
+              <ListItem title="Accessibility" href="">
+                Important information regarding accessibility.
               </ListItem>
               <ListItem
                 title="Releases"
                 href="/docs/primitives/overview/releases"
               >
-                Radix Primitives releases and their changelogs.
+                See all our releases.
               </ListItem>
             </ul>
           </NavigationMenu.Content>
@@ -152,8 +145,6 @@ export default function Navbar({ }: Props) {
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-
-
         <NavigationMenu.Item className="mr-0">
           <NavigationMenu.Link
             className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
@@ -162,8 +153,6 @@ export default function Navbar({ }: Props) {
             ติดต่อ
           </NavigationMenu.Link>
         </NavigationMenu.Item>
-
-
 
         <NavigationMenu.Indicator className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]">
           <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-red-400" />
