@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 
 import { bubblegum } from "../utils/fonts";
-import "./about.scss";
 import { fetchAPI } from "../utils/fetchApi";
 import { getStrapiMedia } from "../utils/api-helpers";
 import Hero from "@/components/Hero/Hero";
@@ -55,7 +54,7 @@ export default function About() {
         })
       );
       // console.log("banner data ", bannerData);
-      console.log("isLoading" , isLoading);
+      console.log("isLoading", isLoading);
 
       setAboutTopData(aboutData.About_top_sector);
       setAboutMiddleData(aboutData.About_middle_sector);
@@ -65,8 +64,7 @@ export default function About() {
       console.error(error);
     } finally {
       console.log("banner data ", bannerData);
-      setIsLoading(false); 
-      
+      setIsLoading(false);
     }
   };
 
@@ -76,9 +74,7 @@ export default function About() {
 
   return (
     <div className="flex flex-col items-center relative select-none min-h-[1000px]">
-      {!isLoading && (
-      <Hero isLoading={isLoading} bannerData={bannerData}/>
-      )}
+      {!isLoading && <Hero isLoading={isLoading} bannerData={bannerData} />}
       {!isLoading && (
         <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
           <section className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">

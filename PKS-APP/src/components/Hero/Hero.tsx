@@ -3,17 +3,18 @@
 import { getStrapiMedia } from "@/app/utils/api-helpers";
 import React from "react";
 
+import "./Hero.scss";
+
 type HeroProps = {
   bannerData: string[];
   isLoading?: boolean;
 };
 
 export default function Hero({ bannerData, isLoading }: HeroProps) {
-  
   console.log("hero bannerData", bannerData);
   console.log("hero isLoading", isLoading);
   return (
-    <header className="about-banner flex justify-center  w-full pt-24 h-[600px]">
+    <header className="hero-banner flex justify-center w-full pt-24 h-[600px]">
       <div
         className="actor "
         style={{

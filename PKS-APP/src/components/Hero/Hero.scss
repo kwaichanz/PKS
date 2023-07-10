@@ -1,6 +1,6 @@
 
   
-  .about-banner {
+  .hero-banner {
     // height: 100vh;
     overflow: hidden;
     position: relative;
@@ -8,7 +8,7 @@
   }
 
   
-.about-banner::after {
+.hero-banner::after {
     content: "";
     display: block;
     position: absolute;
