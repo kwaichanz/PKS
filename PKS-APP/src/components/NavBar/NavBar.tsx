@@ -119,7 +119,7 @@ export default function Navbar({}: Props) {
               </ListItem>
               <ListItem
                 title="Releases"
-                href="/docs/primitives/overview/releases"
+                href=""
               >
                 See all our releases.
               </ListItem>
@@ -130,7 +130,7 @@ export default function Navbar({}: Props) {
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-            href="https://github.com/radix-ui"
+            href=""
           >
             พีเคเอสแคร์
           </NavigationMenu.Link>
@@ -139,7 +139,7 @@ export default function Navbar({}: Props) {
         <NavigationMenu.Item className="ml-auto ">
           <NavigationMenu.Link
             className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-            href="https://github.com/radix-ui"
+            href="/about"
           >
             เกี่ยวกับ
           </NavigationMenu.Link>
@@ -148,7 +148,7 @@ export default function Navbar({}: Props) {
         <NavigationMenu.Item className="mr-0">
           <NavigationMenu.Link
             className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-            href="https://github.com/radix-ui"
+            href=""
           >
             ติดต่อ
           </NavigationMenu.Link>
