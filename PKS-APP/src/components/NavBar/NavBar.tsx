@@ -216,27 +216,34 @@ export default function Navbar({ }: Props) {
             </NavigationMenu.Trigger>
             <NavigationMenu.Content className="absolute top-0 left-0 w-full sm:w-auto">
               <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-                <ListItem title={`Introduction`} href="">
-                  Buy high-quality, accessible blended coffee.
+                <ListItem title={`${NavbarSecondMenuListData?.item_1_title ? NavbarSecondMenuListData.item_1_title : "Introduction"}`} href="">
+                  {NavbarSecondMenuListData?.item_1_subtitle ? NavbarSecondMenuListData.item_1_subtitle : "Buy high-quality, accessible blended coffee."}
+
                 </ListItem>
-                <ListItem title={`Getting`} href="">
-                  A quick tutorial to get yourself an unforgettable taste of
+                <ListItem title={`${NavbarSecondMenuListData?.item_2_title ? NavbarSecondMenuListData.item_2_title : "Getting"}`} href="">
+                  {NavbarSecondMenuListData?.item_2_subtitle ? NavbarSecondMenuListData.item_2_subtitle : "A quick tutorial to get yourself an unforgettable taste of"}
+
                   coffee.
                 </ListItem>
-                <ListItem title={`Packaging`} href="">
-                  Unstyled and compatible with any container.
+                <ListItem title={`${NavbarSecondMenuListData?.item_3_title ? NavbarSecondMenuListData.item_3_title : "Packaging"}`} href="">
+                  {NavbarSecondMenuListData?.item_3_subtitle ? NavbarSecondMenuListData.item_3_subtitle : "Unstyled and compatible with any container."}
+
+
                 </ListItem>
-                <ListItem title={`Promotions`} href="">
-                  Get the best deals from us.
+                <ListItem title={`${NavbarSecondMenuListData?.item_4_title ? NavbarSecondMenuListData.item_4_title : "Promotions"}`} href="">
+                  {NavbarSecondMenuListData?.item_4_subtitle ? NavbarSecondMenuListData.item_4_subtitle : "Get the best deals from us."}
+
                 </ListItem>
-                <ListItem title={`Accessibility`} href="">
-                  Important information regarding accessibility.
+                <ListItem title={`${NavbarSecondMenuListData?.item_5_title ? NavbarSecondMenuListData.item_5_title : "Accessibility"}`} href="">
+                  {NavbarSecondMenuListData?.item_5_subtitle ? NavbarSecondMenuListData.item_5_subtitle : "Important information regarding accessibility."}
+
                 </ListItem>
                 <ListItem
-                  title={`Releases`}
+                  title={`${NavbarSecondMenuListData?.item_6_title ? NavbarSecondMenuListData.item_6_title : "Releases"}`}
                   href=""
                 >
-                  See all our releases.
+                  {NavbarSecondMenuListData?.item_6_subtitle ? NavbarSecondMenuListData.item_6_subtitle : "See all our releases."}
+
                 </ListItem>
               </ul>
             </NavigationMenu.Content>
