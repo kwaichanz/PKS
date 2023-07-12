@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_components_nav_menu_list_items",
+  "info": {
+    "displayName": "Nav_menu_list_items",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "item_1_title": {
+      "type": "string"
+    },
+    "item_1_subtitle": {
+      "type": "string"
+    },
+    "item_2_title": {
+      "type": "string"
+    },
+    "item_2_subtitle": {
+      "type": "string"
+    },
+    "item_3_title": {
+      "type": "string"
+    },
+    "item_3_subtitle": {
+      "type": "string"
+    },
+    "item_4_title": {
+      "type": "string"
+    },
+    "item_4_subtitle": {
+      "type": "string"
+    },
+    "item_5_title": {
+      "type": "string"
+    },
+    "item_5_subtitle": {
+      "type": "string"
+    },
+    "item_6_title": {
+      "type": "string"
+    },
+    "item_6_subtitle": {
+      "type": "string"
+    }
+  }
+}

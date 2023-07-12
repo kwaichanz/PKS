@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_navbar_menus",
+  "info": {
+    "displayName": "Navbar_menu",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Navbar_menu_1": {
+      "type": "string"
+    },
+    "Navbar_menu_2": {
+      "type": "string"
+    },
+    "Navbar_menu_3": {
+      "type": "string"
+    },
+    "Navbar_menu_4": {
+      "type": "string"
+    },
+    "Navbar_menu_5": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_navbar_menu_list_1s",
+  "info": {
+    "displayName": "Navbar_menu_list_1",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Navbar_menu_list_cover": {
+      "displayName": "Navbar_menu_list_cover",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.navbar-menu-list-cover"
+    },
+    "Nav_menu_list_item_1": {
+      "displayName": "Nav_menu_list_item",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.nav-menu-list-item"
+    }
+  }
+}

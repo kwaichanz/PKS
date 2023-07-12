@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "Navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Navbar_menu": {
+      "displayName": "Navbar_menu",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.navbar-menu"
+    },
+    "Navbar_menu_list_1": {
+      "displayName": "Navbar_menu_list_1",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.navbar-menu-list-1"
+    },
+    "Nav_menu_list_item_2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.nav-menu-list-item"
+    }
+  }
+}

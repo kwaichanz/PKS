@@ -49,7 +49,7 @@ export const ProductCard = ({ product }: IProductCardProp) => {
         </div>
         <div className="h-[150px] w-full absolute opacity-0 fd-sh group-hover:opacity-100 flex flex-col justify-center items-center text-center font-serif">
           <span
-            className={`select-none text-lg sm:text-xl font-bold text-red-500 tracking-wider leading-relaxed ${cherry.className}`}
+            className={`select-none text-lg sm:text-xl font-bold text-orange-600 tracking-wider leading-relaxed ${cherry.className}`}
           >
             {product.description}
           </span>

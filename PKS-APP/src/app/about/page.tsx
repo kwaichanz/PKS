@@ -54,7 +54,6 @@ export default function About() {
         })
       );
       // console.log("banner data ", bannerData);
-      console.log("isLoading", isLoading);
 
       setAboutTopData(aboutData.About_top_sector);
       setAboutMiddleData(aboutData.About_middle_sector);
@@ -63,7 +62,7 @@ export default function About() {
     } catch (error) {
       console.error(error);
     } finally {
-      console.log("banner data ", bannerData);
+      // console.log("banner data ", bannerData);
       setIsLoading(false);
     }
   };

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_components_navbar_menu_list_covers",
+  "info": {
+    "displayName": "Navbar_menu_list_cover",
+    "icon": "server",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

@@ -884,6 +884,39 @@ export interface ApiHomepage2Homepage2 extends Schema.SingleType {
   };
 }
 
+export interface ApiNavbarNavbar extends Schema.SingleType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Navbar_menu: Attribute.Component<'components.navbar-menu'>;
+    Navbar_menu_list_1: Attribute.Component<'components.navbar-menu-list-1'>;
+    Nav_menu_list_item_2: Attribute.Component<'components.nav-menu-list-item'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductCategoryProductCategory
   extends Schema.CollectionType {
   collectionName: 'product_categories';
@@ -973,6 +1006,7 @@ declare module '@strapi/strapi' {
       'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;
       'api::home-feed.home-feed': ApiHomeFeedHomeFeed;
       'api::homepage2.homepage2': ApiHomepage2Homepage2;
+      'api::navbar.navbar': ApiNavbarNavbar;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::section-banner.section-banner': ApiSectionBannerSectionBanner;
     }
