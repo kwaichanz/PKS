@@ -8,7 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { prompt } from "@/app/utils/fonts";
 import { fetchAPI } from "@/app/utils/fetchApi";
-import { getExtractedData } from "@/app/utils/api-helpers";
 
 type Props = {};
 
@@ -29,13 +28,6 @@ export default function Navbar({ }: Props) {
       const responseData = await fetchAPI(path, urlParamsObject);
       console.log("nav esponseData", responseData);
 
-      const extractedData = await responseData.data.attributes.map((item) => {
-        return item
-      })
-
-      console.log("nav extractedData", extractedData);
-
-
     } catch (error) {
       console.log(error);
     }
@@ -48,10 +40,20 @@ export default function Navbar({ }: Props) {
 
   return (
     <NavigationMenu.Root
-      className={`sticky top-0 z-50 flex w-screen ${prompt.className}`}
+      className={`sticky top-0 z-50 flex flex-col w-screen ${prompt.className} bg-brown3 shadow-[0_2px_10px]`}
     >
-      <NavigationMenu.List className="center shadow-blackA9 m-0 flex list-none rounded-[6px] bg-brown3 px-1 sm:px-6 shadow-[0_2px_10px] h-20 items-center w-screen ">
-        <Link href="/" className="mr-2 sm:mr-6">
+      <Link href="/" className="mr-2 sm:mr-6 sm:hidden self-center">
+        <Image
+          src="/brand_logo.png"
+          width={60}
+          height={60}
+          alt="PKS"
+          className="static rounded-2xl min-w-[30px]"
+          loading="lazy"
+        />
+      </Link>
+      <NavigationMenu.List className="center shadow-blackA9 m-0 flex justify-center sm:justify-normal list-none rounded-[6px] px-1 sm:px-6 h-12 sm:h-20 items-center w-screen ">
+        <Link href="/" className="mr-2 sm:mr-6 hidden sm:inline">
           <Image
             src="/brand_logo.png"
             width={60}
@@ -177,7 +179,7 @@ export default function Navbar({ }: Props) {
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className="ml-auto ">
+        <NavigationMenu.Item className="sm:ml-auto ">
           <NavigationMenu.Link
             className="text-brown11 hover:bg-brown4 focus:shadow-violet7 px-1  block select-none rounded-[4px] sm:px-3 py-2 text-md  leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
             href="/about"
