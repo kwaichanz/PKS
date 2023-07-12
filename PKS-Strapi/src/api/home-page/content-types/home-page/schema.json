@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero_slide": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.hero-slide"
+    },
+    "Product_category_header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.product-category-header"
+    },
+    "Product_category_card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.product-category-card"
+    },
+    "Featured_product": {
+      "displayName": "Featured_product",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.featured-product"
+    }
+  }
+}

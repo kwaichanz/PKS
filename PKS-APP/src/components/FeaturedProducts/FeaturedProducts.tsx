@@ -37,7 +37,12 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
       const responseData = await fetchAPI(path, urlParamsObject);
       // console.log("responseData", responseData);
 
-      const data = responseData?.data[0].attributes;
+      if (!responseData?.data[0]?.attributes) {
+        console.error("Cannot get FeaturedProducts data");
+        return;
+      }
+
+      const data = await responseData?.data[0].attributes;
       // console.log("data :", data);
 
       const featuredInfo: IFeaturedData = {
@@ -90,10 +95,10 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
                   src={
                     featuredData?.image
                       ? String(
-                          getStrapiMedia(
-                            featuredData?.image?.data?.attributes?.url
-                          )
+                        getStrapiMedia(
+                          featuredData?.image?.data?.attributes?.url
                         )
+                      )
                       : featured.image
                   }
                   alt={featuredData?.title}
@@ -135,19 +140,19 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
               <div className="content-text ">
                 <p className={`text ${thasadith.className}`}>
                   <Balancer>
-                  {featuredData?.description ? (
-                    featuredData?.description
-                  ) : (
-                    <>
-                      เริ่มต้นจากแนวความคิดที่ว่า
-                      ประเทศบราซิลซึ่งเป็นต้นตำรับกาแฟและดินแดนแห่งนี้มีป่า
-                      อันเป็นสุดยอดแห่งป่าดงดิบธรรมชาติของโลก
-                      ที่อุดมไปด้วยเสน่ห์ของธรรมชาติอันยิ่งใหญ่
-                      ทั้งพืชพรรณแมกไม้ สายน้ำ สัตว์ป่านานาชนิด
-                      และยังเป็นแหล่งผลิตอากาศอันบริสุทธิ์
-                      แนวความคิดนี้จึงถูกนำมาเพื่อสร้างสรรค์เป็นร้านกาแฟที่มีบรรยากาศร่มรื่นเย็นสบายด้วยร่มไม้และน้ำล้อมรอบ
-                    </>
-                  )}</Balancer>
+                    {featuredData?.description ? (
+                      featuredData?.description
+                    ) : (
+                      <>
+                        เริ่มต้นจากแนวความคิดที่ว่า
+                        ประเทศบราซิลซึ่งเป็นต้นตำรับกาแฟและดินแดนแห่งนี้มีป่า
+                        อันเป็นสุดยอดแห่งป่าดงดิบธรรมชาติของโลก
+                        ที่อุดมไปด้วยเสน่ห์ของธรรมชาติอันยิ่งใหญ่
+                        ทั้งพืชพรรณแมกไม้ สายน้ำ สัตว์ป่านานาชนิด
+                        และยังเป็นแหล่งผลิตอากาศอันบริสุทธิ์
+                        แนวความคิดนี้จึงถูกนำมาเพื่อสร้างสรรค์เป็นร้านกาแฟที่มีบรรยากาศร่มรื่นเย็นสบายด้วยร่มไม้และน้ำล้อมรอบ
+                      </>
+                    )}</Balancer>
                 </p>
               </div>
               <div className="content-buttons xl:mt-0 md:mt-2 mt-4">

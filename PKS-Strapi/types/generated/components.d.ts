@@ -50,6 +50,18 @@ export interface ComponentsAboutTopSector extends Schema.Component {
   };
 }
 
+export interface ComponentsFeaturedProduct extends Schema.Component {
+  collectionName: 'components_components_featured_products';
+  info: {
+    displayName: 'Featured_product';
+    icon: 'landscape';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
 export interface ComponentsHeroSlide extends Schema.Component {
   collectionName: 'components_components_hero_slides';
   info: {
@@ -133,11 +145,13 @@ export interface ComponentsProductCategoryCard extends Schema.Component {
   info: {
     displayName: 'Product-category-card';
     icon: 'picture';
+    description: '';
   };
   attributes: {
-    category_name: Attribute.String;
-    Category_images: Attribute.Media;
-    Inner_text: Attribute.String;
+    name: Attribute.String;
+    image: Attribute.Media;
+    description: Attribute.String;
+    urlPath: Attribute.String;
   };
 }
 
@@ -160,6 +174,7 @@ declare module '@strapi/strapi' {
       'components.about-middle-sector': ComponentsAboutMiddleSector;
       'components.about-panel': ComponentsAboutPanel;
       'components.about-top-sector': ComponentsAboutTopSector;
+      'components.featured-product': ComponentsFeaturedProduct;
       'components.hero-slide': ComponentsHeroSlide;
       'components.nav-menu-list-item': ComponentsNavMenuListItem;
       'components.navbar-menu-list-1': ComponentsNavbarMenuList1;

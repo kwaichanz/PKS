@@ -127,7 +127,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold`}
                         >
                           <Balancer>
-                            ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ
+                            {/* ขายส่งเมล็ดกาแฟคั่ว เกรดสำหรับร้านกาแฟ */}
                           </Balancer>
                         </h1>
                         <div
@@ -136,8 +136,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                           <p className="">
                             <Balancer>
                               {" "}
-                              The industry leading pure-play coffee company,
-                              serving approximately 4,200 cups of tea per second
+                              {/* The industry leading pure-play coffee company, */}
+                              {/* serving approximately 4,200 cups of tea per second */}
                             </Balancer>
                           </p>
                         </div>

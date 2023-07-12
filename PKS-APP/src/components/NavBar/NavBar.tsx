@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
 import { CaretDownIcon } from "@radix-ui/react-icons";
@@ -16,8 +16,9 @@ type NavbarResponseData = {
 
 }
 
-export default function Navbar({ }: Props) {
 
+export default function Navbar({ }: Props) {
+  const [NavbarMenu, setNavbarMenu] = useState<string[]>()
   const fetchNavbarData = async () => {
     try {
       const path = "/navbar";
@@ -27,6 +28,20 @@ export default function Navbar({ }: Props) {
       };
       const responseData = await fetchAPI(path, urlParamsObject);
       console.log("nav esponseData", responseData);
+
+      if (!responseData.data.attributes) {
+        console.error("Cannot get navbar data");
+        return;
+      }
+
+      const { Navbar_menu, Navbar_menu_list_1, Nav_menu_list_item_2 } = await responseData.data.attributes;
+
+      console.log("Navbar_menu", Navbar_menu);
+      console.log("Navbar_menu_list_1", Navbar_menu_list_1);
+      console.log("Nav_menu_list_item_2", Nav_menu_list_item_2);
+
+      // setNavbar_menu(Navbar_menu);
+
 
     } catch (error) {
       console.log(error);
@@ -142,7 +157,7 @@ export default function Navbar({ }: Props) {
               aria-hidden
             />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-0 left-0 w-full sm:w-auto">
+          {/* <NavigationMenu.Content className="absolute top-0 left-0 w-full sm:w-auto">
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
               <ListItem title="Introduction" href="">
                 Buy high-quality, accessible blended coffee.
@@ -167,7 +182,7 @@ export default function Navbar({ }: Props) {
                 See all our releases.
               </ListItem>
             </ul>
-          </NavigationMenu.Content>
+          </NavigationMenu.Content> */}
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>

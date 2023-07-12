@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_components_featured_products",
+  "info": {
+    "displayName": "Featured_product",
+    "icon": "landscape",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

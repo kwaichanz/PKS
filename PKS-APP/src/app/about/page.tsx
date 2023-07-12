@@ -92,8 +92,8 @@ export default function About() {
                   src={
                     aboutTopData?.image
                       ? String(
-                          getStrapiMedia(aboutTopData.image.data.attributes.url)
-                        )
+                        getStrapiMedia(aboutTopData.image.data.attributes.url)
+                      )
                       : "/images/about/top_about_image.jpg"
                   }
                   alt="top_image"
@@ -175,10 +175,10 @@ export default function About() {
                     src={
                       aboutMiddleData?.image
                         ? String(
-                            getStrapiMedia(
-                              aboutMiddleData.image.data.attributes.url
-                            )
+                          getStrapiMedia(
+                            aboutMiddleData.image.data.attributes.url
                           )
+                        )
                         : "/images/about/middle_about_image.jpg"
                     }
                     alt="middle_about_image"
@@ -207,10 +207,10 @@ export default function About() {
                   src={
                     aboutBottomData?.image
                       ? String(
-                          getStrapiMedia(
-                            aboutBottomData?.image.data.attributes.url
-                          )
+                        getStrapiMedia(
+                          aboutBottomData?.image.data.attributes.url
                         )
+                      )
                       : "/images/about/bottom_about_image.jpg"
                   }
                   alt="bottom_image"

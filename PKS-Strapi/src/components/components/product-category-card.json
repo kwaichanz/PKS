@@ -2,24 +2,29 @@
   "collectionName": "components_components_product_category_cards",
   "info": {
     "displayName": "Product-category-card",
-    "icon": "picture"
+    "icon": "picture",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "category_name": {
+    "name": {
       "type": "string"
     },
-    "Category_images": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "Inner_text": {
+    "description": {
+      "type": "string"
+    },
+    "urlPath": {
       "type": "string"
     }
   }

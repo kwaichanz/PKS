@@ -29,7 +29,7 @@ export const ProductCardSection = () => {
       //   console.log("responseData", responseData);
 
       // Could refactor later with a utility function
-      const cards = responseData?.data?.map((data: any, index: number) => {
+      const cards = await responseData?.data?.map((data: any, index: number) => {
         // console.log("data", data);
         // console.log("index", index);
         return {
