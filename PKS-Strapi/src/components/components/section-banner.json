@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_components_featured_products",
+  "collectionName": "components_components_section_banners",
   "info": {
-    "displayName": "Featured_product",
-    "icon": "landscape",
+    "displayName": "Section_banner",
+    "icon": "picture",
     "description": ""
   },
   "options": {},
@@ -11,12 +11,6 @@
       "type": "string"
     },
     "subtitle": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "urlPath": {
       "type": "string"
     },
     "image": {

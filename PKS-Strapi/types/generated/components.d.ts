@@ -59,6 +59,10 @@ export interface ComponentsFeaturedProduct extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
+    subtitle: Attribute.String;
+    description: Attribute.Text;
+    urlPath: Attribute.String;
+    image: Attribute.Media;
   };
 }
 
@@ -167,6 +171,20 @@ export interface ComponentsProductCategoryHeader extends Schema.Component {
   };
 }
 
+export interface ComponentsSectionBanner extends Schema.Component {
+  collectionName: 'components_components_section_banners';
+  info: {
+    displayName: 'Section_banner';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.String;
+    image: Attribute.Media;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
@@ -182,6 +200,7 @@ declare module '@strapi/strapi' {
       'components.navbar-menu': ComponentsNavbarMenu;
       'components.product-category-card': ComponentsProductCategoryCard;
       'components.product-category-header': ComponentsProductCategoryHeader;
+      'components.section-banner': ComponentsSectionBanner;
     }
   }
 }

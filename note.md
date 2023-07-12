@@ -14,7 +14,7 @@
 
 WTD
 
-1. Link Strapi api with navbar
+<!-- 1. Link Strapi api with navbar -->
 
 2. A product(s) list/details page
 

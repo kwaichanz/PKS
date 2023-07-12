@@ -868,6 +868,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       true
     >;
     Featured_product: Attribute.Component<'components.featured-product'>;
+    Section_banner: Attribute.Component<'components.section-banner'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
