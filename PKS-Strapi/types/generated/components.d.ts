@@ -77,7 +77,7 @@ export interface ComponentsHeroSlide extends Schema.Component {
 export interface ComponentsNavMenuListItem extends Schema.Component {
   collectionName: 'components_components_nav_menu_list_items';
   info: {
-    displayName: 'Nav_menu_list_items';
+    displayName: 'Navbar_menu_list_items';
     icon: 'bulletList';
     description: '';
   };
@@ -106,7 +106,7 @@ export interface ComponentsNavbarMenuList1 extends Schema.Component {
   };
   attributes: {
     Navbar_menu_list_cover: Attribute.Component<'components.navbar-menu-list-cover'>;
-    Nav_menu_list_item_1: Attribute.Component<'components.nav-menu-list-item'>;
+    Navbar_menu_list_item_1: Attribute.Component<'components.nav-menu-list-item'>;
   };
 }
 

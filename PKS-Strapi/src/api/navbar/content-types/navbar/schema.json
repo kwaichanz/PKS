@@ -24,7 +24,7 @@
       "repeatable": false,
       "component": "components.navbar-menu-list-1"
     },
-    "Nav_menu_list_item_2": {
+    "Navbar_menu_list_item_2": {
       "type": "component",
       "repeatable": false,
       "component": "components.nav-menu-list-item"

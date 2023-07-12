@@ -935,7 +935,7 @@ export interface ApiNavbarNavbar extends Schema.SingleType {
   attributes: {
     Navbar_menu: Attribute.Component<'components.navbar-menu'>;
     Navbar_menu_list_1: Attribute.Component<'components.navbar-menu-list-1'>;
-    Nav_menu_list_item_2: Attribute.Component<'components.nav-menu-list-item'>;
+    Navbar_menu_list_item_2: Attribute.Component<'components.nav-menu-list-item'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

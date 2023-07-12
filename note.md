@@ -19,3 +19,5 @@ WTD
 2. A product(s) list/details page
 
 3. A News/Feed(s) page
+
+4. Link Homepage's component to the new api
