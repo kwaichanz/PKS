@@ -73,9 +73,7 @@ export const ProductCardSection = () => {
             {!isLoading && (
               <>
                 {cards?.map((item) => (
-                  <>
-                    <ProductCard key={item.id} product={item} />
-                  </>
+                  <ProductCard key={item.id} product={item} />
                 ))}
               </>
             )}

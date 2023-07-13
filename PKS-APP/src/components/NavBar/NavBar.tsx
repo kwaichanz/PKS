@@ -56,7 +56,7 @@ export default function Navbar({ }: Props) {
         pagination: {},
       };
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log("nav esponseData", responseData);
+      // console.log("nav esponseData", responseData);
 
       if (!responseData.data.attributes) {
         console.error("Cannot get navbar data");
@@ -65,9 +65,9 @@ export default function Navbar({ }: Props) {
 
       const { Navbar_menu, Navbar_menu_list_1, Navbar_menu_list_item_2 } = await responseData.data.attributes;
 
-      console.log("Navbar_menu", Navbar_menu);
-      console.log("Navbar_menu_list_1", Navbar_menu_list_1);
-      console.log("Navbar_menu_list_item_2", Navbar_menu_list_item_2);
+      // console.log("Navbar_menu", Navbar_menu);
+      // console.log("Navbar_menu_list_1", Navbar_menu_list_1);
+      // console.log("Navbar_menu_list_item_2", Navbar_menu_list_item_2);
 
       setNavbarMenuData(Navbar_menu);
 

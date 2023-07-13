@@ -73,7 +73,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const fetchImages = async () => {
     try {
-      const path = `/hero-slide-images`;
+      const path = `/Home-page`;
       const urlParamsObject = {
         populate: "image",
         pagination: {
@@ -84,18 +84,28 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
       const responseData = await fetchAPI(path, urlParamsObject);
 
-      const images = responseData.data[0].attributes.image.data;
+      // console.log("responseData : ", responseData);
+      // console.log("responseData.data : ", responseData.data.attributes.Hero_slide.Images.data);
 
-      const imageSlides = Array.from(Array(images.length).keys());
+      const extractedData = responseData.data.attributes.Hero_slide.Images.data.map(
+        (data: any) => {
+          return data.attributes.url
+        }
+      )
+      // console.log("extractedData : ", extractedData);
+
+      // const images = responseData.data[0].attributes.image.data;
+
+      const imageSlides = Array.from(Array(extractedData.length).keys());
+      // console.log("imageSlides : ", imageSlides);
       setImageSlides(imageSlides);
 
-      const imageUrls = images.map((data: any) => {
-        return data?.attributes?.url;
-      });
+      // const imageUrls = extractedData.map((data: any) => {
+      //   return data?.attributes?.url;
+      // });
 
-      setImageUrls(imageUrls);
-
-      // console.log("imageUrls : ", imageUrls);
+      console.log("extractedData setimg : ", extractedData);
+      setImageUrls(extractedData);
 
       setIsLoading(false);
     } catch (error) {
@@ -135,7 +145,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                         >
                           <p className="">
                             <Balancer>
-                              {" "}
                               {/* The industry leading pure-play coffee company, */}
                               {/* serving approximately 4,200 cups of tea per second */}
                             </Balancer>
