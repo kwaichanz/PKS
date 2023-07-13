@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_home_feeds",
+  "info": {
+    "displayName": "Home_feed",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "urlPath": {
+      "type": "string"
+    }
+  }
+}

@@ -38,6 +38,11 @@
       "type": "component",
       "repeatable": false,
       "component": "components.section-banner"
+    },
+    "Home_feed": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.home-feed"
     }
   }
 }

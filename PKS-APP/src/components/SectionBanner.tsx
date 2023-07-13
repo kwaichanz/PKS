@@ -13,15 +13,21 @@ export const SectionBanner = () => {
   const [bannerData, setBannerData] = useState<IBannerData>();
   const fetchBanner = async () => {
     try {
-      const path = "/section-banners";
+      const path = "/Home-page";
       const urlParamsObject = {
         populate: "image",
         pagination: {},
       };
 
       const responseData = await fetchAPI(path, urlParamsObject);
-      // console.log("responseData", responseData);
-      const { title, subtitle, image } = getExtractedData(responseData)[0];
+      // console.log("responseData section", responseData);
+
+      if (!responseData?.data.attributes.Section_banner) {
+        console.error("Cannot get Product cards data");
+        return;
+      }
+
+      const { title, subtitle, image } = responseData.data.attributes.Section_banner;
       // console.log("title", title);
       // console.log("subtitle", subtitle);
 

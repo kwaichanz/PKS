@@ -14,30 +14,43 @@ interface IFeedProp {
 }
 
 interface IFeedData {
+  id: number;
   title: string;
-  image?: any;
+  image: any;
   urlPath: string;
 }
 
 export const Feeds = ({ feeds }: IFeedProp) => {
   const [leftFeed, setLeftFeed] = useState<IFeedData>();
   const [rightFeed, setRightFeed] = useState<IFeedData>();
+  const [feedsData, setFeedsData] = useState<IFeedData[]>([]);
   const fetchFeeds = async () => {
     try {
-      const path = `/home-feeds`;
+      const path = `/Home-page`;
       const urlParamsObject = {
         populate: "image",
         pagination: {},
       };
 
       const responseData = await fetchAPI(path, urlParamsObject);
-      // console.log("responseData", responseData);
-      const [leftFeed, rightFeed] = getExtractedData(responseData);
+      console.log("responseData Feeds", responseData);
+
+      if (!responseData?.data.attributes.Home_feed) {
+        console.error("Cannot get Home feeds data");
+        return;
+      }
+
+      const extractedData = responseData?.data?.attributes.Home_feed.map((data: IFeedData) => {
+        return data
+      })
+      console.log("extractedData feeds", extractedData);
+      // const [leftFeed, rightFeed] = getExtractedData(responseData);
       // console.log("feed1", leftFeed);
       // console.log("feed2", rightFeed);
 
-      setLeftFeed(leftFeed);
-      setRightFeed(rightFeed);
+      // setLeftFeed(leftFeed);
+      // setRightFeed(rightFeed);
+      setFeedsData(extractedData);
     } catch (error) {
       console.error(error);
     }
@@ -45,6 +58,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
   useEffect(() => {
     fetchFeeds();
   }, []);
+
   return (
     <div className="newsfeed-content h-full bg-[#f7eedc] flex-col pt-28 ">
       <div className="content-header mb-16 block text-center select-none">
@@ -64,8 +78,8 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           <div className="content-image ">
             <img
               src={
-                leftFeed?.image.data.attributes.url
-                  ? String(getStrapiMedia(leftFeed?.image.data.attributes.url))
+                feedsData[0]?.image.data.attributes.url
+                  ? String(getStrapiMedia(feedsData[0]?.image.data.attributes.url))
                   : feeds[0]?.image
               }
               alt="leftfeed"
@@ -75,15 +89,15 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           <div className="content-header select-none">
             <h3 className={`uppercase ${kanit.className}`}>
               <Balancer>
-                {leftFeed?.title
-                  ? leftFeed.title
+                {feedsData[0]?.title
+                  ? feedsData[0].title
                   : "โออาร์ เปิดร้าน คาเฟ่ ฟอร์ แช้นส์ สาขาที่ 8"}
               </Balancer>
             </h3>
           </div>
           <div className="content-button">
             <Link
-              href={leftFeed?.urlPath || ""}
+              href={feedsData[0]?.urlPath || ""}
               prefetch
               className="btn btn-accent btn-outline min-h-6 px-8 hover:shadow-2xl"
             >
@@ -95,8 +109,8 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           <div className="content-image ">
             <img
               src={
-                rightFeed?.image.data.attributes.url
-                  ? String(getStrapiMedia(rightFeed?.image.data.attributes.url))
+                feedsData[1]?.image.data.attributes.url
+                  ? String(getStrapiMedia(feedsData[1]?.image.data.attributes.url))
                   : feeds[1]?.image
               }
               alt="rightfeed"
@@ -106,15 +120,15 @@ export const Feeds = ({ feeds }: IFeedProp) => {
           <div className="content-header select-none">
             <h3 className={`uppercase ${kanit.className}`}>
               <Balancer>
-                {rightFeed?.title
-                  ? rightFeed.title
+                {feedsData[1]?.title
+                  ? feedsData[1].title
                   : "เปิด Café สาขาแรกในมาเลเซีย ขยายตลาดเอเชียเป็นประเทศที่ 9"}
               </Balancer>
             </h3>
           </div>
           <div className="content-button">
             <Link
-              href={rightFeed?.urlPath || ""}
+              href={feedsData[1]?.urlPath || ""}
               prefetch
               className="btn btn-accent btn-outline px-8 "
             >

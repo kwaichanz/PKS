@@ -29,28 +29,28 @@ export const FeaturedProducts = ({ featured }: IFeaturedProp) => {
 
   const fetchFeaturedProducts = async () => {
     try {
-      const path = "/featured-products";
+      const path = "/Home-page";
       const urlParamsObject = {
         populate: "image",
         pagination: {},
       };
       const responseData = await fetchAPI(path, urlParamsObject);
-      // console.log("responseData", responseData);
+      // console.log("responseData FP", responseData);
 
-      if (!responseData?.data[0]?.attributes) {
+      if (!responseData?.data?.attributes) {
         console.error("Cannot get FeaturedProducts data");
         return;
       }
 
-      const data = await responseData?.data[0].attributes;
-      // console.log("data :", data);
+      const extractedData = await responseData?.data.attributes.Featured_product;
+      // console.log("extractedData FP :", extractedData);
 
       const featuredInfo: IFeaturedData = {
-        title: data?.title,
-        subtitle: data?.subtitle,
-        description: data?.description,
-        urlPath: data?.urlPath,
-        image: data?.image,
+        title: extractedData?.title,
+        subtitle: extractedData?.subtitle,
+        description: extractedData?.description,
+        urlPath: extractedData?.urlPath,
+        image: extractedData?.image,
       };
 
       // console.log("featuredInfo :", featuredInfo);

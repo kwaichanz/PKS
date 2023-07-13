@@ -20,26 +20,35 @@ export const ProductCardSection = () => {
 
   const fetchCards = async () => {
     try {
-      const path = `/product-categories`;
+      const path = `/Home-page`;
       const urlParamsObject = {
         populate: "image",
         pagination: {},
       };
       const responseData = await fetchAPI(path, urlParamsObject);
-      //   console.log("responseData", responseData);
+      // console.log("responseData", responseData);
+
+      if (!responseData?.data.attributes.Product_category_card) {
+        console.error("Cannot get Product cards data");
+        return;
+      }
+
+      // console.log("extracted cards data : ", responseData.data.attributes.Product_category_card);
 
       // Could refactor later with a utility function
-      const cards = await responseData?.data?.map((data: any, index: number) => {
+      const cards = await responseData.data.attributes.Product_category_card.map((data: any, index: number) => {
         // console.log("data", data);
         // console.log("index", index);
         return {
           id: index,
-          name: data?.attributes.Name,
-          description: data?.attributes.Description,
-          image: data?.attributes.image.data.attributes.formats.small.url,
-          urlPath: data?.attributes.urlPath,
+          name: data?.name,
+          description: data?.description,
+          image: data?.image.data.attributes.formats.small.url,
+          urlPath: data?.urlPath,
         };
       });
+
+      // console.log("cards", cards);
       // console.log("cards :", cards);
       setCards(cards as ICards[]);
       setIsLoading(false);

@@ -78,6 +78,19 @@ export interface ComponentsHeroSlide extends Schema.Component {
   };
 }
 
+export interface ComponentsHomeFeed extends Schema.Component {
+  collectionName: 'components_components_home_feeds';
+  info: {
+    displayName: 'Home_feed';
+    icon: 'picture';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    urlPath: Attribute.String;
+  };
+}
+
 export interface ComponentsNavMenuListItem extends Schema.Component {
   collectionName: 'components_components_nav_menu_list_items';
   info: {
@@ -194,6 +207,7 @@ declare module '@strapi/strapi' {
       'components.about-top-sector': ComponentsAboutTopSector;
       'components.featured-product': ComponentsFeaturedProduct;
       'components.hero-slide': ComponentsHeroSlide;
+      'components.home-feed': ComponentsHomeFeed;
       'components.nav-menu-list-item': ComponentsNavMenuListItem;
       'components.navbar-menu-list-1': ComponentsNavbarMenuList1;
       'components.navbar-menu-list-cover': ComponentsNavbarMenuListCover;

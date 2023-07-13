@@ -84,6 +84,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
       const responseData = await fetchAPI(path, urlParamsObject);
 
+
+      if (!responseData?.data.attributes.Hero_slide) {
+        console.error("Cannot get Hero Banner data");
+        return;
+      }
+
       // console.log("responseData : ", responseData);
       // console.log("responseData.data : ", responseData.data.attributes.Hero_slide.Images.data);
 
@@ -104,7 +110,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       //   return data?.attributes?.url;
       // });
 
-      console.log("extractedData setimg : ", extractedData);
+      // console.log("extractedData setimg : ", extractedData);
       setImageUrls(extractedData);
 
       setIsLoading(false);
