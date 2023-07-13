@@ -710,145 +710,6 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
   };
 }
 
-export interface ApiAboutSectorAboutSector extends Schema.CollectionType {
-  collectionName: 'about_sectors';
-  info: {
-    singularName: 'about-sector';
-    pluralName: 'about-sectors';
-    displayName: 'About_sector';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    top_title: Attribute.String;
-    top_description: Attribute.Text;
-    top_image: Attribute.Media;
-    center_title: Attribute.String;
-    center_description: Attribute.Text;
-    center_image: Attribute.Media;
-    bottom_title: Attribute.String;
-    bottom_description: Attribute.Text;
-    bottom_image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about-sector.about-sector',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about-sector.about-sector',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFeaturedProductFeaturedProduct
-  extends Schema.CollectionType {
-  collectionName: 'featured_products';
-  info: {
-    singularName: 'featured-product';
-    pluralName: 'featured-products';
-    displayName: 'Featured_product';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    subtitle: Attribute.String;
-    description: Attribute.Text;
-    urlPath: Attribute.String;
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::featured-product.featured-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::featured-product.featured-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHeroSlideImageHeroSlideImage extends Schema.CollectionType {
-  collectionName: 'hero_slide_images';
-  info: {
-    singularName: 'hero-slide-image';
-    pluralName: 'hero-slide-images';
-    displayName: 'Hero_slide_image';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::hero-slide-image.hero-slide-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::hero-slide-image.hero-slide-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomeFeedHomeFeed extends Schema.CollectionType {
-  collectionName: 'home_feeds';
-  info: {
-    singularName: 'home-feed';
-    pluralName: 'home-feeds';
-    displayName: 'Home_feed';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    image: Attribute.Media;
-    urlPath: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-feed.home-feed',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-feed.home-feed',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -881,41 +742,6 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomepage2Homepage2 extends Schema.SingleType {
-  collectionName: 'homepage2s';
-  info: {
-    singularName: 'homepage2';
-    pluralName: 'homepage2s';
-    displayName: 'Homepage2';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Slide: Attribute.Component<'components.hero-slide'>;
-    Product_Card_Header: Attribute.Component<'components.product-category-header'>;
-    Product_Category_Card: Attribute.Component<
-      'components.product-category-card',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::homepage2.homepage2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::homepage2.homepage2',
       'oneToOne',
       'admin::user'
     > &
@@ -956,66 +782,36 @@ export interface ApiNavbarNavbar extends Schema.SingleType {
   };
 }
 
-export interface ApiProductCategoryProductCategory
-  extends Schema.CollectionType {
-  collectionName: 'product_categories';
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
   info: {
-    singularName: 'product-category';
-    pluralName: 'product-categories';
-    displayName: 'Product_category';
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Product';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Description: Attribute.Text;
-    image: Attribute.Media;
-    urlPath: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product-category.product-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product-category.product-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSectionBannerSectionBanner extends Schema.CollectionType {
-  collectionName: 'section_banners';
-  info: {
-    singularName: 'section-banner';
-    pluralName: 'section-banners';
-    displayName: 'Section_banner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
     title: Attribute.String;
-    subtitle: Attribute.String;
+    description: Attribute.Text;
     image: Attribute.Media;
+    product_number: Attribute.String;
+    product_type: Attribute.String;
+    product_serve_type: Attribute.String;
+    size: Attribute.Component<'product.size'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::section-banner.section-banner',
+      'api::product.product',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::section-banner.section-banner',
+      'api::product.product',
       'oneToOne',
       'admin::user'
     > &
@@ -1040,15 +836,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
-      'api::about-sector.about-sector': ApiAboutSectorAboutSector;
-      'api::featured-product.featured-product': ApiFeaturedProductFeaturedProduct;
-      'api::hero-slide-image.hero-slide-image': ApiHeroSlideImageHeroSlideImage;
-      'api::home-feed.home-feed': ApiHomeFeedHomeFeed;
       'api::home-page.home-page': ApiHomePageHomePage;
-      'api::homepage2.homepage2': ApiHomepage2Homepage2;
       'api::navbar.navbar': ApiNavbarNavbar;
-      'api::product-category.product-category': ApiProductCategoryProductCategory;
-      'api::section-banner.section-banner': ApiSectionBannerSectionBanner;
+      'api::product.product': ApiProductProduct;
     }
   }
 }

@@ -91,7 +91,7 @@ export default function Navbar({ }: Props) {
 
   return (
     <NavigationMenu.Root
-      className={`sticky top-0 z-50 flex flex-col w-screen ${prompt.className} bg-brown3 shadow-[0_2px_10px]`}
+      className={`sticky top-0 z-50 flex flex-col w-screen ${prompt.className} bg-brown2 shadow-[0_2px_10px]`}
     >
 
       <Link href="/" className="mr-2 sm:mr-6 sm:hidden self-center">
@@ -104,19 +104,20 @@ export default function Navbar({ }: Props) {
           loading="lazy"
         />
       </Link>
-      {!isLoading && (<>
 
-        <NavigationMenu.List className="center shadow-blackA9 m-0 flex justify-center sm:justify-normal list-none rounded-[6px] px-1 sm:px-6 h-12 sm:h-20 items-center w-screen ">
-          <Link href="/" className="mr-2 sm:mr-6 hidden sm:inline">
-            <Image
-              src="/brand_logo.png"
-              width={60}
-              height={60}
-              alt="PKS"
-              className="static rounded-2xl min-w-[30px]"
-              loading="lazy"
-            />
-          </Link>
+      <NavigationMenu.List className="center shadow-blackA9 m-0 flex justify-center sm:justify-normal list-none rounded-[6px] px-1 sm:px-6 h-12 sm:h-20 items-center w-screen ">
+        <Link href="/" className="mr-2 sm:mr-6 hidden sm:inline">
+          <Image
+            src="/brand_logo.png"
+            width={60}
+            height={60}
+            alt="PKS"
+            className="static rounded-2xl min-w-[30px]"
+            loading="lazy"
+          />
+        </Link>
+        {!isLoading && (<>
+
           <NavigationMenu.Item >
             <NavigationMenu.Trigger className="text-brown11 hover:bg-violet-3 focus:shadow-violet7 px-1 group flex select-none items-center  gap-[2px] rounded-[4px] sm:px-3 py-2 text-md  leading-none outline-none focus:shadow-[0_0_0_2px]">
               {NavbarMenuData?.Navbar_menu_1
@@ -285,8 +286,8 @@ export default function Navbar({ }: Props) {
           <NavigationMenu.Indicator className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]">
             <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-amber8" />
           </NavigationMenu.Indicator>
-        </NavigationMenu.List>
-      </>)}
+        </>)}
+      </NavigationMenu.List>
 
       <div className="perspective-[2000px] absolute top-full left-0 flex w-full ">
         <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />

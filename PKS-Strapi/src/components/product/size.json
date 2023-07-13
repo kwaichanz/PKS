@@ -1,16 +1,11 @@
 {
-  "kind": "collectionType",
-  "collectionName": "home_feeds",
+  "collectionName": "components_product_sizes",
   "info": {
-    "singularName": "home-feed",
-    "pluralName": "home-feeds",
-    "displayName": "Home_feed",
+    "displayName": "Product_options",
+    "icon": "bulletList",
     "description": ""
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
     "title": {
       "type": "string"
@@ -26,8 +21,14 @@
         "audios"
       ]
     },
-    "urlPath": {
+    "value": {
       "type": "string"
+    },
+    "category_number": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
     }
   }
 }

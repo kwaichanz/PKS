@@ -33,7 +33,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
       };
 
       const responseData = await fetchAPI(path, urlParamsObject);
-      console.log("responseData Feeds", responseData);
+      // console.log("responseData Feeds", responseData);
 
       if (!responseData?.data.attributes.Home_feed) {
         console.error("Cannot get Home feeds data");
@@ -43,7 +43,7 @@ export const Feeds = ({ feeds }: IFeedProp) => {
       const extractedData = responseData?.data?.attributes.Home_feed.map((data: IFeedData) => {
         return data
       })
-      console.log("extractedData feeds", extractedData);
+      // console.log("extractedData feeds", extractedData);
       // const [leftFeed, rightFeed] = getExtractedData(responseData);
       // console.log("feed1", leftFeed);
       // console.log("feed2", rightFeed);

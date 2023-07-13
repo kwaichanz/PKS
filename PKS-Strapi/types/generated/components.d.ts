@@ -198,6 +198,22 @@ export interface ComponentsSectionBanner extends Schema.Component {
   };
 }
 
+export interface ProductSize extends Schema.Component {
+  collectionName: 'components_product_sizes';
+  info: {
+    displayName: 'Product_options';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    value: Attribute.String;
+    category_number: Attribute.String;
+    price: Attribute.Integer;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
@@ -215,6 +231,7 @@ declare module '@strapi/strapi' {
       'components.product-category-card': ComponentsProductCategoryCard;
       'components.product-category-header': ComponentsProductCategoryHeader;
       'components.section-banner': ComponentsSectionBanner;
+      'product.size': ProductSize;
     }
   }
 }

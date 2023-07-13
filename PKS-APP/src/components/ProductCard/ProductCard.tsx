@@ -54,17 +54,18 @@ export const ProductCard = ({ product }: IProductCardProp) => {
             {product.description}
           </span>
           <div className="pt-6 text-center">
-            <button
-              className=" rounded-lg py-2 bg-white btn btn-secondary transition-colors duration-200 ease-in-out "
-              type="button"
+            <Link
+              href={product.urlPath || ""}
+              className={`text-center font-bold text-sm ${prompt.className}`}
             >
-              <Link
-                href={product.urlPath || ""}
-                className={`text-center font-bold text-sm ${prompt.className}`}
+              <button
+                className=" rounded-lg py-2 bg-white btn btn-secondary transition-colors duration-200 ease-in-out "
+                type="button"
               >
+
                 Read More
-              </Link>
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
