@@ -15,35 +15,35 @@ import { ProductCardSection } from "@/components/ProductCard/ProductCardSection"
 import { SectionBanner } from "@/components/SectionBanner";
 
 export default function Home() {
-  // const productCardRef = useRef<HTMLDivElement>(null);
-  // const productCardRefValue = useOnScreen(productCardRef);
-  // const [isProductCardRef, setIsProductCardRef] = useState(false);
+  const productCardRef = useRef<HTMLDivElement>(null);
+  const productCardRefValue = useOnScreen(productCardRef);
+  const [isProductCardRef, setIsProductCardRef] = useState(false);
 
-  // useEffect(() => {
-  //   if (!isProductCardRef) {
-  //     setIsProductCardRef(productCardRefValue);
-  //   }
-  // }, [productCardRefValue]);
+  useEffect(() => {
+    if (!isProductCardRef) {
+      setIsProductCardRef(productCardRefValue);
+    }
+  }, [productCardRefValue]);
 
-  // const featuredProductsRef = useRef<HTMLDivElement>(null);
-  // const featuredProductsRefValue = useOnScreen(featuredProductsRef);
-  // const [isFeaturedProductRef, setIsFeaturedProductRef] = useState(false);
+  const featuredProductsRef = useRef<HTMLDivElement>(null);
+  const featuredProductsRefValue = useOnScreen(featuredProductsRef);
+  const [isFeaturedProductRef, setIsFeaturedProductRef] = useState(false);
 
-  // useEffect(() => {
-  //   if (!isFeaturedProductRef) {
-  //     setIsFeaturedProductRef(featuredProductsRefValue);
-  //   }
-  // }, [featuredProductsRefValue]);
+  useEffect(() => {
+    if (!isFeaturedProductRef) {
+      setIsFeaturedProductRef(featuredProductsRefValue);
+    }
+  }, [featuredProductsRefValue]);
 
-  // const feedsRef = useRef<HTMLDivElement>(null);
-  // const feedsRefValue = useOnScreen(feedsRef);
-  // const [isFeedsRef, setIsFeedsRef] = useState(false);
+  const feedsRef = useRef<HTMLDivElement>(null);
+  const feedsRefValue = useOnScreen(feedsRef);
+  const [isFeedsRef, setIsFeedsRef] = useState(false);
 
-  // useEffect(() => {
-  //   if (!isFeedsRef) {
-  //     setIsFeedsRef(feedsRefValue);
-  //   }
-  // }, [feedsRefValue]);
+  useEffect(() => {
+    if (!isFeedsRef) {
+      setIsFeedsRef(feedsRefValue);
+    }
+  }, [feedsRefValue]);
 
   return (
     <div className="flex flex-col items-center justify-between  ">
@@ -51,17 +51,20 @@ export default function Home() {
       <main className="w-full h-full relative bg-white">
         <section
           className="relative mr-auto ml-auto max-w-[1000px] mb-36 mt-16"
+          ref={productCardRef}
         >
-          <ProductCardSection />
+          {isProductCardRef && <ProductCardSection />}
         </section>
-        <article >
-          <FeaturedProducts featured={featuredProducts} />
+        <article ref={featuredProductsRef}>
+          {isFeaturedProductRef && (
+            <FeaturedProducts featured={featuredProducts} />
+          )}
         </article>
         <article>
           <SectionBanner />
         </article>
-        <article >
-          <Feeds feeds={feeds} />
+        <article ref={feedsRef}>
+          {isFeedsRef && <Feeds feeds={feeds} />}
         </article>
       </main>
     </div>
