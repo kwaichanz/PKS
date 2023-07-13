@@ -72,10 +72,10 @@ export default function About() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center relative select-none min-h-[1000px]">
+    <main className="flex flex-col items-center relative select-none min-h-[1000px]">
       {!isLoading && <Hero isLoading={isLoading} bannerData={bannerData} />}
       {!isLoading && (
-        <main className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
+        <div className=" min-h-[400px] max-w-[1392px] my-24 mx-auto w-full text-center items-center h-full">
           <section className="about-top-container max-w-[1274px] min-h-[500px] mx-[4%] ">
             <div
               className={`max-w-[1392px] py-14 px-auto text-lg  tracking-wider sm:tracking-widest leading-relaxed sm:leading-loose ${bubblegum.className} text-left`}
@@ -236,8 +236,8 @@ export default function About() {
               </p>
             </div>
           </section>
-        </main>
+        </div>
       )}
-    </div>
+    </main>
   );
 }

@@ -7,7 +7,8 @@ const {
   purple,
   brown,
   orange,
-  amber
+  amber,
+  grassDark,
 } = require("@radix-ui/colors");
 
 /** @type {import('tailwindcss').Config} */
@@ -47,7 +48,8 @@ module.exports = {
         ...indigo,
         ...brown,
         ...orange,
-        ...amber
+        ...amber,
+        ...grassDark,
       },
       keyframes: {
         enterFromRight: {

@@ -10,7 +10,6 @@ import useOnScreen from "@/app/utils/useOnScreen";
 import { feeds } from "../../mocks/product_card_items";
 import { featuredProducts } from "../../mocks/featured_products";
 
-import Loading from "./loading";
 import { ProductCardSection } from "@/components/ProductCard/ProductCardSection";
 import { SectionBanner } from "@/components/SectionBanner";
 
