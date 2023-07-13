@@ -7,7 +7,7 @@ export default function BlurImage({ image }) {
 
   // console.log('fsafafasfa',getStrapiMedia(image));
 
-// console.log('image : ', image);
+  // console.log('image : ', image);
   return (
     <Image
       className={`embla__slide__img relative object-cover -z-10 duration-700 ease-in-out  ${
@@ -16,8 +16,8 @@ export default function BlurImage({ image }) {
           : "scale-100 blur-0 grayscale-0"
       })`}
       unoptimized={true}
-      src={image ? getStrapiMedia(image) : '/images/hero-slide-1.webp'}
-      alt="hero image" 
+      src={image ? getStrapiMedia(image) : "/images/hero-slide-1.webp"}
+      alt="hero image"
       fill
       priority
       onLoadingComplete={() => setIsLoading(false)}

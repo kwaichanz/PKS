@@ -21,8 +21,6 @@ interface IFeedData {
 }
 
 export const Feeds = ({ feeds }: IFeedProp) => {
-  const [leftFeed, setLeftFeed] = useState<IFeedData>();
-  const [rightFeed, setRightFeed] = useState<IFeedData>();
   const [feedsData, setFeedsData] = useState<IFeedData[]>([]);
   const fetchFeeds = async () => {
     try {

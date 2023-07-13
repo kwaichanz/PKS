@@ -40,8 +40,14 @@
     },
     "size": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "product.size"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
     }
   }
 }
