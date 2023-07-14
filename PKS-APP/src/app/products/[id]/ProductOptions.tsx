@@ -1,17 +1,29 @@
-import React, { useEffect } from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
 interface ProductOptionsProps {
-    title: string;
-    price: number;
-    value: string;
-    category_number: string;
-    image?: any;
+    sizes: {
+
+        title: string;
+        price: number;
+        value: string;
+        category_number: string;
+        image?: any;
+    }[]
 }
 
-export const ProductOptions = (sizes: ProductOptionsProps[]) => {
-    console.log("sizes", sizes);
+export const ProductOptions = async (sizes: ProductOptionsProps) => {
+    async function getProductOptions() {
+
+        console.log("sizes po", sizes.sizes);
+
+        const allSizes = sizes?.sizes?.map((size) => size.title)
+        console.log("allSizes", allSizes);
+
+    }
 
     // useEffect(() => {
     //     const allSizes = sizes.map((size) => {
@@ -19,7 +31,10 @@ export const ProductOptions = (sizes: ProductOptionsProps[]) => {
     //     })
     //     console.log("allSizes", allSizes);
     // }, [])
-    
+    useEffect(() => {
+        getProductOptions()
+
+    }, [])
     return (
         <form>
             <RadioGroup.Root
@@ -40,6 +55,7 @@ export const ProductOptions = (sizes: ProductOptionsProps[]) => {
                         Short
                     </label>
                 </div>
+
                 <div className="flex flex-col col-start-3 items-center gap-4">
                     <img src='/coffee.png' className='max-w-[30px]' />
 
@@ -54,6 +70,7 @@ export const ProductOptions = (sizes: ProductOptionsProps[]) => {
                         Talls
                     </label>
                 </div>
+
                 <div className="flex flex-col col-start-4 items-center gap-4">
                     <img src='/coffee.png' className='max-w-[30px]' />
 
@@ -68,6 +85,7 @@ export const ProductOptions = (sizes: ProductOptionsProps[]) => {
                         Grande
                     </label>
                 </div>
+
                 {/* <div className="flex flex-col items-center gap-4">
                     <img src='/coffee.png' className='max-w-[30px]' />
 

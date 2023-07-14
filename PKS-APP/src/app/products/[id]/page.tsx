@@ -20,6 +20,7 @@ type TProduct = {
 
 }
 
+
 export default function Product({ }: Props) {
     const params = useParams()
     const bannerData: string[] = [];
@@ -55,6 +56,8 @@ export default function Product({ }: Props) {
 
         }
     }
+
+
     useEffect(() => {
         fetchProduct();
     }, [])
